@@ -7,6 +7,7 @@ SITENAME = 'Mitigating Failure'
 SITEURL = ''
 
 PATH = 'content'
+THEME = 'themes/pelican-themes/dev-random'
 
 TIMEZONE = 'America/New_York'
 
