@@ -7,7 +7,11 @@ SITENAME = 'Mitigating Failure'
 SITEURL = ''
 
 PATH = 'content'
-THEME = 'themes/pelican-themes/dev-random'
+ARTICLE_PATHS = ['articles']
+PAGE_PATHS = ['pages']
+
+THEME = 'themes/pelican-bold'
+SITESUBTITLE = SITENAME
 
 TIMEZONE = 'America/New_York'
 
@@ -25,10 +29,6 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
          ('Jinja2', 'http://jinja.pocoo.org/'),
          ('You can modify those links in your config file', '#'),)
-
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
 
