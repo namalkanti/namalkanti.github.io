@@ -1,12 +1,10 @@
-.lang="markdown" # DON'T COPY this line, it exists just for highlighting purposes
+Title: My super title
+Date: 2010-12-03 10:20
+Modified: 2010-12-05 19:30
+Category: Python
+Tags: pelican, publishing
+Slug: my-super-post
+Authors: Alexis Metaireau, Conan Doyle
+Summary: Short version for index and feeds
 
-Title: My first post
-Date: 2017-11-26 10:01
-Modified: 2017-11-27 12:30
-Category: misc
-Tags: first, misc
-Slug: My-first-post
-Authors: Your name
-Summary: What does your post talk about? Write here.
-
-This is the *first post* from my Pelican blog. **YAY!**
+This is the content of my super blog post.
