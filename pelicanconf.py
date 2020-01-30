@@ -10,7 +10,7 @@ PATH = 'content'
 ARTICLE_PATHS = ['articles']
 PAGE_PATHS = ['pages']
 
-THEME = 'themes/pelican-bold'
+THEME = 'themes/pelican-mg/'
 SITESUBTITLE = SITENAME
 
 TIMEZONE = 'America/New_York'
