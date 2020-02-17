@@ -18,4 +18,4 @@
 	url = https://github.com/demianbrecht/pelican-bold
 [submodule "themes/pelican-mg"]
 	path = themes/pelican-mg
-	url = https://github.com/lucachr/pelican-mg
+	url = https://github.com/lucachr/pelican-mg.git
