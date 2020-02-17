@@ -21,4 +21,4 @@ In Progress
 Partial Success
 Complete
 Stalled
-
+Failed
