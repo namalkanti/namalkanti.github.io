@@ -1,24 +1,31 @@
 Title: about
 
-WORK IN PROGRESS
+Hey! I'm Niraj! This is a blog I want to use to chronicle my different projects.
 
-I made this blog to write about my different attempts with projects. 
-I feel that most people(both in blogs and academia) only publich positive results.
-For this blog I want to write about all my projects, including the failures. 
-Time spent on my projects tends to vary as other priorities come up in life so 
-it's unlikely that I'll be consistent with my updates but I hope these posts will be helpful to somebody.
+It feels like most people(both in blogs and academia) only publish positive results. 
+But sometimes, we learn the most from failures, and this attitude makes it difficult to share 
+failues with others. 
+With this blog I want to share both my successes and failures. 
+It is unlikely to be updated frequently, as my projects are a hobby and get outprioritized 
+by other areas in my life; but I hope these posts are useful to anybody who also enjoys trying 
+out new ideas.
 
-Mitigating  failure is because I feel that failure isn't something to be rid of but simply reduced.
-We learn the most from our failures
+The title, Mitigating Failure, is because I feel that failure isn't something to be eliminated but simply reduced.
+Most lessons are learned through failures.
 
-I have three categories; Lab, Workshop, and Studio. This comes from a video game, XCOM. 
-The Lab is meant for ideas and concepts 
-Workshop is meant for actual products or devices I plan on using
-Studio is for art projects
+I have three categories; Lab, Workshop, and Studio. This comes from the research and development aspect of a video game, XCOM. 
+The Lab is meant for investigating ideas and concepts. 
+The Workshop is meant for actual projects I plan on using.
+The Studio is for art projects.
 
-Projects will have different stages
-In Progress
-Partial Success
-Complete
-Stalled
-Failed
+Projects will have different stages  
+
+<span id="In-Progress">In Progress</span>- Currently being worked on
+
+<span id="Partial-Success">Partial Success</span> - Completed and successful; but not to the extent I would have liked
+
+<span id="Complete">Complete</span>- Completed to my satisfaction
+
+<span id="Stalled">Stalled</span>- Not yet complete, but deferred until a later date
+
+<span id="Failed">Failed</span>- Failed and abandoned
