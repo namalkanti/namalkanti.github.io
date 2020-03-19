@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mitigating Failure</title><link href="http://namalkanti.github.io/" rel="alternate"></link><link href="http://namalkanti.github.io/feeds/all.atom.xml" rel="self"></link><id>http://namalkanti.github.io/</id><updated>2020-01-18T20:56:30Z</updated></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mitigating Failure</title><link href="http://namalkanti.github.io/" rel="alternate"></link><link href="http://namalkanti.github.io/feeds/all.atom.xml" rel="self"></link><id>http://namalkanti.github.io/</id><updated>2020-03-19T00:00:00-04:00</updated><subtitle>Mitigating Failure</subtitle><entry><title>Resume</title><link href="http://namalkanti.github.io/Resume.html" rel="alternate"></link><published>2020-03-19T00:00:00-04:00</published><updated>2020-03-19T00:00:00-04:00</updated><author><name>Niraj Amalkanti</name></author><id>tag:namalkanti.github.io,2020-03-19:/Resume.html</id><summary type="html">&lt;p&gt;Updating My Resume&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Overview&lt;/h1&gt;
+&lt;p&gt;I created my resume right after college using a LaTex template I found online.
+I've been iteratively updating it since but I'm finding it doesn't communicate
+my skillset well.
+Making the drastic changes within the LaTex is becoming too difficult so I've 
+decided to take a step back and redo my resume. I want to investigate
+other ways of creating my resume to see if LaTex is still the best fit for me.&lt;/p&gt;</content><category term="Workshop"></category><category term="resume"></category><category term="LaTex"></category></entry></feed>
