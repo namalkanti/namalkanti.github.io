@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Niraj Amalkanti'
 SITENAME = 'Mitigating Failure'
-SITEURL = 'https://namalkanti.github.io'
+SITEURL = ''
 
 PATH = 'content'
 ARTICLE_PATHS = ['articles']
