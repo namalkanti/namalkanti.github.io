@@ -5,7 +5,6 @@ Category: Workshop
 Tags: resume, LaTex
 Slug: Resume
 Authors: Niraj Amalkanti 
-Summary: Updating My Resume
 State: In-Progress
 
 # Overview
