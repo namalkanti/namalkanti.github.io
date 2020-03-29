@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mitigating Failure</title><link href="https://mitigatingfailure.com/" rel="alternate"></link><link href="https://mitigatingfailure.com/feeds/all.atom.xml" rel="self"></link><id>https://mitigatingfailure.com/</id><updated>2020-03-19T00:00:00-04:00</updated><subtitle>Mitigating Failure</subtitle><entry><title>Resume</title><link href="https://mitigatingfailure.com/Resume.html" rel="alternate"></link><published>2020-03-19T00:00:00-04:00</published><updated>2020-03-19T00:00:00-04:00</updated><author><name>Niraj Amalkanti</name></author><id>tag:mitigatingfailure.com,2020-03-19:/Resume.html</id><summary type="html">&lt;h1&gt;Overview&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mitigating Failure</title><link href="https://mitigatingfailure.com/" rel="alternate"></link><link href="https://mitigatingfailure.com/feeds/all.atom.xml" rel="self"></link><id>https://mitigatingfailure.com/</id><updated>2020-03-19T00:00:00-04:00</updated><subtitle>Mitigating Failure</subtitle><entry><title>Resume</title><link href="https://mitigatingfailure.com/Resume.html" rel="alternate"></link><published>2020-03-19T00:00:00-04:00</published><updated>2020-03-19T00:00:00-04:00</updated><author><name>Niraj Amalkanti</name></author><id>tag:mitigatingfailure.com,2020-03-19:/Resume.html</id><summary type="html">&lt;h3&gt;Entries&lt;/h3&gt;
+&lt;p&gt;&lt;a href="#overview"&gt; Overview &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a name="oversion"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Overview&lt;/h1&gt;
 &lt;p&gt;I created my resume right after college using a LaTex template I found online.
 I've been iteratively updating it since but I'm finding it doesn't communicate
 my skillset well.
 Making the drastic changes within the LaTex is becoming too difficult so I've 
-decided to take a step back and …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Overview&lt;/h1&gt;
+decided to take a step …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Entries&lt;/h3&gt;
+&lt;p&gt;&lt;a href="#overview"&gt; Overview &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a name="oversion"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Overview&lt;/h1&gt;
 &lt;p&gt;I created my resume right after college using a LaTex template I found online.
 I've been iteratively updating it since but I'm finding it doesn't communicate
 my skillset well.
 Making the drastic changes within the LaTex is becoming too difficult so I've 
 decided to take a step back and redo my resume. I want to investigate
-other ways of creating my resume to see if LaTex is still the best fit for me.&lt;/p&gt;</content><category term="Workshop"></category><category term="resume"></category><category term="LaTex"></category></entry></feed>
+other ways of creating my resume to see if LaTex is still the best fit for me.
+I'll start with creating a sketch of what I want my resume to look like and 
+then iterate through different options. &lt;/p&gt;</content><category term="Workshop"></category><category term="resume"></category><category term="LaTex"></category></entry></feed>
