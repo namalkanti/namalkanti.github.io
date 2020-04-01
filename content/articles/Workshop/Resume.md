@@ -10,7 +10,7 @@ State: In-Progress
 ### Entries
 [ Overview ](#overview)
 
-<a name="oversion"></a>
+<a name="overview"></a>
 # Overview
 
 I created my resume right after college using a LaTex template I found online.
