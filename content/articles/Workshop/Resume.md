@@ -21,3 +21,7 @@ decided to take a step back and redo my resume. I want to investigate
 other ways of creating my resume to see if LaTex is still the best fit for me.
 I'll start with creating a sketch of what I want my resume to look like and 
 then iterate through different options. 
+
+## Objective
+* Investigate different formats for a resume and determine which is best 
+for my purposes
