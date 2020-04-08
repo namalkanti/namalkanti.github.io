@@ -1,5 +1,4 @@
 Title: about
-save_as: index.html
 
 Hey! I'm Niraj! This is a blog I want to use to chronicle my different projects.
 
