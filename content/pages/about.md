@@ -29,3 +29,9 @@ Projects will have different stages
 <span id="Stalled">Stalled</span>- Not yet complete, but deferred until a later date
 
 <span id="Failed">Failed</span>- Failed and abandoned
+
+I'd also like to point out that these posts will follow my own progression through these projects. That means if
+I'm familiar with a topic I may move very quickly through it. I will try to link relevant background 
+information when I notice this, but it may slip sometimes. Similarly, if I'm unfamiliar with a topic I will
+chronicle my learning process, which may bore readers who already are familiar with the topic. However, it is 
+likely to be helpful to readers in a similar position to me; so I will not rewrite these sections either.
