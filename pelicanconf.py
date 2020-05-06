@@ -13,7 +13,7 @@ PAGE_PATHS = ['pages']
 THEME = 'themes/pelican-mg/'
 SITESUBTITLE = SITENAME
 
-STATIC_PATHS = ['extra/CNAME']
+STATIC_PATHS = ['extra/CNAME', 'images']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 
 TIMEZONE = 'America/New_York'
