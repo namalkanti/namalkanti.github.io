@@ -5,13 +5,16 @@ Category: Workshop
 Tags: openscad 
 Slug: Arch-Keychain
 Authors: Niraj Amalkanti 
-State: In-Progress
+State: Stalled
 
 ### Entries
 [ Overview ](#overview)
 
 [ 5/22/2020 - Initial Fumbling ](#5/22/2020)
 
+[ 5/23/2020 - Tutorials ](#5/23/2020)
+
+[ 5/24/2020 - 3D Printing Service ](#5/24/2020)
 
 <a name="overview"></a>
 # Overview
@@ -100,3 +103,27 @@ I'm not sure but this might mean I'm done? I have an stl file scaled for 1mm. I 
 my next step should be to look at actual OpenSCAD tutorials to see if I'm missing something. If 
 not I can try to find 3d printing services and send off my design. Perhaps my project
 is a little too simple...
+
+<a name="5/23/2020"></a>
+# 5/23/2020 - Tutorials
+
+Googling some tutorials gave me the basics. An openscad file is basically a collection of
+"actions" which create objects and operators which act on those actions. Compiling these
+together creates a model. You can also define variables and functions(functions are called
+modules) for more complex projects. Vectors and Loops also exist and have the expected
+functions. This kind of reminds me of verilog; where a somewhat simple, specialized 
+language can be very expressive for its domain. It looks like I fumbled my way into the
+right approach. Now I feel a bit more confident that my file is correct; so next 
+I'll look up 3D printing services.
+
+<a name="5/24/2020"></a>
+# 5/24/2020 - 3D Printing Services
+
+Some quick googling lead to a large list of 3D printing services. I'm not really sure
+how to pick them but [Shapeways](https://www.shapeways.com) seems like a good fit. It's not meant for industrial printing
+and they'll let me print a single object. They have a lot of materials but it looks like
+their versatile plastic is available in a blue for the arch linux logo. It's not terribly
+expensive ($12.00) but the shipping cost is almost the same as the model($9.00). They 
+don't offer any cheaper version, so I'll have to deal with it. This feels too easy....
+But I'm not sure what else to do. They estimate it'll take a month until my print arrives
+so I guess I'll see how well I did when it gets here.
