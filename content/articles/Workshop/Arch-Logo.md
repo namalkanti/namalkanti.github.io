@@ -35,6 +35,8 @@ very comfortable with. Anther advantage with text formats is it
 makes version control very easy. So it makes sense for me to try learning OpenSCAD
 instead of a more conventional CAD tool.
 
+I'm going to use github to keep track of my files the repo is [here](https://github.com/namalkanti/Arch-Keychain-Model)
+
 ## Objectives
 * Use OpenSCAD to create a STL file of the Arch Linux logo as a keychain
 * Learn the basics of OpenSCAD
