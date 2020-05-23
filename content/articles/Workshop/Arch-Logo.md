@@ -108,8 +108,15 @@ is a little too simple...
 # 5/23/2020 - Tutorials
 
 Googling some tutorials gave me the basics. An openscad file is basically a collection of
-"actions" which create objects and operators which act on those actions. Compiling these
-together creates a model. You can also define variables and functions(functions are called
+"actions" which create objects and "operators" which act on those actions. 
+In this example the action was an svg import. Compiling these
+together creates a model. 
+
+<figure class="center">
+    <img src="{attach}/images/scad_analysis.png" width="80%" height="auto" class="border">
+</figure>
+
+You can also define variables and functions(functions are called
 modules) for more complex projects. Vectors and Loops also exist and have the expected
 functions. This kind of reminds me of verilog; where a somewhat simple, specialized 
 language can be very expressive for its domain. It looks like I fumbled my way into the
