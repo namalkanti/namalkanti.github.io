@@ -110,7 +110,8 @@ is a little too simple...
 Googling some tutorials gave me the basics. An openscad file is basically a collection of
 "actions" which create objects and "operators" which act on those actions. 
 In this example the action was an svg import. Compiling these
-together creates a model. 
+together creates a model. In CAD this approach is called 
+Constructive Sold Geometry.
 
 <figure class="center">
     <img src="{attach}/images/scad_analysis.png" width="80%" height="auto" class="border">
