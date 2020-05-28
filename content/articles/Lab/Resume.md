@@ -36,6 +36,8 @@ State: In-Progress
 
 [ 5/03/2020 - Picking Initial Fonts](#5/03/2020)
 
+[ 5/24/2020 - Finishing up Styling](#5/24/2020)
+
 <a name="overview"></a>
 # Overview
 
@@ -504,3 +506,47 @@ headings and title. This allowed me to quickly experiment with different fonts/s
 how they'd look. I used Scribus's preview mode to view the rendered document and the styles
 window to change them. It was much faster than highlighting and
 changing large blocks of text and the workflow felt great.
+
+<a name="5/24/2020"></a>
+# 5/24/2020 - Finishing Initial Styling
+
+<figure class="center">
+    <img src="{attach}/images/initial_styling.png" width="60%" height="auto" class="border">
+    <figcaption>Current Resume sample initial styles set up</figcaption>
+</figure>
+
+This is my resume with the styles developed and associated to different text groups.
+My main goal here was to show clear seperation and hierarchy between different parts 
+of my resume with indents, size, and style.
+
+I also made some changes with the ordering and word choice. I moved the company
+name and location to the same line and put job title afterwards; as I think the company 
+and location are more closely tied to each other. I also added the city to my contact 
+info section. I never liked the idea of an address on my resume, but I think adding
+an approximate location is a good idea. Finally, I changed the last skill entry to basic
+instead of competent. Basic conveys the idea that I know something about these skills/areas
+but don't have a very deep background; which is my intention.
+
+One aspect I struggled with was how to emphasize the resume title. I didn't like the look 
+of just making it larger. But with Scribus's fine control I could actually stretch 
+the text horizontally and I liked this distinct emphasis.
+
+Styles were incredibly useful here, they really helped me save time and improved my design
+process. Why did this happen this time? When I tried using styles in my first attempt
+they showed potential but were a lot of work. But that didn't happen this time, even though
+I'm still in the design phase. The main reason was that I followed Byfield's typographic
+principles. Recognizing that I would only need two fonts(one for body and one for heading);
+I set the default character style to my body font and created a second style for the heading
+which I applied to the relevant areas. This was a trivial amount of work but allowed
+me to leverage styles in my initial font selection process. As I continued to work,
+I simply branched out and kept inheriting and modifying my styles as needed. Again, this
+was very little work, but allowed me to continue using styles and changing them as needed.
+This typographic, styles first approach let me make full use of styles in my design process
+without introducing unecessary amounts of work.
+
+This was definitely a different design process, but learning it will be extremely useful
+in future; even when I'm working with documents and styles in LibreOffice. Byfield was
+correct, once I changed how I thought about my process, I found styles to be incredibly
+useful. However, I can also easily see why people may not like styles; especially if 
+they don't follow this workflow. I can also see how styles are influenced by programmers.
+Though I don't feel like many programmers use or even know about styles.
