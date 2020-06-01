@@ -5,7 +5,7 @@ Category: Lab
 Tags: resume 
 Slug: Resume
 Authors: Niraj Amalkanti 
-State: Complete
+State: Successful
 
 ### TLDR
 I wanted to redo my resume so I designed a layout in Inkscape and investigated

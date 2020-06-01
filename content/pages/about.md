@@ -21,15 +21,19 @@ The Lab is meant for investigating ideas and concepts.
 The Workshop is meant for actual projects I plan on using.
 The Studio is for art projects.
 
-Projects will have different stages  
+Projects will have different labels as defined below
+
+These labels are for projects that are incomplete 
 
 <span id="In-Progress">In Progress</span>- Currently being worked on
 
+<span id="Stalled">Stalled</span>- Not yet complete, but deferred until a later date
+
+These labels will mark a project as complete
+
 <span id="Partial-Success">Partial Success</span> - Completed and successful; but not to the extent I would have liked
 
-<span id="Complete">Complete</span>- Completed to my satisfaction
-
-<span id="Stalled">Stalled</span>- Not yet complete, but deferred until a later date
+<span id="Successful">Successful</span>- Completed to my satisfaction
 
 <span id="Failed">Failed</span>- Failed and abandoned
 
