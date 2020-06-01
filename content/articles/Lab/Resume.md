@@ -620,5 +620,6 @@ However, this blog does show how I implemented the design and what decisions I m
 I hope these aspects will be useful to others who are designing their own resumes. The
 personal details of my own resume are not relevant to that process. If I find out that
 Scribus was actually the wrong tool(not sure how but it could happen); then I will make
-an update with that information. But otherwise I am satisfied marking this project as complete.
+an update with that information. But otherwise I am satisfied marking this project as 
+completed and successful.
 
