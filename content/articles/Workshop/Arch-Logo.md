@@ -1,4 +1,4 @@
-Title: Arch Linux Logo Keychain
+Title: Arch Linux Keychain
 Date: 2020-5-22 
 Modified: 2020-5-22 
 Category: Workshop
