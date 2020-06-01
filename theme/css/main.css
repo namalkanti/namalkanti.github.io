@@ -1,5 +1,14 @@
 html {
-  font: 400 14px / 20px "Oswald", "Helvetica Neue",Helvetica,Arial,sans-serif; }
+  font: 400 16px / 22px "Ubuntu", "Helvetica Neue",Helvetica,Arial,sans-serif; }
+
+h1 {
+  font-family: "Oswald", "sans serif"; }
+
+h2 {
+  font-family: "Oswald", "sans serif"; }
+
+h3 {
+  font-family: "Oswald", "sans serif"; }
 
 a {
   color: #33b5e5; }
@@ -149,29 +158,29 @@ a {
   float: left;
   position: relative; }
 
+.center {
+  text-align: center; }
+
+.border {
+  border: 3px solid black; }
+
 #In-Progress {
-    color: blue;
-}
+  color: blue; }
 
 #Partial-Success {
-    color: teal;
-}
+  color: teal; }
 
 #Complete {
-    color: green;
-}
+  color: green; }
 
 #Stalled {
-    color: orange;
-}
+  color: orange; }
 
 #Failed {
-    color: red;
-}
+  color: red; }
 
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0; }
-
