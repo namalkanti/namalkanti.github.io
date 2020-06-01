@@ -5,7 +5,14 @@ Category: Lab
 Tags: resume 
 Slug: Resume
 Authors: Niraj Amalkanti 
-State: In-Progress
+State: Complete
+
+### TLDR
+I wanted to redo my resume so I designed a layout in Inkscape and investigated
+several tools to implement my design. Scribus was the one I selected and I 
+feel it's an excellent choice for resume design. But Scribus itself has
+a large learning curve and you really need to be using styles correctly
+to get the most out of it. This may discourage a lot of other users.
 
 ### Entries
 [ Overview ](#overview)
@@ -37,6 +44,12 @@ State: In-Progress
 [ 5/03/2020 - Picking Initial Fonts](#5/03/2020)
 
 [ 5/24/2020 - Finishing up Styling](#5/24/2020)
+
+[ 5/29/2020 - Finishing Layout](#5/29/2020)
+
+[ 5/30/2020 - Adding Icons](#5/30/2020)
+
+[ 5/31/2020 - Final Thoughts](#5/30/2020)
 
 <a name="overview"></a>
 # Overview
@@ -550,3 +563,62 @@ correct, once I changed how I thought about my process, I found styles to be inc
 useful. However, I can also easily see why people may not like styles; especially if 
 they don't follow this workflow. I can also see how styles are influenced by programmers.
 Though I don't feel like many programmers use or even know about styles.
+
+<a name="5/29/2020"></a>
+# 5/29/2020 - Finishing Layout
+
+<figure class="center">
+    <img src="{attach}/images/layout.png" width="60%" height="auto" class="border">
+    <figcaption>Resume with Final Layout</figcaption>
+</figure>
+
+I used a grid along with the align and distribute tool to assemble the final layout.
+I also made a few other changes. I changed "good" to "Strong" as a skill tier,
+because I think good is very weak adjective. I also changed the section seperation to be
+horizontal lines under the headings instead of a vertical line. This feels less crowded
+and a lot more clear with the section emphasis.
+
+The final change I made is one that may not be noticeable. I wanted to change the color
+of the headings to something more distinct, but this felt too bold for a technical resume. 
+As a compromise, I used Navy. This is barely perceptible, but I think it does draw the
+eyes to the headings even if it's not obvious as to why. It's subtle, but I think it works.
+And if not, nobody will notice anyways; so it feels like a small risk. The resume still looks
+excellent in black and white; as per my original design goal.
+
+The last step will be to add the meters for my skills and add icons for the contact info.
+Then I'll be done!
+
+<a name="5/30/2020"></a>
+# 5/30/2020 - Adding Icons
+
+<figure class="center">
+    <img src="{attach}/images/icons.png" width="60%" height="auto" class="border">
+    <figcaption>Resume with Final Layout</figcaption>
+</figure>
+
+For the last step I added icons to each entry of the contact info section using freely
+available clip art. And I added the meters for the skills section. I made the borders
+of the meters a little more rounded because that feels consistent with the rounding
+in my fonts. Now my resume template is complete! All I need to do now is a final evaluation.
+
+<a name="5/31/2020"></a>
+# 5/31/2020 - Final Thoughts
+This was a very long process but I'm satisfied with the result. I learned a lot, not 
+just about Scribus and LibreOffice, but also typography and aspects of print design
+in general. I'm certain this knowledge will be useful when I need to make documents 
+in the future. I definitely feel that Scribus was the right tool for the job; I would've
+struggled way too much on layout in LibreOffice. There was definitely a learning curve
+but it was worth it.
+
+One final aspect I want to explain is why I don't have any entries about feedback. It's
+reccomended that most resumes are reviewed by friends and colleagues. As I mentioned in
+my goals; I wanted to create a template based on my design for my resume. Now that I have
+the template; the more personal task of creating my own resume can begin. I will give
+this to others to review but it will not be a public process. 
+
+However, this blog does show how I implemented the design and what decisions I made. 
+I hope these aspects will be useful to others who are designing their own resumes. The
+personal details of my own resume are not relevant to that process. If I find out that
+Scribus was actually the wrong tool(not sure how but it could happen); then I will make
+an update with that information. But otherwise I am satisfied marking this project as complete.
+
