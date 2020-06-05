@@ -12,13 +12,15 @@ State: In-Progress
 
 [ 6/2/2020 - Method ](#6/2/2020)
 
-[ 6/3/2020 - Discussion:Python and Flask ](#6/3/2020)
+[ 6/3/2020 - Discussion:Python and Django ](#6/3/2020)
 
 [ 6/4/2020 - Discussion:Rust and Rocket ](#6/4/2020)
 
 [ 6/5/2020 - Discussion:Kotlin and Spring Boot ](#6/5/2020)
 
-[ 6/6/2020 - Implementation:Python and Flask ](#6/6/2020)
+[ 6/6/2020 - Implementation:Python and Django ](#6/6/2020)
+
+[ 6/7/2020 - Implementation:Rust and Rock ](#6/7/2020)
 
 
 <a name="overview"></a>
@@ -52,6 +54,8 @@ Over the past few years I've been exposed to a lot of languages, but there are t
 stand outs; Rust and Kotlin. Both appeal to me for different reasons which I will 
 detail later.
 
+The git repo where these projects will be is [here](https://github.com/namalkanti/idfinder-samples).
+
 ## Objectives
 * Identify a choice for my secondary language 
 * Identify use cases for my secondary language
@@ -81,13 +85,18 @@ it's something simple all three languages have mature support for. That consiste
 example will be helpful in my comparisons.
 
 <a name="6/3/2020"></a>
-# 6/3/2020 - Discussion:Python and Flask
-Originally, I used Django as the framework to implement the original idfinder app. This
+# 6/3/2020 - Discussion:Python and Django
+I used Django as the framework to implement the original idfinder app. This
 was to learn Django, but I mainly used and still use Flask for any needs I have in
 building web apps. None of my personal projects need the complexity of Django or Pyramid. 
-The Django implementation is also out of date (Django 1.7, which ran on Python2). 
-So my first task will be to redo the app in Flask for a more consistent and 
-recent comparison. 
+Most of them simply need a simple web server that responds to http requests. But this
+project will require databases and forms. I could add these modules to flask, but I'd
+have to pick all the modules for these tasks myself. Django has a "batteries included"
+philosophy. Since this is meant to be a simple control example. I will use
+Django again for this project.
+But the Django implementation is out of date (Django 1.7, which ran on Python2). 
+So my first task will be to redo the app in a recent Django version for a more 
+consistent and recent comparison. 
 
 <a name="6/4/2020"></a>
 # 6/4/2020 - Discussion:Rust and Rocket
@@ -123,6 +132,12 @@ building standalone applications in Clojure could be unecessarily arduous for me
 support it with Java, but I don't like Java that much. But I like Kotlin a lot, and it could
 be a way to support my clojure experiments.
 
+One question that might come up here is "Why not Scala?". I've held a low key interest in
+Scala for some time. It's supposed to combine functional programming with a more traditional
+paradigm to be considered a more practical language. While I find this enticing; it doesn't
+quite grab me the way Kotlin's syntax and design decisions did. But the ability to explore
+Scala later is definitely an attractive aspect of Kotlin.
+
 Rust would expand my view about how I program but Kotlin would expand my views on tooling.
 I use IDEs when required to at work, but for personal programming I prefer using Vim 
 and the command line(on Linux, course). Kotlin really seems to encourage the use of an
@@ -135,4 +150,18 @@ to be a simpler project that defaults a lot of options for you. So I will use Sp
 for this exercise.
 
 <a name="6/6/2020"></a>
-# 6/6/2020 - Implementation:Python and Flask
+# 6/6/2020 - Implementation:Python and Django
+The implementation process was relatively straightforward. I was able to copy most of my 
+existing code from the older Django version. There were a few things that changed(mostly syntax)
+and Python3's default unicode simplified or eliminated some code in the previous version.
+
+Revisiting Django reminded me how pedantic the framework is. I understand the value 
+of such a rigorous framework; mainly in situations when you're working on a project
+with lots of different people. But it definitely feels like overkill for a personal 
+project. But it does do a lot of work for you, unlike flask, where I might spend just
+as much time getting everything set up. I've heard pyramid is supposed to fill a gap
+between the two projects, and it might be worth looking into some time in the future.
+But I don't want to explore that tangent now.
+
+<a name="6/7/2020"></a>
+# 6/7/2020 - Implementation:Rust and Rocket
