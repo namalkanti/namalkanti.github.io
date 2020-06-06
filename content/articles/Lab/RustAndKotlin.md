@@ -20,7 +20,7 @@ State: In-Progress
 
 [ 6/6/2020 - Implementation:Python and Django ](#6/6/2020)
 
-[ 6/7/2020 - Implementation:Rust and Rock ](#6/7/2020)
+[ 6/7/2020 - Reviewing Rust docs ](#6/7/2020)
 
 
 <a name="overview"></a>
@@ -164,4 +164,23 @@ between the two projects, and it might be worth looking into some time in the fu
 But I don't want to explore that tangent now.
 
 <a name="6/7/2020"></a>
-# 6/7/2020 - Implementation:Rust and Rocket
+# 6/7/2020 - Reviewing Rust Docs
+
+I started with reviewing the official rust [docs](https://doc.rust-lang.org/book/). I 
+note that it's expanded quite a bit since I looked at it back in 2016. The review
+reminded me that while Rust seems verbose; it's usually only because the language
+wants you to be explicit with what you want. It is capable of type inference and some
+constructs have syntactic sugar when appropriate. I wasn't extremely thorough; there 
+are a lot of complicated concepts and I'll review them as I start going through Rocket's 
+documentation. Some of them I remember from my earlier work with Rust but some are new.
+
+Something I note is that the reccomended way to install and update rust is a new tool called rustup.
+Normally I maintain tools using the package manager in my linux distro but 
+rustup is what is now suggested. Rustup allows you to easily switch your rust toolchain
+based on build type(stable vs nightly) and also makes it easier to handle toolchains
+for different CPU architectures. I've cross-compiled C++ for ARM and know that it can be
+messy; so I can see the value of this. You can also override the toolchain on a by directory 
+basis; so it's a little like Python's virtualenv. 
+
+<a name="6/8/2020"></a>
+# 6/8/2020 - Reading Rocket Docs
