@@ -5,7 +5,7 @@ Category: Workshop
 Tags: openscad 
 Slug: Arch-Keychain
 Authors: Niraj Amalkanti 
-State: Stalled
+State: Partial-Success
 
 ### Entries
 [ Overview ](#overview)
@@ -15,6 +15,8 @@ State: Stalled
 [ 5/23/2020 - Tutorials ](#5/23/2020)
 
 [ 5/24/2020 - 3D Printing Service ](#5/24/2020)
+
+[ 6/08/2020 - Final Thoughts ](#6/08/2020)
 
 <a name="overview"></a>
 # Overview
@@ -135,3 +137,20 @@ expensive ($12.00) but the shipping cost is almost the same as the model($9.00).
 don't offer any cheaper version, so I'll have to deal with it. This feels too easy....
 But I'm not sure what else to do. They estimate it'll take a month until my print arrives
 so I guess I'll see how well I did when it gets here.
+
+<a name="6/08/2020"></a>
+# 6/08/2020 - Final Thoughts
+
+It finally came in today! A little earlier than I expected.
+<figure class="center">
+    <img src="{attach}/images/arch_print.jpg" width="40%" height="auto" class="border">
+</figure>
+It looks exactly like what I wanted and fits on my key ring. Feels sturdy too; though I'll
+have to use it a bit more to see. I guess it really was that simple. OpenSCAD's ability 
+to directly import svgs made this project extremely trivial; even for a novice like me.
+
+So how to mark this project? I did use OpenSCAD to build a 3D model and successfully 
+printed it with a printing service. However, it feels hesitant to say that I really
+learned the basics of OpenSCAD. My project was simple, too simple. So I will be 
+marking this project as a partial success. Maybe in the future I can do another
+project and really get to learn the basics of OpenSCAD.

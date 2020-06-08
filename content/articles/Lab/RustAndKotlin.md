@@ -182,5 +182,18 @@ for different CPU architectures. I've cross-compiled C++ for ARM and know that i
 messy; so I can see the value of this. You can also override the toolchain on a by directory 
 basis; so it's a little like Python's virtualenv. 
 
+Another interesting aspect of Rust are its macros. These are meant for syntactic sugar
+and to specify Domain Specific Languages. DSLs are a feature that have always interested
+me. But I note that macros are definitely a work-in-progress now; and subject to changes.
+
 <a name="6/8/2020"></a>
 # 6/8/2020 - Reading Rocket Docs
+My next step was Rocket's [docs](https://rocket.rs/v0.4/guide/). They expected a good
+understanding of Rust beforehand and I definitely felt that this was tested. Rocket
+feels somewhat like a DSL in Rust for building web apps. It's still Rust but there's
+a lot of macros and specific ways functions need to be used and called. Rocket doesn't
+provide a templating engine or database ORM so I will need to include these.
+
+<a name="6/9/2020"></a>
+# 6/9/2020 - 
+My first task was to get 

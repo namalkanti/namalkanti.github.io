@@ -25,17 +25,17 @@ Projects will have different labels as defined below
 
 These labels are for projects that are incomplete 
 
-<span id="In-Progress">In Progress</span>- Currently being worked on
+<span id="In-Progress">In Progress</span> - Currently being worked on
 
-<span id="Stalled">Stalled</span>- Not yet complete, but deferred until a later date
+<span id="Stalled">Stalled</span> - Not yet complete, but deferred until a later date
 
 These labels will mark a project as complete
 
 <span id="Partial-Success">Partial Success</span> - Completed and successful; but not to the extent I would have liked
 
-<span id="Successful">Successful</span>- Completed to my satisfaction
+<span id="Successful">Successful</span> - Completed to my satisfaction
 
-<span id="Failed">Failed</span>- Failed and abandoned
+<span id="Failed">Failed</span> - Failed and abandoned
 
 I'd also like to point out that these posts will follow my own progression through these projects. That means if
 I'm familiar with a topic I may move very quickly through it. I will try to link relevant background 
