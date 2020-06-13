@@ -5,7 +5,13 @@ Category: Lab
 Tags: rust, kotlin 
 Slug: Rust and Kotlin
 Authors: Niraj Amalkanti 
-State: In-Progress
+State: Partial-Success
+
+### TLDR
+I wanted to pick a new language to learn and maintain my skill in. I also wanted to make sure
+I had use cases for the new language so I had practical reasons to continue using it. 
+I ended up picking Rust as this language,
+but I couldn't come up with any concrete use cases.
 
 ### Entries
 [ Overview ](#overview)
@@ -22,6 +28,21 @@ State: In-Progress
 
 [ 6/7/2020 - Reviewing Rust docs ](#6/7/2020)
 
+[ 6/8/2020 - Reading Rocket docs ](#6/8/2020)
+
+[ 6/9/2020 - Investigating Diesel and Changing the Project ](#6/9/2020)
+
+[ 6/10/2020 - Implementing the New Project ](#6/10/2020)
+
+[ 6/11/2020 - Starting the Kotlin Project ](#6/11/2020)
+
+[ 6/12/2020 - Rethinking My Plan ](#6/12/2020)
+
+[ 6/13/2020 - The Decision ](#6/13/2020)
+
+[ 6/14/2020 - Use Cases ](#6/14/2020)
+
+[ 6/15/2020 - Final Thoughts and Objective Analysis ](#6/15/2020)
 
 <a name="overview"></a>
 # Overview
@@ -29,26 +50,28 @@ State: In-Progress
 I consider my "primary" languages to be Python and C/C++. I use both of these languages 
 at work and in my personal projects. The other languages I know, I consider to
 be "tertiary" languages. These are languages I've done a few projects or work
-with in the past but I don't regularly use them. What I'd like to do is add a "secondary"
+in but I don't regularly use them. What I'd like to do is add a "secondary"
 language to my skillset. This would be a language I don't use with extreme regularity
 or for work (where I don't necessarily have choice), but a language I pay attention to
 and try to use semi-frequently. This language would ideally be useful in areas or aspects
-that Python and C/C++ don't cover. A secondary language also requires an ongoing 
+that Python and C/C++ don't cover. A secondary language would require an ongoing 
 maintenace commitment which is why it's not a trivial decision or one I can simply 
-add languages to easily.
+select easily.
 
 I actually tried adding Haskell as a secondary language in the past. I had heard 
 a lot of good things about Haskell and was interested in trying it out.
 I learned about it through this [book](http://learnyouahaskell.com). It introduced a lot
-of interesting ideas and I decided I would implement this blog using Hakyll. However, like
-most of my side projects I worked on it infrequently. Because Haskell is so different from
-Python and C++ I usually spent my time "working" on my blog as a bit of Haskell review.
+of interesting ideas and I was initially excited to use it more. 
+I decided I would implement this blog using Hakyll. However, like
+most of my side projects, I worked on it infrequently. Because Haskell is so different from
+Python and C++ I usually spent my time "working" on my blog instead on Haskell review.
 Which I then forgot when I came back to it. Obviously, I got nothing done and decided
 to use Pelican instead. Haskell was too different from my existing knowledge base and
 honestly; Pelican was a better fit for this kind of project for me. So now, I want to
 pick a language that's more similar to Python/C++ while still extending my skillset. I'd also
 like to find some clear use cases. I want this work to be useful to me, instead 
-of just being a project to maintain my skill in the language.
+of just being a project to maintain my skill in the language. Otherwise I might make
+the same mistake and try to force this new language in areas where I shouldn't.
 
 Over the past few years I've been exposed to a lot of languages, but there are two
 stand outs; Rust and Kotlin. Both appeal to me for different reasons which I will 
@@ -92,7 +115,7 @@ building web apps. None of my personal projects need the complexity of Django or
 Most of them simply need a simple web server that responds to http requests. But this
 project will require databases and forms. I could add these modules to flask, but I'd
 have to pick all the modules for these tasks myself. Django has a "batteries included"
-philosophy. Since this is meant to be a simple control example. I will use
+philosophy. Since this is meant to be a simple control example, I will use
 Django again for this project.
 But the Django implementation is out of date (Django 1.7, which ran on Python2). 
 So my first task will be to redo the app in a recent Django version for a more 
@@ -100,7 +123,7 @@ consistent and recent comparison.
 
 <a name="6/4/2020"></a>
 # 6/4/2020 - Discussion:Rust and Rocket
-I was initially introduced to Rust when Mozilla began using it for their rendering engine.
+I was initially introduced to Rust when Mozilla began using it for their firefox rendering engine.
 The concepts of being safe with memory and fixing issues during compilation appealled to
 me. When discord released their Rust api, a friend of mine and I implemented a small chat 
 bot. I learned the basics of rust through this project. I found it to be verbose, but I
@@ -110,8 +133,7 @@ use the trait system. Normally; I use object oriented languages and this is the 
 I'm familiar with. Rust's traits are different in that they emphasize object behavior instead
 of identity. This is supposed to be semantically clearer when defining datatypes and how
 they should be used. Leaving the traditional object oriented paradigm is a way that
-learning Rust can expand how I think about programming. The combination of speed and type
-safety is also something that neither Python or C++ have.  
+learning Rust can expand how I think about programming.   
 
 [Rocket](rocket.rs) is a web development framework in Rust that's mature. Some initial code samples
 suggest it's very similar to Flask; so I hope to adapt to it quickly.
@@ -120,17 +142,21 @@ suggest it's very similar to Flask; so I hope to adapt to it quickly.
 # 6/5/2020 - Discussion:Kotlin and Spring Boot
 Kotlin is a language I discovered when investigating Android app development. I'm fairly
 familiar with Java and initially felt there was no point in learning another language.
-But I started going through some courses and the more I learned about Kotlin, the more
+But I started going through a udacity [course](https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011) 
+and the more I learned about Kotlin, the more
 I began to like it. Kotlin feels like a language that was designed by programmers and 
 a lot of the language features are ideas I've wished were in other languages. 
 Google also now supports Kotlin as an official android language 
-which gives it more weight.
+which gives it more weight. The course itself was a little... cringe-worthy... to a 
+fault. I couldn't
+tell if it was intentional for satire or the instructors just lacked charisma. But 
+the material was excellent.
 
 Kotlin's JVM backend is also a benefit. [Clojure](clojure.org) is a language I've wanted to experiment with
 for some time. Like Haskell, clojure is a massive departure from what I'm used to, and 
 building standalone applications in Clojure could be unecessarily arduous for me. I could
 support it with Java, but I don't like Java that much. But I like Kotlin a lot, and it could
-be a way to support my clojure experiments.
+help support my clojure experiments.
 
 One question that might come up here is "Why not Scala?". I've held a low key interest in
 Scala for some time. It's supposed to combine functional programming with a more traditional
@@ -188,6 +214,7 @@ me. But I note that macros are definitely a work-in-progress now; and subject to
 
 <a name="6/8/2020"></a>
 # 6/8/2020 - Reading Rocket Docs
+
 My next step was Rocket's [docs](https://rocket.rs/v0.4/guide/). They expected a good
 understanding of Rust beforehand and I definitely felt that this was tested. Rocket
 feels somewhat like a DSL in Rust for building web apps. It's still Rust but there's
@@ -195,5 +222,256 @@ a lot of macros and specific ways functions need to be used and called. Rocket d
 provide a templating engine or database ORM so I will need to include these.
 
 <a name="6/9/2020"></a>
-# 6/9/2020 - 
-My first task was to get 
+# 6/9/2020 - Investigating Diesel and Changing the Project
+I found a lot of posts that discussed integrating Rocket with an ORM(Diesel seems to
+be the best choice), but this was the best [post](https://medium.com/digitalfrontiers/web-service-with-rust-rocket-and-diesel-7425f4a04f4c).
+In addition to providing me a tutorial, it also had an excellent analysis of Rust, Rocket,
+and Diesel. The author, Marco Amann, seems to have a similar style to mine and his other
+posts are investigations into different technologies. I should keep him in mind as a 
+good example.
+
+He showed that Diesel actually requires you to write SQL by hand. This is a turn off
+to me, but Amann notes this is actually very powerful. There are a lot of database 
+modeling tools that generate SQL for you; and this approach allows you to use them and
+leverage the unique traits of each database. I recognize that value of this, but as 
+somebody whose database needs don't require this level of detail and control; it's not
+quite as valuable.
+
+Amann continues to note that Rust and Diesel require fairly tight integration of the 
+database layer and views. Each view needs a handle to the database connection in order
+to use it. It's not as neatly abstracted as it was in Django.
+
+This new information motivates a change in project. Not only will I have to set up
+Diesel, I'll also have to figure out how to use a templating library, if I want to create
+the same project in Rocket that I made in Django. My goal here is not to learn web app
+development in different languages; it's to simply try the language out. This particular
+approach will be a lot more work and I really don't think I'll gain much from it. In fact,
+I already feel like I have a good assesment on Rust and Rocket from the docs and examples.
+But I don't want to move on without completing something concrete. So instead, I'll
+use a json file to store information about the id cards instead of a database. I'll write
+two views, one which will return a list of the id cards in json and another which will
+return individual id card information, also in json, based on an input id. This will 
+mean that I won't need to use a templating library either. But this kind of response is what I
+might use if I was using some javascript front-end framework; so it's not total garbage.
+
+I feel this is a much more reasonable project that will satisfy my goals for Rust and Rocket
+without adding a lot of unecessary work.
+
+<a name="6/10/2020"></a>
+# 6/10/2020 - Implementing the New Project
+
+Now that I've simplified my parameter scope, this was much easier to implement. I used
+serde_json; which seems to be the de facto official json library in rust. Creating and 
+mounting the views was also simple. But even with this simple example I needed to be
+very explicit about when I was borrowing references. Rust definitely makes sure you're
+being very explicit about what you want when coding. I was originally going to discuss
+what I liked and disliked about Rust but I think I'll save the breakdown for the end
+and include Python and C/C++ as well. Now I should move on to Kotlin and Spring Boot.
+
+<a name="6/11/2020"></a>
+# 6/11/2020 - Starting the Kotlin Project
+
+There's a lot of tutorials using Kotlin and Spring Boot but I'm focusing on this 
+[one](https://spring.io/guides/tutorials/spring-boot-kotlin/).
+Getting Spring Boot started was interesting. I'm using the Community version of IntelliJ
+so I wasn't able to start the project from the IDE. Instead I went to this [site](https://start.spring.io)
+and downloaded a zip with all the configuration files. This was easy enough to set up
+but this process feels ... weird to me. I suppose it's not actually different than an IDE setting 
+everything up, but it feels different. As I went through the tutorials I started to see
+how dense Spring is. Even with Spring Boot handling a lot of set up, it feels like there's
+a lot of work that's being done for me and I'm not aware of what's going on. I didn't
+really look into other web frameworks but considering how much is hidden from me in Spring
+it might be a good idea to find a simpler framework.
+
+I found another framework with a good reptuation called [ktor](https://ktor.io). They have
+an excellent tutorial and it feels more like Rocket or Flask than Spring or Django. I can't
+help but wonder whether I should've used Flask and SQLAlchemy for a simplied example for Python
+to stay consistent. Django doesn't feel like Rocket and I'm not sure all this work is 
+important. This level of uncertainty means I should revaluate my plan.
+
+<a name="6/12/2020"></a>
+# 6/12/2020 - Rethinking My Plan
+
+I stated in the beginning my goal was to evaluate Rust and Kotlin to select a secondary
+language for my skillset. And I emphasized that, even though I'm building web apps, 
+I probably won't use either of these languages for web apps and this is supposed to be
+to see how to evaluate libraries in each language. 
+
+But despite my claim, this really feels like I'm evaluating web frameworks. When I'm 
+thinking about each stage; I'm focusing on differences between Django, Rocket, and now 
+Spring. I really should be focusing on Python, Rust, and Kotlin. This means .... I messed
+up. I think my idea sounded good but it's not really working. I already learned about 
+both languages through their docs and the udacity course. I should've picked a simpler
+project or library to use. Or maybe a project wasn't even necessary; I could've just
+had a discussion based on the courses/reading I already did. 
+At this point I'm focusing too much on web frameworks and 
+their idiosyncrasies instead of the language itself.
+
+So what's my new plan? I really don't need to finish this Kotlin project. I also 
+don't like leaving things unfinished. But I've already wasted a decent amount of time
+on this and I'm not really enjoying this process anymore. Personal projects are supposed
+to be fun and useful. I feel like I've already gotten the 
+information I need so now it's time to make a decision.
+
+<a name="6/13/2020"></a>
+# 6/13/2020 - The Decision
+
+Because of my wasted time I ended up reviewing the Udacity [course](https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011) 
+on Kotlin again. I want to make sure I'm giving it a fair assesment since I've spent 
+so much time on Rust. First I'll go over what I like about my existing languages.
+
+## Python 
+## What I Like
+* Easy syntax
+* Interpreted language is trivial to debug
+* Strong api support almost everwhere
+* Fun to program in
+* Works well with C/C++ for speed ups
+
+## What I Dislike
+* Dynamic typing creates annoying runtime errors and excessive debugging
+* Can be difficult to create good style when working with larger groups
+* Deployment is messy(virtualenvs help, but it's not an ideal fix)
+* Global Interpreter Lock makes multi-threading difficult
+* Very slow with out C/C++ support
+
+## C++
+## What I Like
+* Smart pointers and C++14/17 addons make language far more enjoyable(not quite fun though)
+* Works extremely well with Python 
+
+## What I Dislike
+* Auto helps but the language feels very rigid due to lack of type inference
+* Requires lots of code to enforce type safety
+
+Both languages have weaknesses, but for my own use cases; the combination is extremely
+powerful.
+
+## Rust
+## What I Like
+* Rust compiler is excellent at forcing me to recognize ambiguities and address them
+* Memory management is very similar to C++ smart pointers and feels like an easy transition
+* Trait system feels really powerful and I'm excited to work with it
+* Tooling feels simple
+* Easy to build static executables mean deployment can be very simple
+
+## What I Dislike
+* Code is very verbose, can be ugly. 
+* Can feel very annoying when fighting with the borrow checker
+
+Rust has a lot of interesting features. Forcing extra attention to detail when writing
+code and dealing with errors during compilation means I don't have to deal with 
+annoying runtime errors. The trait system is really interesting and I'm eager to explore
+how I can use it when designing applications.
+
+My biggest issue with rust is how verbose and ... well, ugly it can be. Lifetimes in
+particular just look bad. And combining lifetimes with generics makes Rust code look
+incredibly busy.
+
+## Kotlin
+## What I Like
+* Concise syntax feels very simple
+* Syntactic sugar feels appropriate and makes coding easier
+* Feels fun
+* Features like interface delegation make designing and implementing complex designs simple and fun
+* JVM integration allows me opportunities to explore other languages like Clojure more easily
+
+## What I Dislike
+* Tooling and build system feels incredibly complicated
+
+Kotlin really impressed me with it's concise syntax and interesting features. Interface delegation
+is one in particular I can't get over. Rust may be fun to design software in, but I feel
+that Kotlin is more fun to actually write code for.
+
+My biggest issue with Kotlin is the tooling. IntelliJ is probably my favorite IDE(the 
+only other ones I've used are Eclipse, Visual Studio, and Xcode), but I still can't say
+I enjoy IDEs. I recognize their value, especially with large projects with multiple
+developers, but it's not something I enjoy dealing with for personal projects. Even if 
+I don't use IntelliJ, Kotlin requires Gradle which still feels complex. It's nothing
+like Rust and Cargo.
+
+So what's my decision? It's probably obvious, but I think Rust is the best pick for me. 
+It might feel like this a biased decision or I didn't give Kotlin a fair chance, but I 
+think it comes down to what the language adds to my skillset and how I feel about it. 
+
+Rust expands my viewpoint with traits which are different from the object systems I'm used
+to. I'm very excited to see how I can use Rust's trait system to implement my designs.
+
+Kotlin was meant to expand my viewpoint by using IDEs and a more rigid build system. Even
+after trying it and noting the advantages, I still think of it a chore.
+
+That really makes the decision clear. I'll still use
+Kotlin when I need to (Android apps) but I won't invest in it the same way as Rust.
+
+<a name="6/14/2020"></a>
+# 6/14/2020 - Use Cases
+
+In addition to selecting a language, I also decided I wanted to make sure I have some
+good use cases. Otherwise it'll be more difficult to keep my familiarity with Rust without
+actually making up projects to do so. I want to avoid the same mistake I made with Haskell.
+
+Rust's site defines four main areas the Rust team wants to focus Rust for; so this
+is probably what I'll look at.
+
+## Command Line
+The first target they mention is command line tools. Currently I use python for all
+my command line tools. It's large amount of supporting libraries and ease of debugging
+make it easy to quickly prototype tools and start using them. 
+
+However a big issue when distributing command line tools is the environment. Spawning
+virtual envs just for command line tools is annoying. And making sure those venvs are all 
+consistent is a chore. But for personal tools it's not clear how much of a problem it
+is. I have desktop and a laptop so keeping those envs consistent isn't too hard.
+
+Still, Rust definitely has advantages here. I should definitely consider Rust for cli
+tools I use.
+
+## WebAssembly
+
+This is an interesting case. WebAssembly seems to be the new kid on the block for front
+end web development. I don't really do any front end web stuff and don't really have 
+a desire to do so. Probably not a strong use case, but I think it's something I should 
+keep an eye on.
+
+## Networking
+
+From my experiences with Rocket, I'm not actually sure I like Rust, personally, for this
+use case. Rocket does have benefits but I'm not sure they're for me.
+
+## Embedded Systems
+
+This use case feels powerful. Rust's tooling allows easy cross-compilation for different
+architectures. I've done cross-compilation for ARM on iOS devices using cmake and it isn't
+pretty. Rust's abilities in memory mangement will make it easier to keep memory issues
+in check. And debugging runtime issues in embedded systems can be a nightmare; so having
+everything addressed during compilation is attractive. I do have some project ideas with fpgas
+and rasberry pis that could make use of this. So this could be a good use case.
+
+My main problem is that I don't have very many of these and they'll likely be inconsistent.
+Useful, yes, but not the kind of work that'll help keep my Rust skills sharp over time.
+
+<a name="6/15/2020"></a>
+# 6/15/2020 - Final Thoughts and Objective Analysis
+
+So this project's course was a lot more complicated and a lot more embarrassing.
+I had an idea at first; but it ended up being a huge distraction. But I did say that
+I wanted this blog to show up my screw-ups, not just successes. I should own up to that.
+
+I do feel that I accomplished my first goal of selecting a secondary language. Rust 
+does feel like it neatly fills a gap that I have between Python and C/C++. It's a lot 
+more fun than C/C++ but doesn't have python's sluggishness. The tooling and dependency
+management is also fantastic, some thing both Python and C/C++ can struggle with.
+
+But I don't honestly know when I'll use it. There's potential for use in embedded projects
+but I don't have very many of those. I can maybe see it being useful for CLI projects
+but I need to remember my lessons from Haskell. I shouldn't just use Rust for projects
+I actually need because I want to use Rust. If Python is better for my cli tool I should use it. This may
+mean I need to make up projects to develop and maintain my Rust skills and I don't know how easy that
+will be for me to do in the long term. Or even if it's something I really will want to
+do over time.
+
+So I'm going to mark this project as partial success. I don't really feel like I've come
+up with strong use cases for Rust for myself. I'll try to keep it as a "secondary" language
+but we'll ultimately see how well that turns out. Rust is a lot more similar to Python and 
+C/C++; so it has that in favor of Haskell, at least. But whether I can keep up motivation
+to support a language for what's basically "academic" purposes remains to be seen.
