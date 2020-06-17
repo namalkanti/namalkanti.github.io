@@ -1,6 +1,6 @@
 Title: Resume Formats
 Date: 2020-3-19 
-Modified: 2020-4-19 
+Modified: 2020-5-31 
 Category: Lab
 Tags: resume 
 Slug: Resume

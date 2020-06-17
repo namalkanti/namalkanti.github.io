@@ -1,6 +1,6 @@
 Title: Rust and Kotlin
 Date: 2020-6-2 
-Modified: 2020-6-2 
+Modified: 2020-6-15 
 Category: Lab
 Tags: rust, kotlin 
 Slug: Rust and Kotlin
