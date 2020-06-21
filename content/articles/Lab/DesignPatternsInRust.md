@@ -20,7 +20,9 @@ State: In-Progress
 
 [ 6/17/2020 - Implementing User Struct ](#6/17/2020)
 
-[ 6/18/2020 - Implementing Internal Api ](#6/18/2020)
+[ 6/20/2020 - Designing Internal Api ](#6/20/2020)
+
+[ 6/21/2020 - Implementing Internal Api ](#6/21/2020)
 
 <a name="overview"></a>
 # Overview
@@ -302,4 +304,36 @@ I ended up commenting out all the code in main.rs. This is ugly, but I'll
 remove it eventually and it'll let me use it as a reference while I develop.
 
 <a name="6/18/2020"></a>
-# 6/18/2020 - Implementing Internal Api
+# 6/18/2020 - Diagram Update
+
+I realized today that I don't need to store the list of current users in a vector. 
+I'm not attempting to do any exit actions or changing behavior based on current users.
+This also means the initialization step doesn't require the internal api; so I'll update
+it to explictly reference loading the yaml file. So I've updated the diagram to remove this.
+
+<figure class="center">
+    <img src="{attach}/images/no_current_users.png" width="60%" height="auto" class="border">
+    <figcaption>Updated Diagram</figcaption>
+</figure>
+
+<a name="6/20/2020"></a>
+# 6/20/2020 - Designing Internal API
+
+One aspect I need to address with the internal api is how to handle logins. In the previous version I used a struct
+to implement the traditional state pattern. But, as I noted [earlier](#6/14/2020), the [docs](https://doc.rust-lang.org/book/ch17-03-oo-design-patterns.html)
+have a better idea. I can have the DynamicBot struct return a LoggedOut type that uses a login method
+to return a DynamicBot. This allows the Rust compiler to keep track of the types and whether methods 
+are valid or not.
+
+For the internal api, I need two methods; one that waits for the name of somebody who enters the channel, and 
+another method that takes the music string.
+
+<figure class="center">
+    <img src="{attach}/images/bot_states.png" width="60%" height="auto">
+    <figcaption>Bot States and Internal Api</figcaption>
+</figure>
+
+I've tagged the repo in its current state [here](https://github.com/namalkanti/DynamicEntryBot/tree/6-20).
+
+<a name="6/21/2020"></a>
+# 6/21/2020 - Implementing Internal API
