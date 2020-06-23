@@ -22,7 +22,9 @@ State: In-Progress
 
 [ 6/20/2020 - Designing Internal Api ](#6/20/2020)
 
-[ 6/21/2020 - Implementing Internal Api ](#6/21/2020)
+[ 6/22/2020 - Implementing Internal Api ](#6/22/2020)
+
+[ 6/24/2020 - Channels with Serenity ](#6/24/2020)
 
 <a name="overview"></a>
 # Overview
@@ -64,8 +66,8 @@ I will fork and rename the bot. This is the [repo](https://github.com/namalkanti
 I mentioned in my previous post that I wanted to find concrete use cases for Rust.
 I want to clarify that this is not one. I will likely not use this bot and don't
 expect anybody else to. This project is more of an excercise to test out design patterns
-in Rust. And as I also saw in my previous entry, my ideas in this area don't always pan out
-as well. So we'll see how this one goes.
+in Rust. And as I also saw in my previous entry, my ideas in this area don't always pan out. 
+So we'll see how this one goes.
 
 
 ## Objectives
@@ -114,7 +116,7 @@ patterns are very rigid. Of course, even in Python, there may be situations wher
 should favor the object approach instead of higher order functions. It all depends on
 exactly what your problem is.
 
-This kind of problem reoccurs frequently in software engineering. But their abstractness
+These kinds of problems reoccur frequently in software engineering. But their abstractness
 makes them difficult to describe. So design patterns also provide us with a concise vocabulary
 to discuss these kinds of problems. Rather than spend twenty minutes describing this 
 problem I could say "it's the strategy pattern" or "it's a variation on the strategy pattern".
@@ -137,7 +139,7 @@ generally have a simple trade off. You add complexity to your software in exchan
 isolating some part and allowing it to change independentally. If you know this will happen
 frequently it's an excellent trade off. If not, then you're adding needless complexity.
 Granted, most problems are rarely this black and white and you'll need to make decisions
-on your case. So it's important to recognize the 
+based on your case. So it's important to recognize the 
 trade offs, both in general, and in your specific problem.
 
 This kind of recognition ability comes with practice. Another personal example I can give
@@ -158,7 +160,7 @@ a big part of neural network training and involves sweeping through different co
 of parameters for different network types. This ends up being a perfect fit for the 
 builder pattern; I can use it to easily construct different networks set with whichever
 defaults I want for certain experiments. And it's easy to redo these experiments
-without having to deal without commenting out different parameters of code. My familiarity
+without having to deal without commenting out different parts of code. My familiarity
 with design patterns lets me do this with minimal time or thought penalties; and identify
 and address them very early. I make overengineering mistakes sometimes, but I always learn
 from them. And the time and brain bandwitdh saved more than makes up for it.
@@ -191,7 +193,11 @@ it shouldn't. But behavior is still tied to each state object so changing and ad
 is the same as the state pattern. 
 
 This was a very useful example and I'm interested to see how my own project might 
-use similar ideas.
+use similar ideas. My only criticism is that the documentation seems to support the 
+idea that design patterns are these rigid constructs and their rust implementation "isn't
+a design pattern". I'd argue their implementation is still using the basic ideas of the 
+state pattern; just applied with Rust's own unique features. Nevertheless; this is a semantic
+criticism at best, and not worth dwelling on.
 
 <a name="6/15/2020"></a>
 # 6/15/2020 - Updating Old Project
@@ -335,5 +341,19 @@ another method that takes the music string.
 
 I've tagged the repo in its current state [here](https://github.com/namalkanti/DynamicEntryBot/tree/6-20).
 
-<a name="6/21/2020"></a>
-# 6/21/2020 - Implementing Internal API
+<a name="6/22/2020"></a>
+# 6/22/2020 - Implementing Internal API
+The api I'm using is this [one](https://github.com/serenity-rs/serenity); it seems to be
+most well supported at the time of this writing. It looked intimidating at first; but
+the examples were helpful to understaind how to approach the implementation. 
+
+I want to keep my internal api seperate from serenity; as per the veneer design pattern. So
+what I did is spawn Serenity in a seperate thread; and use mspc channels to handle communications
+between Serenity and my internal api. This is definitely a lot more complex. But the trade off is
+I can change the external api and keep the rest of my code untouched.
+I was able to finish the internal api's implementation and next I'll need to make sure the
+message passers are working from inside Serenity.
+
+[current repo state](https://github.com/namalkanti/DynamicEntryBot/tree/6-22)
+<a name="6/24/2020"></a>
+# 6/24/2020 - Channels with Serenity
