@@ -361,8 +361,9 @@ I was able to finish the internal api's implementation and next I'll need to mak
 message passers are working from inside Serenity.
 
 [current repo state](https://github.com/namalkanti/DynamicEntryBot/tree/6-22)
-<a name="6/24/2020"></a>
-# 6/24/2020 - Channels with Serenity
+
+<a name="6/23/2020"></a>
+# 6/23/2020 - Channels with Serenity
 
 Sending the channels to Serenity was a little complex. The mpsc channels can
 be sent to other threads safely, but Serenity shares information across all event handlers,
