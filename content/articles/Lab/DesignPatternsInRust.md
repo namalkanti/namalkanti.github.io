@@ -24,7 +24,13 @@ State: In-Progress
 
 [ 6/22/2020 - Implementing Internal Api ](#6/22/2020)
 
-[ 6/24/2020 - Channels with Serenity ](#6/24/2020)
+[ 6/23/2020 - Channels with Serenity ](#6/23/2020)
+
+[ 6/24/2020 - Cleaning Up Code ](#6/24/2020)
+
+[ 6/25/2020 - Adding playback different playback options ](#6/25/2020)
+
+[ 6/26/2020 - Using names instead of ids ](#6/26/2020)
 
 <a name="overview"></a>
 # Overview
@@ -189,7 +195,7 @@ your object into different objects to indicate state. Rust's ownership mechanics
 make this possible. This kind of object transformation feels somewhat like a fusion
 of functional and object-oriented programming. But using types to denote state means
 the Rust compiler can step in and recognize when something is being used in a way that
-it shouldn't. But behavior is still tied to each state object so changing and add states
+it shouldn't. But behavior is still tied to each state object so changing and adding states
 is the same as the state pattern. 
 
 This was a very useful example and I'm interested to see how my own project might 
@@ -345,7 +351,7 @@ I've tagged the repo in its current state [here](https://github.com/namalkanti/D
 # 6/22/2020 - Implementing Internal API
 The api I'm using is this [one](https://github.com/serenity-rs/serenity); it seems to be
 most well supported at the time of this writing. It looked intimidating at first; but
-the examples were helpful to understaind how to approach the implementation. 
+the examples were helpful to understand how to approach the implementation. 
 
 I want to keep my internal api seperate from serenity; as per the veneer design pattern. So
 what I did is spawn Serenity in a seperate thread; and use mspc channels to handle communications
@@ -357,3 +363,26 @@ message passers are working from inside Serenity.
 [current repo state](https://github.com/namalkanti/DynamicEntryBot/tree/6-22)
 <a name="6/24/2020"></a>
 # 6/24/2020 - Channels with Serenity
+
+Sending the channels to Serenity was a little complex. The mpsc channels can
+be sent to other threads safely, but Serenity shares information across all event handlers,
+so I can't pass the channels to my explicit target endpoint. This means I need to guard
+them with mutexes and arcs. The mutexes implement locks and the arcs keep track of
+the channels if multiple threads were to access them. I won't ever create such a situation,
+but it is allowed in the code so I have to account for it. This is just Rust forcing
+me to be very explicity when dealing with concurrency. But they have designed both
+the Arc and Mutex types to make this as painless as possible.
+
+Serenity also has a way to handle audio playback. This was buried in the (surprisingly good)
+documentation. But I can easily handle playback using youtube-dl or ffmpeg. Both need
+to be installed as command line tools, but I had both of them already.
+
+Now I have a working prototype! I was able to log into my test channel and used
+the youtube-dl endpoint to play music when I joined. There was a small delay to
+account for the download, but it works! Now I'd like to make three improvements.
+First, I want to address all the warnings my code is throwing at me and improve
+error handling. Then I want to allow my code to use file paths or youtube links to
+play music. Finally; the bot uses user and channel ids instead of names. It would be
+a nice quality of life improvement to use names instead.
+
+[current repo state](https://github.com/namalkanti/DynamicEntryBot/tree/6-23)
