@@ -1,5 +1,767 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mitigating Failure - Lab</title><link href="https://mitigatingfailure.com/" rel="alternate"></link><link href="https://mitigatingfailure.com/feeds/lab.atom.xml" rel="self"></link><id>https://mitigatingfailure.com/</id><updated>2020-04-19T00:00:00-04:00</updated><subtitle>Mitigating Failure</subtitle><entry><title>Resume Formats</title><link href="https://mitigatingfailure.com/Resume.html" rel="alternate"></link><published>2020-03-19T00:00:00-04:00</published><updated>2020-04-19T00:00:00-04:00</updated><author><name>Niraj Amalkanti</name></author><id>tag:mitigatingfailure.com,2020-03-19:/Resume.html</id><summary type="html">&lt;h3&gt;TLDR&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mitigating Failure - Lab</title><link href="https://mitigatingfailure.com/" rel="alternate"></link><link href="https://mitigatingfailure.com/feeds/lab.atom.xml" rel="self"></link><id>https://mitigatingfailure.com/</id><updated>2020-06-26T00:00:00-04:00</updated><subtitle>Mitigating Failure</subtitle><entry><title>Design Patterns in Rust</title><link href="https://mitigatingfailure.com/Design%20Patterns%20in%20Rust.html" rel="alternate"></link><published>2020-06-13T00:00:00-04:00</published><updated>2020-06-26T00:00:00-04:00</updated><author><name>Niraj Amalkanti</name></author><id>tag:mitigatingfailure.com,2020-06-13:/Design Patterns in Rust.html</id><summary type="html">&lt;h3&gt;Entries&lt;/h3&gt;
+&lt;p&gt;&lt;a href="#overview"&gt; Overview &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/13/2020"&gt; 6/13/2020 - Why Design Patterns? &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/14/2020"&gt; 6/14/2020 - Preliminary Research &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/15/2020"&gt; 6/15/2020 - Updating Old Project &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/16/2020"&gt; 6/16/2020 - New Design &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/17/2020"&gt; 6/17/2020 - Implementing User Struct &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/20/2020"&gt; 6/20/2020 - Designing Internal Api &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/22/2020"&gt; 6/22/2020 - Implementing Internal Api &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/23/2020"&gt; 6/23/2020 - Channels with Serenity &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/24/2020"&gt; 6/24 …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Entries&lt;/h3&gt;
+&lt;p&gt;&lt;a href="#overview"&gt; Overview &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/13/2020"&gt; 6/13/2020 - Why Design Patterns? &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/14/2020"&gt; 6/14/2020 - Preliminary Research &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/15/2020"&gt; 6/15/2020 - Updating Old Project &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/16/2020"&gt; 6/16/2020 - New Design &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/17/2020"&gt; 6/17/2020 - Implementing User Struct &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/20/2020"&gt; 6/20/2020 - Designing Internal Api &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/22/2020"&gt; 6/22/2020 - Implementing Internal Api &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/23/2020"&gt; 6/23/2020 - Channels with Serenity &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/24/2020"&gt; 6/24/2020 - Cleaning Up Code &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/26/2020"&gt; 6/26/2020 - Final Thoughts and Objective Analysis&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a name="overview"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Overview&lt;/h1&gt;
+&lt;p&gt;When discord announced their rust api; I worked with a friend to create a small 
+discord &lt;a href="https://github.com/abcde13/SuperBot"&gt;bot&lt;/a&gt;. The bot read a music file
+off the filesystem and played it when the user entered the channel. It also played
+a file when a goal was scored in the video game, Rocket League. It wasn't particularly
+easy to use or robust; we made it more to learn Rust than to use it. And while we
+learned the basics of Rust, we never really got around to exploring how to implement more 
+extendable designs using Rust's trait system.&lt;/p&gt;
+&lt;p&gt;Traits can be described as a more rigid way of implementing "duck typing" 
+which is how Python handles object behavior. Instead of characterizing objects by
+their datatype; you define their behavior with traits and use these traits to define
+when they can be used. This is also similar to implementing interfaces in Java.
+It is supposed to be semantically clearer than using objects, since in most usage 
+cases you really care about what an object can do; not what it is.&lt;/p&gt;
+&lt;p&gt;I typically program in Object-Oriented languages and make extensive use of design
+patterns when designing larger programs. I find they help make programs easier to adapt
+and extend, but they require forethought and careful use. Originally, design patterns
+were designed for Java and their explicit implementation works best there. I currently work 
+in Computer Vision research and use Python and C/C++ at work. Both of these languages
+have object systems, but their nuanaces mean I always need to adapt the design pattern
+to both the language and use case.&lt;/p&gt;
+&lt;p&gt;Rust's traits are even more different that Java's objects. I'm curious to see
+how or even if design patterns still work. I do think the high level ideas(creating 
+guidelines on solving frequent, specific types of problems) will still work in Rust.
+But the actual implementations may be drastically different. &lt;/p&gt;
+&lt;p&gt;I plan on using this chat bot to investigate this. I don't want it to be tied a game
+so I will drop the feature that plays output for scoring in Rocket League. To be more
+robust; I will have the bot try and use youtube videos to play music instead of 
+a taking an audio file from the filesystem. Since I'm changing the original purpose
+I will fork and rename the bot. This is the new &lt;a href="https://github.com/namalkanti/DynamicEntryBot"&gt;repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I mentioned in my previous &lt;a href="http://mitigatingfailure.com/Rust and Kotlin.html"&gt;post&lt;/a&gt; 
+that I wanted to find concrete use cases for Rust.
+I want to clarify that this is not one. I will likely not use this bot and don't
+expect anybody else to. This project is more of an excercise to test out design patterns
+in Rust. And as I also saw in my previous entry, my ideas in this area don't always pan out. 
+So we'll see how this one goes.&lt;/p&gt;
+&lt;h2&gt;Objectives&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Refactor the old bot into one that only plays music when a user enters a channel&lt;/li&gt;
+&lt;li&gt;Investigate design patterns in Rust with the trait system&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a name="6/13/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/13/2020 - Why Design Patterns?&lt;/h1&gt;
+&lt;p&gt;What exactly are design patterns? The simplest way to describe them is that they
+are high level guidelines for common problems in software engineering. If a problem
+is concrete, you can abstract it into a library and be done. But some problems are 
+more vague and can't easily be built into a library that's useful for most users. But
+these problems occur very frequently, so it makes sense to have some way to discuss them
+instead of vague descriptions. This is a very simple paraphrasing and for those not 
+familiar with design patterns I'd suggest this &lt;a href="https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124"&gt;book&lt;/a&gt;. 
+It looks childish, but it's an excellent high level overview of design patterns; including
+good examples for using them. Most people suggest the classic Gang of Four(GoF) &lt;a href="https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/ref=pd_lpo_14_t_0/142-4926188-2343330?_encoding=UTF8&amp;amp;pd_rd_i=0201633612&amp;amp;pd_rd_r=c935072f-585f-4f50-af54-1ed0f5d29e5a&amp;amp;pd_rd_w=v5oRp&amp;amp;pd_rd_wg=Rnjdu&amp;amp;pf_rd_p=7b36d496-f366-4631-94d3-61b87b52511b&amp;amp;pf_rd_r=FT5QD7E1X78JTZ6GX7KZ&amp;amp;psc=1&amp;amp;refRID=FT5QD7E1X78JTZ6GX7KZ"&gt;book&lt;/a&gt;,
+but I find this book to be too verbose for a first read. The Head First book will give you
+a good high level overview of design patterns, and then you can read the GoF book for more details.&lt;/p&gt;
+&lt;p&gt;One mistake people make when discussing or using design patterns is that they think of them
+too rigidly. Design Patterns were originally made for Java; and some say they help compensate
+for Java's weaknesses. Other languages don't need design patterns because they have features
+like higher order functions built in. But I think this is too myopic. Using design patterns
+exactly the way they are for Java in other languages is incorrect, yes. But if that was all
+that design patterns were, they could be made into a library. They're more high level
+guidelines and can be implemented in other languages differently.&lt;/p&gt;
+&lt;p&gt;This sounds very abstract so I'll use a concrete example with the strategy pattern. If you
+aren't familiar with this pattern this discussion won't make any sense, so I'd review it first.
+In Java, the strategy pattern is implemented by using different objects for different
+algorithms with a common Java interface. In Python, we could do something similar, except
+using duck typing and ensuring our objects have the necessary methods. But Python has
+higher order functions, so instead of creating objects for each algorithm, we can just 
+pass around higher order functions instead. Java doesn't support this, so it looks like
+we're using design patterns to address this weakness. But I'd argue we are still using
+the strategy pattern in Python. The strategy pattern is creating an abstraction for some
+set of algorithms. In Java we do this with objects. In Python we do this with higher order
+functions, but our higher order functions still need a consistent interface(interface here
+means function prototype). So we're still creating an interface and abstracting away
+details of behavior, because we recognize we may want this behavior to change. This is 
+what design patterns really are. But it's very difficult to see without an example. And 
+it's very easy to see how some people might think the details for implementing design
+patterns are very rigid. Of course, even in Python, there may be situations where we 
+should favor the object approach instead of higher order functions. It all depends on
+exactly what your problem is.&lt;/p&gt;
+&lt;p&gt;These kinds of problems reoccur frequently in software engineering. But their abstractness
+makes them difficult to describe. So design patterns also provide us with a concise vocabulary
+to discuss these kinds of problems. Rather than spend twenty minutes describing this 
+problem I could say "it's the strategy pattern" or "it's a variation on the strategy pattern".
+Anybody who knows design patterns would instantly have a strong grasp on my problem,
+and be able to help me with it.&lt;/p&gt;
+&lt;p&gt;Another way design patterns help software engineers is by developing their "precognition".
+Once you become familiar with them; you can start recognizing them. This lets you predict
+how the software might evolve, and you can ask your product manager what they think. It's
+important not to overengineer pre-emptively, but raising these concerns in advance can
+help everybody think about how the software may change and what's the best way to handle 
+that. It's a 
+balancing act between overengineering and not digging yourself into holes, and design
+patterns can help identify and address these areas ahead of time.&lt;/p&gt;
+&lt;p&gt;So then are design patterns "perfect"? Of course, not, they have trade offs like every 
+design decision and you shouldn't always use them. Always using shiny design patterns
+results in overengineering and can make you codebase large and unwieldly. Design patterns
+generally have a simple trade off. You add complexity to your software in exchange for
+isolating some part and allowing it to change independentally. If you know this will happen
+frequently it's an excellent trade off. If not, then you're adding needless complexity.
+Granted, most problems are rarely this black and white and you'll need to make decisions
+based on your case. So it's important to recognize the 
+trade offs, both in general, and in your specific problem.&lt;/p&gt;
+&lt;p&gt;This kind of recognition ability comes with practice. Another personal example I can give
+to demonstrate the benefits of this is how I approach my own research code. I currently
+work as a computer vision researcher; when trying out different approaches I'll often
+start with simple python scripts with Spyder and/or Jupyter. Obviously, it makes no sense
+doing any serious software design here. But as I add to these scripts they can become
+quite difficult to use. I end up commenting out lines, or changing parameters by changing
+source code. I can try to use functions, but even this becomes too weak very quickly.
+But because of my experience recognizing and applying design patterns; when these issues
+show up, I can very quickly refactor my code to use them. This keeps my scripts simple
+and easy to use and allows me to run my experiments more confidently. Instead of 
+scrambling through my code to make sure everything is commented out correctly. This
+does take some additional time, but always pays off.&lt;/p&gt;
+&lt;p&gt;A concrete example of this is when building neural networks. Hyperparameter tuning is 
+a big part of neural network training and involves sweeping through different combinations
+of parameters for different network types. This ends up being a perfect fit for the 
+builder pattern; I can use it to easily construct different networks set with whichever
+defaults I want for certain experiments. And it's easy to redo these experiments
+without having to deal without commenting out different parts of code. My familiarity
+with design patterns lets me do this with minimal time or thought penalties; and identify
+and address them very early. I make overengineering mistakes sometimes, but I always learn
+from them. And the time and brain bandwitdh saved more than makes up for it.&lt;/p&gt;
+&lt;p&gt;C/C++ are similar enough to Python that this carries over easily. The stronger typing
+and slower evolution of the code actually makes it easier to apply these techniques there.
+I now want to develop this skill in Rust. Rust's trait system is different than a traditional
+object system. I don't want to misuse this so I need to learn how to apply design patterns
+to Rust.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/14/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/14/2020 - Preliminary Research&lt;/h1&gt;
+&lt;p&gt;First, I wanted to see what kind of information there was on this area beforehand. I 
+found some github repos with design pattern examples, but I didn't find this to be helpful.
+As I mentioned, a discussion for a specific use case is usually important to understanding design
+patterns. Concrete code examples without context don't really help. But the Rust &lt;a href="https://doc.rust-lang.org/book/ch17-00-oop.html"&gt;docs&lt;/a&gt;
+have this. There's an entire chapter on traditional OO principles,
+how to use them in Rust, and which standard Rust features can be better. This is 
+exactly what I wanted.&lt;/p&gt;
+&lt;p&gt;Reading the documentation was very helpful. They describe how to implement a basic 
+blog using the concrete GoF state pattern; then give an example of how to do it better
+in Rust. The basic idea is, instead of storing a state variable, you actually tranform
+your object into different objects to indicate state. Rust's ownership mechanics 
+make this possible. This kind of object transformation feels somewhat like a fusion
+of functional and object-oriented programming. But using types to denote state means
+the Rust compiler can step in and recognize when something is being used in a way that
+it shouldn't. But behavior is still tied to each state object so changing and adding states
+is the same as the state pattern. &lt;/p&gt;
+&lt;p&gt;This was a very useful example and I'm interested to see how my own project might 
+use similar ideas. My only criticism is that the documentation seems to support the 
+idea that design patterns are these rigid constructs and their rust implementation "isn't
+a design pattern". I'd argue their implementation is still using the basic ideas of the 
+state pattern; just applied with Rust's own unique features. Nevertheless; this is a semantic
+criticism at best, and not worth dwelling on.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/15/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/15/2020 - Updating Old Project&lt;/h1&gt;
+&lt;p&gt;The first step should be updating the old project to get ride of the code I don't 
+need. I'd also like to test it and make sure it works as I expect(plays music from
+filesystem when I join the channel).&lt;/p&gt;
+&lt;p&gt;Unfortunately, the first thing I note is the discord api I was using is no longer
+regularly maintained. There seems to be a new &lt;a href="https://github.com/serenity-rs/serenity"&gt;one&lt;/a&gt;
+, but this is one issue of using Rust. It lacks the popularity of other 
+languages so edge cases
+like this are not likely to be maintained over long periods of time.
+And as I mentioned earlier, this is probably not a good use case for Rust anyways, so 
+I can't really expect anything.&lt;/p&gt;
+&lt;p&gt;This puts me in an awkward situation. I could go ahead and implement the bot with a new
+api. This is only a research experiment and if it goes stale, it's not a big deal.&lt;/p&gt;
+&lt;p&gt;But maybe I can turn this into something. Design patterns are meant to adapt to 
+change when it's expected. Perhaps I can design this application and abstract
+away the discord api. So when it does change, all I would need to do(if I wanted to update
+it), is make the necessary changes to this layer. 
+This is referred to 
+as the veneer design pattern. I'm creating an api of my own, that my code will conform
+to. So if the api changes, I won't need to change my 
+own code. I just need to update my
+internal api &lt;/p&gt;
+&lt;p&gt;But this means; there's no point in updating this existing code. I might be able to 
+reuse some of it, but now I need to design this application. That will be my first step.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/16/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/16/2020 - New Design&lt;/h1&gt;
+&lt;p&gt;I want this bot to play music when a user enters the voice channel. So the first thing
+this bot needs is to keep track of everybody in the channel. I can store this as a 
+vector of users. We'll keep them as strings for now.&lt;/p&gt;
+&lt;figure class="center"&gt;
+    &lt;img src="https://mitigatingfailure.com/first_dynamic_bot.png" width="20%" height="auto"&gt;
+    &lt;figcaption&gt;First Datatype&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;So my internal discord api will need to log in and query a list of users in the channel;
+which will be used to initialize my vector.&lt;/p&gt;
+&lt;figure class="center"&gt;
+    &lt;img src="https://mitigatingfailure.com/second_bot.png" width="80%" height="auto"&gt;
+    &lt;figcaption&gt;Datatype with Internal Api&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;However, this will just be the initialization step. Afterwards I'll need a loop where
+the internal api listens to the external one and pushes updates to the DynamicBot.&lt;/p&gt;
+&lt;figure class="center"&gt;
+    &lt;img src="https://mitigatingfailure.com/third_bot.png" width="60%" height="auto" class="border"&gt;
+    &lt;figcaption&gt;Init and Event Loop&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;So what else? Well each user will have their own music they want for their entry theme.
+So rather than keep this seperate, I should use a struct for each user instead of a string
+and store a vector of those.&lt;/p&gt;
+&lt;figure class="center"&gt;
+    &lt;img src="https://mitigatingfailure.com/final_dynbot.png" width="60%" height="auto" class="border"&gt;
+    &lt;figcaption&gt;Final Diagram&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Now that my sketch is complete. I want to review it. This is a pretty simple design. 
+Most of the work will be getting the event loop to synchronize between my internal and
+the external api.&lt;/p&gt;
+&lt;p&gt;The veneer pattern is justified here. I expect the rust api I'm using to change so
+it makes sense to abstract that away.&lt;/p&gt;
+&lt;p&gt;Another pattern I considered was using a command pattern to push the music playing 
+behavior in the the UserStructs. If I wanted to support multiple types of behavior,
+this would be a good idea. But I don't plan on adding any other types of behavior, 
+so this would be 
+needless complexity. My first task will be to implement the user structs.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/17/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/17/2020 - Implementing User Struct&lt;/h1&gt;
+&lt;p&gt;Implementing this piece should be simple. The tricky part is initialization. Each
+user will have a name and a piece of music for them. I don't want to store this in 
+code, so I'll need a way to initialize these objects.&lt;/p&gt;
+&lt;p&gt;I ended up using yaml to do this. I prefer using yaml when working with data that's
+meant to be edited by people. I was hesitant at first, since I expect json to be 
+more reliably supported. But the serde json library I've used in rust has yaml
+bindings as well. If this isn't supported at any point I can always convert the 
+yaml into json; the api is exactly the same.&lt;/p&gt;
+&lt;p&gt;I did make a few changes. I created a registered user field in the DynamicBot to store
+a HashMap with usernames as keys and music identifiers as values. This gets
+loaded from the yaml file. Then I will go
+back to using a list of Strings to keep track of users in a channel, as I originally
+meant to. There's no need for a struct for Users; once the music file plays I don't
+need to keep track of it. &lt;/p&gt;
+&lt;figure class="center"&gt;
+    &lt;img src="https://mitigatingfailure.com/updated_struct.png" width="60%" height="auto" class="border"&gt;
+    &lt;figcaption&gt;Updated Diagram&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I've tagged the gitrepo with the state of the codebase right now, &lt;a href="https://github.com/namalkanti/DynamicEntryBot/tree/6-17"&gt;here&lt;/a&gt;.
+I ended up commenting out all the code in main.rs. This is ugly, but I'll 
+remove it eventually and it'll let me use it as a reference while I develop.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/18/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/18/2020 - Diagram Update&lt;/h1&gt;
+&lt;p&gt;I realized today that I don't need to store the list of current users in a vector. 
+I'm not attempting to do any exit actions or changing behavior based on current users.
+This also means the initialization step doesn't require the internal api; so I'll update
+it to explictly reference loading the yaml file. So I've updated the diagram to remove this.&lt;/p&gt;
+&lt;figure class="center"&gt;
+    &lt;img src="https://mitigatingfailure.com/no_current_users.png" width="60%" height="auto" class="border"&gt;
+    &lt;figcaption&gt;Updated Diagram&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;a name="6/20/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/20/2020 - Designing Internal API&lt;/h1&gt;
+&lt;p&gt;One aspect I need to address with the internal api is how to handle logins. In the previous version I used a struct
+to implement the traditional state pattern. But, as I noted &lt;a href="#6/14/2020"&gt;earlier&lt;/a&gt;, the &lt;a href="https://doc.rust-lang.org/book/ch17-03-oo-design-patterns.html"&gt;docs&lt;/a&gt;
+have a better idea. I can have the DynamicBot struct return a LoggedOut type that uses a login method
+to return a DynamicBot. This allows the Rust compiler to keep track of the types and whether methods 
+are valid or not.&lt;/p&gt;
+&lt;p&gt;For the internal api, I need two methods; one that waits for the name of somebody who enters the channel, and 
+another method that takes the music string.&lt;/p&gt;
+&lt;figure class="center"&gt;
+    &lt;img src="https://mitigatingfailure.com/bot_states.png" width="60%" height="auto"&gt;
+    &lt;figcaption&gt;Bot States and Internal Api&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I've tagged the repo in its current state &lt;a href="https://github.com/namalkanti/DynamicEntryBot/tree/6-20"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/22/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/22/2020 - Implementing Internal API&lt;/h1&gt;
+&lt;p&gt;The api I'm using is this &lt;a href="https://github.com/serenity-rs/serenity"&gt;one&lt;/a&gt;; it seems to be
+most well supported at the time of this writing. It looked intimidating at first; but
+the examples were helpful to understand how to approach the implementation. &lt;/p&gt;
+&lt;p&gt;I want to keep my internal api seperate from serenity; as per the veneer design pattern. So
+what I did is spawn Serenity in a seperate thread; and use mpsc channels to handle communications
+between Serenity and my internal api. This is definitely a lot more complex. But the trade off is
+I can change the external api and keep the rest of my code untouched.
+I was able to finish the internal api's implementation and next I'll need to make sure the
+message passers are working from inside Serenity.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/namalkanti/DynamicEntryBot/tree/6-22"&gt;current repo state&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/23/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/23/2020 - Channels with Serenity&lt;/h1&gt;
+&lt;p&gt;Sending the channels to Serenity was a little complex. The mpsc channels can
+be sent to other threads safely, but Serenity shares information across all event handlers,
+so I can't pass the channels to my explicit target endpoint. This means I need to guard
+them with mutexes and arcs. The mutexes implement locks and the arcs keep track of
+the channels if multiple threads were to access them. I won't ever create such a situation,
+but it is allowed in the code so I have to account for it. This is just Rust forcing
+me to be very explicity when dealing with concurrency. But they have designed both
+the Arc and Mutex types to make this as painless as possible.&lt;/p&gt;
+&lt;p&gt;Serenity also has a way to handle audio playback. This was buried in the (surprisingly good)
+documentation. But I can easily handle playback using youtube-dl or ffmpeg. Both need
+to be installed as command line tools, but I had both of them already.&lt;/p&gt;
+&lt;p&gt;Now I have a working prototype! I was able to log into my test channel and used
+the youtube-dl endpoint to play music when I joined. There was a small delay to
+account for the download, but it works! &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/namalkanti/DynamicEntryBot/tree/6-23"&gt;current repo state&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/24/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/24/2020 - Cleaning Up Code&lt;/h1&gt;
+&lt;p&gt;I cleared out all the warnings; most of this had to do with not handling errors correctly.
+I also made use of Rust's module system to organize the api a bit better. I added a 
+logout command so I don't always have to Ctrl-C the bot from the command line. I really
+like the error messages the Rust compiler gives out. They're easy to understand and 
+don't feel like a cryptic mess.
+Because of this I felt much more confident refactoring my Rust code.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/26/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/26/2020 - Final Thoughts and Objective Analysis&lt;/h1&gt;
+&lt;p&gt;Well, at this point I have the bot in a working state with reasonably clean code structure.
+Is there more I could do? I could make some quality of life changes so I can join channels 
+with their names and store users with names instead of IDs. If this was a legitimate project,
+I would probably have to do so. But for this research experiment I don't think it's necessary.
+The work would really come down to investigating the api until I figured out how the get 
+the information I need.&lt;/p&gt;
+&lt;p&gt;I'm very pleased with Rust. Most of the annoyance I had with this project was getting the api
+to work and even that wasn't so bad once I learned how to navigate the documentation. While
+pedantic, the rust compiler does a great job of telling you why it doesn't like some piece
+of code you're writing. I also really like the trait system and how Rust handles types. Using
+object transformation for the state pattern feels very natural. And the trait system allows me
+to add behavior without thinking about some complicated object structure.&lt;/p&gt;
+&lt;p&gt;Something I'm less pleased with is how verbose some of the code can be. And it's not always 
+easy to hide code behind functions, because you need to be very careful with references and 
+how you use your variables. This wouldn't stop me from using(or enjoying) Rust, but it's 
+something to note.&lt;/p&gt;
+&lt;p&gt;So did I accomplish my goals? I'd say so, yes. I refactored the bot into a working version 
+with the serenity api. There are some quality of life annoyances with usage, but it works.
+I also played around with design patterns and found two natural cases with the state pattern
+and the veneer pattern. Both patterns provide benefits for their increased complexity. With the
+state pattern, I learned how to modify a design pattern for use in Rust. And I rejected a use
+case for a design pattern(command pattern for user info) because it added complexity and 
+wasn't necessary.&lt;/p&gt;
+&lt;p&gt;However, everything isn't perfect. As I mentioned in this previous project, I want to develop
+Rust as a secondary language. I did see how that could be difficult in the future. This bot 
+was a just a research experiment, not something I was genuinely enthusiastic about building. 
+This meant my motivation to do so was sometimes weak. I noted how I didn't feel the need to
+add some quality of life improvements, but if this was a project I was genuinely passionate 
+about; I would've done so without hesitation. I have plenty of these projects but it is hard
+to justify using Rust instead of Python or C++. The quarantine going on right now means I
+have time to invest in these Rust maintenance projects, but when everything returns to normal
+I'm not sure I will be able to so. So my ability to keep Rust as a secondary language
+will hinge on whether I have personal projects where Rust is genuinely the right choice.&lt;/p&gt;
+&lt;p&gt;But, this has no bearing on the goals for this project, so I am happy with marking it as
+successful.&lt;/p&gt;</content><category term="Lab"></category><category term="rust"></category></entry><entry><title>Rust and Kotlin</title><link href="https://mitigatingfailure.com/Rust%20and%20Kotlin.html" rel="alternate"></link><published>2020-06-02T00:00:00-04:00</published><updated>2020-06-15T00:00:00-04:00</updated><author><name>Niraj Amalkanti</name></author><id>tag:mitigatingfailure.com,2020-06-02:/Rust and Kotlin.html</id><summary type="html">&lt;h3&gt;TLDR&lt;/h3&gt;
+&lt;p&gt;I wanted to pick a new language to learn and maintain my skill in. I also wanted to make sure
+I had use cases for the new language so I had practical reasons to continue using it. 
+I ended up picking Rust as this language,
+but I couldn't come …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;TLDR&lt;/h3&gt;
+&lt;p&gt;I wanted to pick a new language to learn and maintain my skill in. I also wanted to make sure
+I had use cases for the new language so I had practical reasons to continue using it. 
+I ended up picking Rust as this language,
+but I couldn't come up with any concrete use cases.&lt;/p&gt;
+&lt;h3&gt;Entries&lt;/h3&gt;
+&lt;p&gt;&lt;a href="#overview"&gt; Overview &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/2/2020"&gt; 6/2/2020 - Method &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/3/2020"&gt; 6/3/2020 - Discussion:Python and Django &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/4/2020"&gt; 6/4/2020 - Discussion:Rust and Rocket &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/5/2020"&gt; 6/5/2020 - Discussion:Kotlin and Spring Boot &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/6/2020"&gt; 6/6/2020 - Implementation:Python and Django &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/7/2020"&gt; 6/7/2020 - Reviewing Rust docs &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/8/2020"&gt; 6/8/2020 - Reading Rocket docs &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/9/2020"&gt; 6/9/2020 - Investigating Diesel and Changing the Project &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/10/2020"&gt; 6/10/2020 - Implementing the New Project &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/11/2020"&gt; 6/11/2020 - Starting the Kotlin Project &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/12/2020"&gt; 6/12/2020 - Rethinking My Plan &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/13/2020"&gt; 6/13/2020 - The Decision &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/14/2020"&gt; 6/14/2020 - Use Cases &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/15/2020"&gt; 6/15/2020 - Final Thoughts and Objective Analysis &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a name="overview"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Overview&lt;/h1&gt;
+&lt;p&gt;I consider my "primary" languages to be Python and C/C++. I use both of these languages 
+at work and in my personal projects. The other languages I know, I consider to
+be "tertiary" languages. These are languages I've done a few projects 
+in but I don't regularly use them. What I'd like to do is add a "secondary"
+language to my skillset. This would be a language I don't use with extreme regularity
+, but a language I pay attention to
+and try to use semi-frequently. This language would ideally be useful in areas 
+that Python and C/C++ don't cover. A secondary language would require an ongoing 
+maintenance commitment which is why it's not a trivial decision. &lt;/p&gt;
+&lt;p&gt;I actually tried adding Haskell as a secondary language in the past. I had heard 
+a lot of good things about Haskell and was interested in trying it out.
+I learned about it through this &lt;a href="http://learnyouahaskell.com"&gt;book&lt;/a&gt;. It introduced a lot
+of interesting ideas and I was initially excited to use it more. 
+I decided I would implement this blog using Hakyll, a static site generator in Haskell. 
+However, like
+most of my side projects, I worked on it infrequently. Because Haskell is so different from
+Python and C++ I usually spent my time "working" on my blog instead on Haskell review.
+Which I then forgot when I came back to it. Obviously, I got nothing done and decided
+to use Pelican instead. Haskell was too different from my existing knowledge base and
+honestly; Pelican was a better fit for this kind of project for me. So now, I want to
+pick a language that's more similar to Python/C++ while still extending my skillset. I'd also
+like to find some clear use cases. I want this work to be useful to me, instead 
+of just being a project to maintain my skill in the language. Otherwise I might make
+the same mistake and try to force this new language in areas where I shouldn't.&lt;/p&gt;
+&lt;p&gt;Over the past few years I've been exposed to a lot of languages, but there are two
+stand outs; Rust and Kotlin. Both appeal to me for different reasons which I will 
+detail later.&lt;/p&gt;
+&lt;p&gt;The git repo where these projects will be is &lt;a href="https://github.com/namalkanti/idfinder-samples"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Objectives&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Identify a choice for my secondary language &lt;/li&gt;
+&lt;li&gt;Identify use cases for my secondary language&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a name="6/2/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/2/2020 - Method&lt;/h1&gt;
+&lt;p&gt;The method I will use to evaluate this decision is an interesting one. Some time ago;
+I made a very simple web app with a friend as a way to learn Django. This web app
+was a small site where you would post pictures of lost University IDs along 
+with contact info. Somebody who lost their ID would look this up and find the person who
+located it. We never planned on deploying it; it was an exercise to learn Django. &lt;/p&gt;
+&lt;p&gt;This same exercise would be useful for this investigation as well. Python, Rust, and Kotlin
+all have fairly mature frameworks for web development. Not only would I get a chance
+to learn more about the language; I would also get to see how libraries in the language
+are used. This is better than some toy example which would only require basic code.
+But this exercise is simple enough that I won't be spending a huge amount of time on the app;
+which is good because I'm repeating it three times. Using the same example will also
+give some consistency to my comparison.&lt;/p&gt;
+&lt;p&gt;I want, to again, emphasize that I won't necessarily use Rust or Kotlin for web dev even though
+that's what I'm doing in this exercise. If they are better than Python+Flask for my projects
+then I will, but otherwise I'll use what I'm familiar with. That's also why I want to figure
+out other use cases for this secondary language. I'm only using a web app because 
+it's something simple that all three languages have mature support for. That consistent 
+example will be helpful in my comparisons.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/3/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/3/2020 - Discussion:Python and Django&lt;/h1&gt;
+&lt;p&gt;I used Django as the framework to implement the original idfinder app. This
+was to learn Django, but I mainly use Flask for any needs I have in
+building web apps. None of my personal projects need the complexity of Django or Pyramid. 
+Most of them need a simple web server that responds to http requests. But this
+project will require databases and forms. I could add these modules to flask, but I'd
+have to pick all the modules for these tasks myself. Django has a "batteries included"
+philosophy. Since this is meant to be a simple control example, I will use
+Django again for this project.
+But the Django implementation is out of date (Django 1.7, which ran on Python2). 
+So my first task will be to redo the app in a recent Django version for a more 
+consistent and recent comparison. &lt;/p&gt;
+&lt;p&gt;&lt;a name="6/4/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/4/2020 - Discussion:Rust and Rocket&lt;/h1&gt;
+&lt;p&gt;I was initially introduced to Rust when Mozilla began using it for their firefox rendering engine.
+The concepts of being safe with memory and fixing issues during compilation appealed to
+me. When discord released their Rust api, a friend of mine and I implemented a small chat 
+bot. I learned the basics of rust through this project. I found it to be verbose, but I
+did like some of their implementation decisions. Their memory management model is very similar
+to smart pointers in C++; so I quickly adapted to it. I did not get a chance to really
+use the trait system. Normally; I use object oriented languages and this is the paradigm
+I'm familiar with. Rust's traits are different in that they emphasize object behavior instead
+of identity. This is supposed to be semantically clearer when defining datatypes and how
+they should be used. Leaving the traditional object oriented paradigm is a way that
+learning Rust can expand how I think about programming.   &lt;/p&gt;
+&lt;p&gt;&lt;a href="rocket.rs"&gt;Rocket&lt;/a&gt; is a web development framework in Rust that's mature. Some initial code samples
+suggest it's very similar to Flask; so I hope to adapt to it quickly.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/5/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/5/2020 - Discussion:Kotlin and Spring Boot&lt;/h1&gt;
+&lt;p&gt;Kotlin is a language I discovered when investigating Android app development. I'm fairly
+familiar with Java and initially felt there was no point in learning another language.
+But I started going through a udacity &lt;a href="https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011"&gt;course&lt;/a&gt; 
+and the more I learned about Kotlin, the more
+I began to like it. Kotlin feels like a language that was designed by programmers and 
+a lot of the language features are ideas I've wished were in other languages. 
+Google also now supports Kotlin as an official android language 
+which gives it more weight. The course itself was a little... cringe-worthy... to a 
+fault. I couldn't
+tell if it was intentional for satire or the instructors just lacked charisma. But 
+the material was excellent.&lt;/p&gt;
+&lt;p&gt;Kotlin's JVM backend is also a benefit. &lt;a href="clojure.org"&gt;Clojure&lt;/a&gt; is a language I've wanted to experiment with
+for some time. Like Haskell, clojure is a massive departure from what I'm used to, and 
+building standalone applications in Clojure could be unecessarily arduous for me. I could
+support it with Java, but I don't like Java that much. But I like Kotlin a lot, and it could
+help support my clojure experiments.&lt;/p&gt;
+&lt;p&gt;One question that might come up here is "Why not Scala?". I've held a low key interest in
+Scala for some time. It's supposed to combine functional programming with a more traditional
+paradigm to be considered a more practical language. While I find this enticing; it doesn't
+quite grab me the way Kotlin's syntax and design decisions did. But the ability to explore
+Scala later is definitely an attractive aspect of Kotlin.&lt;/p&gt;
+&lt;p&gt;Rust would expand my view about how I program but Kotlin would expand my views on tooling.
+I use IDEs when required to at work, but for personal programming I prefer using Vim 
+and the command line(on Linux, course). Kotlin really seems to encourage the use of an
+IDE (IntelliJ). So developing Kotlin as a secondary language could increase my familiarity
+(and acceptance) of IDEs.&lt;/p&gt;
+&lt;p&gt;The most well known JVM web framework to me is Spring. Spring requires a lot of configuration
+and knowledge, but there seems to be a project called Spring Boot. Spring Boot is supposed
+to be a simpler project that defaults a lot of options for you. So I will use Spring Boot 
+for this exercise.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/6/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/6/2020 - Implementation:Python and Django&lt;/h1&gt;
+&lt;p&gt;The implementation process was relatively straightforward. I was able to copy most of my 
+existing code from the older Django version. There were a few things that changed(mostly syntax)
+and Python3's default unicode simplified or eliminated some code in the previous version.&lt;/p&gt;
+&lt;p&gt;Revisiting Django reminded me how pedantic the framework is. I understand the value 
+of such a rigorous framework; mainly in situations when you're working on a project
+with lots of different people. But it definitely feels like overkill for a personal 
+project. But it does do a lot of work for you, unlike flask, where I might spend just
+as much time getting everything set up. I've heard pyramid is supposed to fill a gap
+between the two projects, and it might be worth looking into some time in the future.
+But I don't want to explore that tangent now.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/7/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/7/2020 - Reviewing Rust Docs&lt;/h1&gt;
+&lt;p&gt;I started with reviewing the official rust &lt;a href="https://doc.rust-lang.org/book/"&gt;docs&lt;/a&gt;. I 
+note that it's expanded quite a bit since I looked at it back in 2016. The review
+reminded me that while Rust seems verbose; it's usually only because the language
+wants you to be explicit with what you want. It is capable of type inference and some
+constructs have syntactic sugar when appropriate. I wasn't extremely thorough; there 
+are a lot of complicated concepts and I'll review them as I start going through Rocket's 
+documentation. Some of them I remember from my earlier work with Rust but some are new.&lt;/p&gt;
+&lt;p&gt;Something I note is that the reccomended way to install and update rust is a new tool called rustup.
+Normally I maintain tools using the package manager in my linux distro but 
+rustup is what is now suggested. Rustup allows you to easily switch your rust toolchain
+based on build type(stable vs nightly) and also makes it easier to handle toolchains
+for different CPU architectures. I've cross-compiled C++ for ARM and know that it can be
+messy; so I can see the value of this. You can also override the toolchain on a by directory 
+basis; so it's a little like Python's virtualenv. &lt;/p&gt;
+&lt;p&gt;Another interesting aspect of Rust are its macros. These are meant for syntactic sugar
+and to specify Domain Specific Languages. DSLs are a feature that have always interested
+me. But I note that macros are definitely a work-in-progress now; and subject to changes.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/8/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/8/2020 - Reading Rocket Docs&lt;/h1&gt;
+&lt;p&gt;My next step was Rocket's &lt;a href="https://rocket.rs/v0.4/guide/"&gt;docs&lt;/a&gt;. They expected a good
+understanding of Rust beforehand and I definitely felt that this was tested. Rocket
+feels somewhat like a DSL in Rust for building web apps. It's still Rust but there's
+a lot of macros and specific ways functions need to be used and called. Rocket doesn't
+provide a templating engine or database ORM so I will need to include these.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/9/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/9/2020 - Investigating Diesel and Changing the Project&lt;/h1&gt;
+&lt;p&gt;I found a lot of posts that discussed integrating Rocket with an ORM(Diesel seems to
+be the best choice), but this was the best &lt;a href="https://medium.com/digitalfrontiers/web-service-with-rust-rocket-and-diesel-7425f4a04f4c"&gt;post&lt;/a&gt;.
+In addition to providing me a tutorial, it also had an excellent analysis of Rust, Rocket,
+and Diesel. The author, Marco Amann, seems to have a similar style to mine and his other
+posts are investigations into different technologies. I should keep him in mind as a 
+good example.&lt;/p&gt;
+&lt;p&gt;He showed that Diesel actually requires you to write SQL by hand. This is a turn off
+to me, but Amann notes this is actually very powerful. There are a lot of database 
+modeling tools that generate SQL for you; and this approach allows you to use them and
+leverage the unique traits of each database. I recognize that value of this, but as 
+somebody whose database needs don't require this level of detail and control; it's not
+quite as valuable.&lt;/p&gt;
+&lt;p&gt;Amann continues to note that Rust and Diesel require fairly tight integration of the 
+database layer and views. Each view needs a handle to the database connection in order
+to use it. It's not as neatly abstracted as it was in Django.&lt;/p&gt;
+&lt;p&gt;This new information motivates a change in project. Not only will I have to set up
+Diesel, I'll also have to figure out how to use a templating library, if I want to create
+the same project in Rocket that I made in Django. My goal here is not to learn web app
+development in different languages; it's to simply try the language out. This particular
+approach will be a lot more work and I really don't think I'll gain much from it. In fact,
+I already feel like I have a good assesment on Rust and Rocket from the docs and examples.
+But I don't want to move on without completing something concrete. So instead, I'll
+use a json file to store information about the id cards instead of a database. I'll write
+two views, one which will return a list of the id cards in json and another which will
+return individual id card information, also in json, based on an input id. This will 
+mean that I won't need to use a templating library either. But this kind of response is what I
+might use if I was using some javascript front-end framework; so it's not total garbage.&lt;/p&gt;
+&lt;p&gt;I feel this is a much more reasonable project that will satisfy my goals for Rust and Rocket
+without adding a lot of unecessary work.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/10/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/10/2020 - Implementing the New Project&lt;/h1&gt;
+&lt;p&gt;Now that I've simplified my parameter scope, this was much easier to implement. I used
+serde_json; which seems to be the de facto official json library in rust. Creating and 
+mounting the views was also simple. But even with this simple example I needed to be
+very explicit about when I was borrowing references. Rust definitely makes sure you're
+being very explicit about what you want when coding. I was originally going to discuss
+what I liked and disliked about Rust but I think I'll save the breakdown for the end
+and include Python and C/C++ as well. Now I should move on to Kotlin and Spring Boot.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/11/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/11/2020 - Starting the Kotlin Project&lt;/h1&gt;
+&lt;p&gt;There's a lot of tutorials using Kotlin and Spring Boot but I'm focusing on this 
+&lt;a href="https://spring.io/guides/tutorials/spring-boot-kotlin/"&gt;one&lt;/a&gt;.
+Getting Spring Boot started was interesting. I'm using the Community version of IntelliJ
+so I wasn't able to start the project from the IDE. Instead I went to this &lt;a href="https://start.spring.io"&gt;site&lt;/a&gt;
+and downloaded a zip with all the configuration files. This was easy enough to set up
+but this process feels ... weird to me. I suppose it's not actually different than an IDE setting 
+everything up, but it feels different. As I went through the tutorials I started to see
+how dense Spring is. Even with Spring Boot handling a lot of set up, it feels like there's
+a lot of work that's being done for me and I'm not aware of what's going on. I didn't
+really look into other web frameworks but considering how much is hidden from me in Spring
+it might be a good idea to find a simpler framework.&lt;/p&gt;
+&lt;p&gt;I found another framework with a good reptuation called &lt;a href="https://ktor.io"&gt;ktor&lt;/a&gt;. They have
+an excellent tutorial and it feels more like Rocket or Flask than Spring or Django. I can't
+help but wonder whether I should've used Flask and SQLAlchemy for a simplied example for Python
+to stay consistent. Django doesn't feel like Rocket and I'm not sure all this work is 
+important. This level of uncertainty means I should revaluate my plan.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/12/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/12/2020 - Rethinking My Plan&lt;/h1&gt;
+&lt;p&gt;I stated in the beginning my goal was to evaluate Rust and Kotlin to select a secondary
+language for my skillset. And I emphasized that, even though I'm building web apps, 
+I probably won't use either of these languages for web apps and this is supposed to be
+to see how to evaluate libraries in each language. &lt;/p&gt;
+&lt;p&gt;But despite my claim, this really feels like I'm evaluating web frameworks. When I'm 
+thinking about each stage; I'm focusing on differences between Django, Rocket, and now 
+Spring. I really should be focusing on Python, Rust, and Kotlin. This means .... I messed
+up. I think my idea sounded good but it's not really working. I already learned about 
+both languages through their docs and the udacity course. I should've picked a simpler
+project or library to use. Or maybe a project wasn't even necessary; I could've just
+had a discussion based on the courses/reading I already did. 
+At this point I'm focusing too much on web frameworks and 
+their idiosyncrasies instead of the language itself.&lt;/p&gt;
+&lt;p&gt;So what's my new plan? I really don't need to finish this Kotlin project. I also 
+don't like leaving things unfinished. But I've already wasted a decent amount of time
+on this and I'm not really enjoying this process anymore. Personal projects are supposed
+to be fun and useful. I feel like I've already gotten the 
+information I need so now it's time to make a decision.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/13/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/13/2020 - The Decision&lt;/h1&gt;
+&lt;p&gt;Because of my wasted time I ended up reviewing the Udacity &lt;a href="https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011"&gt;course&lt;/a&gt; 
+on Kotlin again. I want to make sure I'm giving it a fair assesment since I've spent 
+so much time on Rust. First I'll go over what I like about my existing languages.&lt;/p&gt;
+&lt;h2&gt;Python&lt;/h2&gt;
+&lt;h2&gt;What I Like&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Easy syntax&lt;/li&gt;
+&lt;li&gt;Interpreted language is trivial to debug&lt;/li&gt;
+&lt;li&gt;Strong api support almost everwhere&lt;/li&gt;
+&lt;li&gt;Fun to program in&lt;/li&gt;
+&lt;li&gt;Works well with C/C++ for speed ups&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;What I Dislike&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Dynamic typing creates annoying runtime errors and excessive debugging&lt;/li&gt;
+&lt;li&gt;Can be difficult to create good style when working with larger groups&lt;/li&gt;
+&lt;li&gt;Deployment is messy(virtualenvs help, but it's not an ideal fix)&lt;/li&gt;
+&lt;li&gt;Global Interpreter Lock makes multi-threading difficult&lt;/li&gt;
+&lt;li&gt;Very slow with out C/C++ support&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;C++&lt;/h2&gt;
+&lt;h2&gt;What I Like&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Smart pointers and C++14/17 addons make language far more enjoyable(not quite fun though)&lt;/li&gt;
+&lt;li&gt;Works extremely well with Python &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;What I Dislike&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Auto helps but the language feels very rigid due to lack of type inference&lt;/li&gt;
+&lt;li&gt;Requires lots of code to enforce type safety&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Both languages have weaknesses, but for my own use cases; the combination is extremely
+powerful.&lt;/p&gt;
+&lt;h2&gt;Rust&lt;/h2&gt;
+&lt;h2&gt;What I Like&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Rust compiler is excellent at forcing me to recognize ambiguities and address them&lt;/li&gt;
+&lt;li&gt;Memory management is very similar to C++ smart pointers and feels like an easy transition&lt;/li&gt;
+&lt;li&gt;Trait system feels really powerful and I'm excited to work with it&lt;/li&gt;
+&lt;li&gt;Tooling feels simple&lt;/li&gt;
+&lt;li&gt;Easy to build static executables mean deployment can be very simple&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;What I Dislike&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Code is very verbose, can be ugly. &lt;/li&gt;
+&lt;li&gt;Can feel very annoying when fighting with the borrow checker&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Rust has a lot of interesting features. Forcing extra attention to detail when writing
+code and dealing with errors during compilation means I don't have to deal with 
+annoying runtime errors. The trait system is really interesting and I'm eager to explore
+how I can use it when designing applications.&lt;/p&gt;
+&lt;p&gt;My biggest issue with rust is how verbose and ... well, ugly it can be. Lifetimes in
+particular just look bad. And combining lifetimes with generics makes Rust code look
+incredibly busy.&lt;/p&gt;
+&lt;h2&gt;Kotlin&lt;/h2&gt;
+&lt;h2&gt;What I Like&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Concise syntax feels very simple&lt;/li&gt;
+&lt;li&gt;Syntactic sugar feels appropriate and makes coding easier&lt;/li&gt;
+&lt;li&gt;Feels fun&lt;/li&gt;
+&lt;li&gt;Features like interface delegation make designing and implementing complex designs simple and fun&lt;/li&gt;
+&lt;li&gt;JVM integration allows me opportunities to explore other languages like Clojure more easily&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;What I Dislike&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Tooling and build system feels incredibly complicated&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Kotlin really impressed me with it's concise syntax and interesting features. Interface delegation
+is one in particular I can't get over. Rust may be fun to design software in, but I feel
+that Kotlin is more fun to actually write code for.&lt;/p&gt;
+&lt;p&gt;My biggest issue with Kotlin is the tooling. IntelliJ is probably my favorite IDE(the 
+only other ones I've used are Eclipse, Visual Studio, and Xcode), but I still can't say
+I enjoy IDEs. I recognize their value, especially with large projects with multiple
+developers, but it's not something I enjoy dealing with for personal projects. Even if 
+I don't use IntelliJ, Kotlin requires Gradle which still feels complex. It's nothing
+like Rust and Cargo.&lt;/p&gt;
+&lt;p&gt;So what's my decision? It's probably obvious, but I think Rust is the best pick for me. 
+It might feel like this a biased decision or I didn't give Kotlin a fair chance, but I 
+think it comes down to what the language adds to my skillset and how I feel about it. &lt;/p&gt;
+&lt;p&gt;Rust expands my viewpoint with traits which are different from the object systems I'm used
+to. I'm very excited to see how I can use Rust's trait system to implement my designs.&lt;/p&gt;
+&lt;p&gt;Kotlin was meant to expand my viewpoint by using IDEs and a more rigid build system. Even
+after trying it and noting the advantages, I still think of it a chore.&lt;/p&gt;
+&lt;p&gt;That really makes the decision clear. I'll still use
+Kotlin when I need to (Android apps) but I won't invest in it the same way as Rust.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/14/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/14/2020 - Use Cases&lt;/h1&gt;
+&lt;p&gt;In addition to selecting a language, I also decided I wanted to make sure I have some
+good use cases. Otherwise it'll be more difficult to keep my familiarity with Rust without
+actually making up projects to do so. I want to avoid the same mistake I made with Haskell.&lt;/p&gt;
+&lt;p&gt;Rust's site defines four main areas the Rust team wants to focus Rust for; so this
+is probably what I'll look at.&lt;/p&gt;
+&lt;h2&gt;Command Line&lt;/h2&gt;
+&lt;p&gt;The first target they mention is command line tools. Currently I use python for all
+my command line tools. It's large amount of supporting libraries and ease of debugging
+make it easy to quickly prototype tools and start using them. &lt;/p&gt;
+&lt;p&gt;However a big issue when distributing command line tools is the environment. Spawning
+virtual envs just for command line tools is annoying. And making sure those venvs are all 
+consistent is a chore. But for personal tools it's not clear how much of a problem it
+is. I have desktop and a laptop so keeping those envs consistent isn't too hard.&lt;/p&gt;
+&lt;p&gt;Still, Rust definitely has advantages here. I should definitely consider Rust for cli
+tools I use.&lt;/p&gt;
+&lt;h2&gt;WebAssembly&lt;/h2&gt;
+&lt;p&gt;This is an interesting case. WebAssembly seems to be the new kid on the block for front
+end web development. I don't really do any front end web stuff and don't really have 
+a desire to do so. Probably not a strong use case, but I think it's something I should 
+keep an eye on.&lt;/p&gt;
+&lt;h2&gt;Networking&lt;/h2&gt;
+&lt;p&gt;From my experiences with Rocket, I'm not actually sure I like Rust, personally, for this
+use case. Rocket does have benefits but I'm not sure they're for me.&lt;/p&gt;
+&lt;h2&gt;Embedded Systems&lt;/h2&gt;
+&lt;p&gt;This use case feels powerful. Rust's tooling allows easy cross-compilation for different
+architectures. I've done cross-compilation for ARM on iOS devices using cmake and it isn't
+pretty. Rust's abilities in memory mangement will make it easier to keep memory issues
+in check. And debugging runtime issues in embedded systems can be a nightmare; so having
+everything addressed during compilation is attractive. I do have some project ideas with fpgas
+and rasberry pis that could make use of this. So this could be a good use case.&lt;/p&gt;
+&lt;p&gt;My main problem is that I don't have very many of these and they'll likely be inconsistent.
+Useful, yes, but not the kind of work that'll help keep my Rust skills sharp over time.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/15/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/15/2020 - Final Thoughts and Objective Analysis&lt;/h1&gt;
+&lt;p&gt;So this project's course was a lot more complicated and a lot more embarrassing.
+I had an idea at first; but it ended up being a huge distraction. But I did say that
+I wanted this blog to show up my screw-ups, not just successes. I should own up to that.&lt;/p&gt;
+&lt;p&gt;I do feel that I accomplished my first goal of selecting a secondary language. Rust 
+does feel like it neatly fills a gap that I have between Python and C/C++. It's a lot 
+more fun than C/C++ but doesn't have python's sluggishness. The tooling and dependency
+management is also fantastic, some thing both Python and C/C++ can struggle with.&lt;/p&gt;
+&lt;p&gt;But I don't honestly know when I'll use it. There's potential for use in embedded projects
+but I don't have very many of those. I can maybe see it being useful for CLI projects
+but I need to remember my lessons from Haskell. I shouldn't just use Rust for projects
+I actually need because I want to use Rust. If Python is better for my cli tool I should use it. This may
+mean I need to make up projects to develop and maintain my Rust skills and I don't know how easy that
+will be for me to do in the long term. Or even if it's something I really will want to
+do over time.&lt;/p&gt;
+&lt;p&gt;So I'm going to mark this project as partial success. I don't really feel like I've come
+up with strong use cases for Rust for myself. I'll try to keep it as a "secondary" language
+but we'll ultimately see how well that turns out. Rust is a lot more similar to Python and 
+C/C++; so it has that in favor of Haskell, at least. But whether I can keep up motivation
+to support a language for what's basically "academic" purposes remains to be seen.&lt;/p&gt;</content><category term="Lab"></category><category term="rust"></category><category term="kotlin"></category></entry><entry><title>Resume Formats</title><link href="https://mitigatingfailure.com/Resume.html" rel="alternate"></link><published>2020-03-19T00:00:00-04:00</published><updated>2020-05-31T00:00:00-04:00</updated><author><name>Niraj Amalkanti</name></author><id>tag:mitigatingfailure.com,2020-03-19:/Resume.html</id><summary type="html">&lt;h3&gt;TLDR&lt;/h3&gt;
 &lt;p&gt;I wanted to redo my resume so I designed a layout in Inkscape and investigated
 several tools to implement my design. Scribus was the one I selected and I 
 feel it's an excellent choice for resume design. But Scribus itself has
@@ -519,4 +1281,5 @@ this to others to review but it will not be a public process. &lt;/p&gt;
 I hope these aspects will be useful to others who are designing their own resumes. The
 personal details of my own resume are not relevant to that process. If I find out that
 Scribus was actually the wrong tool(not sure how but it could happen); then I will make
-an update with that information. But otherwise I am satisfied marking this project as complete.&lt;/p&gt;</content><category term="Lab"></category><category term="resume"></category></entry></feed>
+an update with that information. But otherwise I am satisfied marking this project as 
+completed and successful.&lt;/p&gt;</content><category term="Lab"></category><category term="resume"></category></entry></feed>

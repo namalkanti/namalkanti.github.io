@@ -167,14 +167,14 @@ a {
 #In-Progress {
   color: blue; }
 
+#Stalled {
+  color: orange; }
+
 #Partial-Success {
   color: teal; }
 
-#Complete {
+#Successful {
   color: green; }
-
-#Stalled {
-  color: orange; }
 
 #Failed {
   color: red; }

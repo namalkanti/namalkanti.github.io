@@ -4,15 +4,16 @@
 &lt;p&gt;&lt;a href="#5/22/2020"&gt; 5/22/2020 - Initial Fumbling &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#5/23/2020"&gt; 5/23/2020 - Tutorials &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#5/24/2020"&gt; 5/24/2020 - 3D Printing Service &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/08/2020"&gt; 6/08/2020 - Final Thoughts &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a name="overview"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;Overview&lt;/h1&gt;
 &lt;p&gt;As a Linux user I love opportunities to show off my preferred operating system.
-Recently I tried looking for a keychain for the Arch Linux logo. I wanted a 3D model
-of …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Entries&lt;/h3&gt;
+Recently I tried looking for a keychain for the Arch Linux logo. I …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Entries&lt;/h3&gt;
 &lt;p&gt;&lt;a href="#overview"&gt; Overview &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#5/22/2020"&gt; 5/22/2020 - Initial Fumbling &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#5/23/2020"&gt; 5/23/2020 - Tutorials &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#5/24/2020"&gt; 5/24/2020 - 3D Printing Service &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#6/08/2020"&gt; 6/08/2020 - Final Thoughts &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a name="overview"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;Overview&lt;/h1&gt;
 &lt;p&gt;As a Linux user I love opportunities to show off my preferred operating system.
@@ -114,4 +115,18 @@ their versatile plastic is available in a blue for the arch linux logo. It's not
 expensive ($12.00) but the shipping cost is almost the same as the model($9.00). They 
 don't offer any cheaper version, so I'll have to deal with it. This feels too easy....
 But I'm not sure what else to do. They estimate it'll take a month until my print arrives
-so I guess I'll see how well I did when it gets here.&lt;/p&gt;</content><category term="Workshop"></category><category term="openscad"></category></entry></feed>
+so I guess I'll see how well I did when it gets here.&lt;/p&gt;
+&lt;p&gt;&lt;a name="6/08/2020"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;6/08/2020 - Final Thoughts&lt;/h1&gt;
+&lt;p&gt;It finally came in today! A little earlier than I expected.
+&lt;figure class="center"&gt;
+    &lt;img src="https://mitigatingfailure.com/arch_print.jpg" width="40%" height="auto" class="border"&gt;
+&lt;/figure&gt;
+It looks exactly like what I wanted and fits on my key ring. Feels sturdy too; though I'll
+have to use it a bit more to see. I guess it really was that simple. OpenSCAD's ability 
+to directly import svgs made this project extremely trivial; even for a novice like me.&lt;/p&gt;
+&lt;p&gt;So how to mark this project? I did use OpenSCAD to build a 3D model and successfully 
+printed it with a printing service. However, it feels hesitant to say that I really
+learned the basics of OpenSCAD. My project was simple, too simple. So I will be 
+marking this project as a partial success. Maybe in the future I can do another
+project and really get to learn the basics of OpenSCAD.&lt;/p&gt;</content><category term="Workshop"></category><category term="openscad"></category></entry></feed>
