@@ -49,20 +49,20 @@ but I couldn't come up with any concrete use cases.
 
 I consider my "primary" languages to be Python and C/C++. I use both of these languages 
 at work and in my personal projects. The other languages I know, I consider to
-be "tertiary" languages. These are languages I've done a few projects or work
+be "tertiary" languages. These are languages I've done a few projects 
 in but I don't regularly use them. What I'd like to do is add a "secondary"
 language to my skillset. This would be a language I don't use with extreme regularity
-or for work (where I don't necessarily have choice), but a language I pay attention to
-and try to use semi-frequently. This language would ideally be useful in areas or aspects
+, but a language I pay attention to
+and try to use semi-frequently. This language would ideally be useful in areas 
 that Python and C/C++ don't cover. A secondary language would require an ongoing 
-maintenace commitment which is why it's not a trivial decision or one I can simply 
-select easily.
+maintenance commitment which is why it's not a trivial decision. 
 
 I actually tried adding Haskell as a secondary language in the past. I had heard 
 a lot of good things about Haskell and was interested in trying it out.
 I learned about it through this [book](http://learnyouahaskell.com). It introduced a lot
 of interesting ideas and I was initially excited to use it more. 
-I decided I would implement this blog using Hakyll. However, like
+I decided I would implement this blog using Hakyll, a static site generator in Haskell. 
+However, like
 most of my side projects, I worked on it infrequently. Because Haskell is so different from
 Python and C++ I usually spent my time "working" on my blog instead on Haskell review.
 Which I then forgot when I came back to it. Obviously, I got nothing done and decided
@@ -88,7 +88,7 @@ The git repo where these projects will be is [here](https://github.com/namalkant
 
 The method I will use to evaluate this decision is an interesting one. Some time ago;
 I made a very simple web app with a friend as a way to learn Django. This web app
-was basically a small site where you would post pictures of lost University IDs along 
+was a small site where you would post pictures of lost University IDs along 
 with contact info. Somebody who lost their ID would look this up and find the person who
 located it. We never planned on deploying it; it was an exercise to learn Django. 
 
@@ -104,15 +104,15 @@ I want, to again, emphasize that I won't necessarily use Rust or Kotlin for web 
 that's what I'm doing in this exercise. If they are better than Python+Flask for my projects
 then I will, but otherwise I'll use what I'm familiar with. That's also why I want to figure
 out other use cases for this secondary language. I'm only using a web app because 
-it's something simple all three languages have mature support for. That consistent 
+it's something simple that all three languages have mature support for. That consistent 
 example will be helpful in my comparisons.
 
 <a name="6/3/2020"></a>
 # 6/3/2020 - Discussion:Python and Django
 I used Django as the framework to implement the original idfinder app. This
-was to learn Django, but I mainly used and still use Flask for any needs I have in
+was to learn Django, but I mainly use Flask for any needs I have in
 building web apps. None of my personal projects need the complexity of Django or Pyramid. 
-Most of them simply need a simple web server that responds to http requests. But this
+Most of them need a simple web server that responds to http requests. But this
 project will require databases and forms. I could add these modules to flask, but I'd
 have to pick all the modules for these tasks myself. Django has a "batteries included"
 philosophy. Since this is meant to be a simple control example, I will use
@@ -124,7 +124,7 @@ consistent and recent comparison.
 <a name="6/4/2020"></a>
 # 6/4/2020 - Discussion:Rust and Rocket
 I was initially introduced to Rust when Mozilla began using it for their firefox rendering engine.
-The concepts of being safe with memory and fixing issues during compilation appealled to
+The concepts of being safe with memory and fixing issues during compilation appealed to
 me. When discord released their Rust api, a friend of mine and I implemented a small chat 
 bot. I learned the basics of rust through this project. I found it to be verbose, but I
 did like some of their implementation decisions. Their memory management model is very similar

@@ -1,11 +1,11 @@
 Title: Design Patterns in Rust 
 Date: 2020-6-13 
-Modified: 2020-6-14 
+Modified: 2020-6-26 
 Category: Lab
 Tags: rust 
 Slug: Design Patterns in Rust
 Authors: Niraj Amalkanti 
-State: In-Progress
+State: Successful
 
 ### Entries
 [ Overview ](#overview)
@@ -28,9 +28,7 @@ State: In-Progress
 
 [ 6/24/2020 - Cleaning Up Code ](#6/24/2020)
 
-[ 6/25/2020 - Adding playback different playback options ](#6/25/2020)
-
-[ 6/26/2020 - Using names instead of ids ](#6/26/2020)
+[ 6/26/2020 - Final Thoughts and Objective Analysis](#6/26/2020)
 
 <a name="overview"></a>
 # Overview
@@ -51,7 +49,7 @@ It is supposed to be semantically clearer than using objects, since in most usag
 cases you really care about what an object can do; not what it is.
 
 I typically program in Object-Oriented languages and make extensive use of design
-patterns when design larger programs. I find they help make programs easier to adapt
+patterns when designing larger programs. I find they help make programs easier to adapt
 and extend, but they require forethought and careful use. Originally, design patterns
 were designed for Java and their explicit implementation works best there. I currently work 
 in Computer Vision research and use Python and C/C++ at work. Both of these languages
@@ -67,9 +65,10 @@ I plan on using this chat bot to investigate this. I don't want it to be tied a 
 so I will drop the feature that plays output for scoring in Rocket League. To be more
 robust; I will have the bot try and use youtube videos to play music instead of 
 a taking an audio file from the filesystem. Since I'm changing the original purpose
-I will fork and rename the bot. This is the [repo](https://github.com/namalkanti/DynamicEntryBot).
+I will fork and rename the bot. This is the new [repo](https://github.com/namalkanti/DynamicEntryBot).
 
-I mentioned in my previous post that I wanted to find concrete use cases for Rust.
+I mentioned in my previous [post](http://mitigatingfailure.com/Rust and Kotlin.html) 
+that I wanted to find concrete use cases for Rust.
 I want to clarify that this is not one. I will likely not use this bot and don't
 expect anybody else to. This project is more of an excercise to test out design patterns
 in Rust. And as I also saw in my previous entry, my ideas in this area don't always pan out. 
@@ -188,7 +187,7 @@ have this. There's an entire chapter on traditional OO principles,
 how to use them in Rust, and which standard Rust features can be better. This is 
 exactly what I wanted.
 
-Reading the documentation chapter was very helpful. They describe how to implement a basic 
+Reading the documentation was very helpful. They describe how to implement a basic 
 blog using the concrete GoF state pattern; then give an example of how to do it better
 in Rust. The basic idea is, instead of storing a state variable, you actually tranform
 your object into different objects to indicate state. Rust's ownership mechanics 
@@ -354,7 +353,7 @@ most well supported at the time of this writing. It looked intimidating at first
 the examples were helpful to understand how to approach the implementation. 
 
 I want to keep my internal api seperate from serenity; as per the veneer design pattern. So
-what I did is spawn Serenity in a seperate thread; and use mspc channels to handle communications
+what I did is spawn Serenity in a seperate thread; and use mpsc channels to handle communications
 between Serenity and my internal api. This is definitely a lot more complex. But the trade off is
 I can change the external api and keep the rest of my code untouched.
 I was able to finish the internal api's implementation and next I'll need to make sure the
@@ -380,10 +379,59 @@ to be installed as command line tools, but I had both of them already.
 
 Now I have a working prototype! I was able to log into my test channel and used
 the youtube-dl endpoint to play music when I joined. There was a small delay to
-account for the download, but it works! Now I'd like to make three improvements.
-First, I want to address all the warnings my code is throwing at me and improve
-error handling. Then I want to allow my code to use file paths or youtube links to
-play music. Finally; the bot uses user and channel ids instead of names. It would be
-a nice quality of life improvement to use names instead.
+account for the download, but it works! 
 
 [current repo state](https://github.com/namalkanti/DynamicEntryBot/tree/6-23)
+
+<a name="6/24/2020"></a>
+# 6/24/2020 - Cleaning Up Code
+
+I cleared out all the warnings; most of this had to do with not handling errors correctly.
+I also made use of Rust's module system to organize the api a bit better. I added a 
+logout command so I don't always have to Ctrl-C the bot from the command line. I really
+like the error messages the Rust compiler gives out. They're easy to understand and 
+don't feel like a cryptic mess.
+Because of this I felt much more confident refactoring my Rust code.
+
+<a name="6/26/2020"></a>
+# 6/26/2020 - Final Thoughts and Objective Analysis
+Well, at this point I have the bot in a working state with reasonably clean code structure.
+Is there more I could do? I could make some quality of life changes so I can join channels 
+with their names and store users with names instead of IDs. If this was a legitimate project,
+I would probably have to do so. But for this research experiment I don't think it's necessary.
+The work would really come down to investigating the api until I figured out how the get 
+the information I need.
+
+I'm very pleased with Rust. Most of the annoyance I had with this project was getting the api
+to work and even that wasn't so bad once I learned how to navigate the documentation. While
+pedantic, the rust compiler does a great job of telling you why it doesn't like some piece
+of code you're writing. I also really like the trait system and how Rust handles types. Using
+object transformation for the state pattern feels very natural. And the trait system allows me
+to add behavior without thinking about some complicated object structure.
+
+Something I'm less pleased with is how verbose some of the code can be. And it's not always 
+easy to hide code behind functions, because you need to be very careful with references and 
+how you use your variables. This wouldn't stop me from using(or enjoying) Rust, but it's 
+something to note.
+
+So did I accomplish my goals? I'd say so, yes. I refactored the bot into a working version 
+with the serenity api. There are some quality of life annoyances with usage, but it works.
+I also played around with design patterns and found two natural cases with the state pattern
+and the veneer pattern. Both patterns provide benefits for their increased complexity. With the
+state pattern, I learned how to modify a design pattern for use in Rust. And I rejected a use
+case for a design pattern(command pattern for user info) because it added complexity and 
+wasn't necessary.
+
+However, everything isn't perfect. As I mentioned in this previous project, I want to develop
+Rust as a secondary language. I did see how that could be difficult in the future. This bot 
+was a just a research experiment, not something I was genuinely enthusiastic about building. 
+This meant my motivation to do so was sometimes weak. I noted how I didn't feel the need to
+add some quality of life improvements, but if this was a project I was genuinely passionate 
+about; I would've done so without hesitation. I have plenty of these projects but it is hard
+to justify using Rust instead of Python or C++. The quarantine going on right now means I
+have time to invest in these Rust maintenance projects, but when everything returns to normal
+I'm not sure I will be able to so. So my ability to keep Rust as a secondary language
+will hinge on whether I have personal projects where Rust is genuinely the right choice.
+
+But, this has no bearing on the goals for this project, so I am happy with marking it as
+successful.
