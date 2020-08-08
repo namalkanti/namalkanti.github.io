@@ -1,4 +1,4 @@
-Title: Resume Formats
+Title: Resume Template
 Date: 2020-3-19 
 Modified: 2020-5-31 
 Category: Studio
