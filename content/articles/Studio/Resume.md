@@ -1,7 +1,7 @@
 Title: Resume Formats
 Date: 2020-3-19 
 Modified: 2020-5-31 
-Category: Lab
+Category: Studio
 Tags: resume 
 Slug: Resume
 Authors: Niraj Amalkanti 
