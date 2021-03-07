@@ -5,7 +5,7 @@ Category: Studio
 Tags: logo 
 Slug: Cyclegrams-Logo
 Authors: Niraj Amalkanti 
-State: In-Progress
+State: Stalled
 
 ### Entries
 [ Overview ](#overview)
@@ -24,6 +24,12 @@ State: In-Progress
 
 [ 2/13/2021 - First SVG](#2/13/2021)
 
+[ 3/2/2021 - First Draft](#3/2/2021)
+
+[ 3/5/2021 - Review](#3/5/2021)
+
+[ 3/6/2021 - Git Assessment](#3/6/2021)
+
 <a name="overview"></a>
 # Overview
 
@@ -36,7 +42,7 @@ is a good opportunity to try logo design.
 
 I've never designed a logo before, but I would like to design a 
 personal one in the future. The lack of distribution makes this 
-a low pressure project 
+a good, low pressure project 
 to try out first.
 
 Even this wouldn't necessarily be a good reason for a blog post, 
@@ -66,7 +72,7 @@ since each entry is one line. Social media can do this to an extent; but
 it isn't as comprehensive(only when you post or upload pictures). I find 
 it much easier to write one sentence about my day than upload a photo 
 per day. And I don't always want this info to be public so social media 
-is out of the question.
+is out of the question anyways.
 
 My main problem with this is how I'm implementing it. Having to carry 
 around a giant stack of notecards isn't ideal. And each of these cards 
@@ -244,3 +250,51 @@ my first draft.
 
 At this point, I'd like to let my mind "sit" for a few days and review this later. If I'm still okay with
 it then I will consider the logo design finished.
+
+<a name="3/5/2021"></a>
+# 3/5/2021 - Review
+
+Well I've thought about it for a few days and I think I'm going to go forward with this.
+
+Obviously, it's not "perfect". It feels too simple and I'm worried it may not be unique enough.
+But since I want a simple logo, it seems aggressive to criticize it for being "too simple". The
+lack of uniqueness isn't critical since I'm not distributing this in any way. I usually find
+that I never consider my art projects to be "perfect" and I'm told this is fairly common.
+
+Apparently the wheel plus design I used is a very common design called a sun cross. Despite this,
+a sun cross in a trapezoidal shape like mine doesn't appear to be an existing logo so I should be okay.
+
+The next step would be to merge my branch back into main since I'm going to select this as my 
+main logo. Since I never made any changes to master this ended up being utterly trivial and not
+a real test of git in this context. I did try making some small changes but wasn't able to 
+create any major merge conflict. And I didn't think artificially trying too hard 
+to create a merge conflict was a good way to practically test git.
+
+At this point I will mark this project as stalled. I don't want to declare it finished until
+I see the logo in my app; I will probably make some minor adjustments at that point. But I've
+been making poor progress in my app development and am unsure when I'll get around to finishing
+it.
+
+However, I can make an assessment of git at this point and will do so before moving to finish the
+app.
+
+<a name="3/6/2021"></a>
+# 3/6/2021 - Git Assessment
+
+After a bit of consideration I think Git is a good fit for me in these kinds of projects.
+
+I didn't get the chance to truly test git with some sort of esoteric merge conflicts but what
+I did get to see is promising. The xml structure of svg seems to be very intelligently designed. 
+It's actually based on the concept of layers and each layer is a top level xml tag. So all of my
+changes looked coherent in the xml. 
+
+
+Even if this isn't a strong case for git, it's worth nothing the effort of using git here was 
+non-existent. I'm so fluent in git from work/personal projects, simply making commits with 
+comments is trivial. The "design 
+log" this ends up creating is probably more than worth the marginal effort of using git. Even
+if branching and merging turns out to be more trouble than it's worth, the git history and logs
+are sufficient.
+
+So my evaluation is that I will continue to use git when working on inkscape projects. If I end
+up changing my mind about this later, I will amend this entry.
