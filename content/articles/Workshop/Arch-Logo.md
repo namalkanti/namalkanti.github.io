@@ -7,6 +7,11 @@ Slug: Arch-Keychain
 Authors: Niraj Amalkanti 
 State: Partial-Success
 
+### TLDR 
+I wanted to created a keyring accessory that looked like the Arch Linux logo
+and intended to create a 3D model and print it; this ended up being way
+easier than expected
+
 ### Entries
 [ Overview ](#overview)
 

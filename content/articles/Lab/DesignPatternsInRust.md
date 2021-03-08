@@ -7,6 +7,11 @@ Slug: Design Patterns in Rust
 Authors: Niraj Amalkanti 
 State: Successful
 
+### TLDR
+I wanted to try experimenting with traditional java design patterns in Rust.
+I knew the features of Rust would mean I couldn't copy and paste them
+from GoF's templates.
+
 ### Entries
 [ Overview ](#overview)
 
