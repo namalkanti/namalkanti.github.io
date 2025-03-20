@@ -44,6 +44,10 @@ but I couldn't come up with any concrete use cases.
 
 [ 6/15/2020 - Final Thoughts and Objective Analysis ](#6/15/2020)
 
+[ 10/10/2024 - Update: Kotlin ](#10/10/2024)
+
+[ 10/12/2024 - Update: Rust ](#10/12/2024)
+
 <a name="overview"></a>
 # Overview
 
@@ -475,3 +479,119 @@ up with strong use cases for Rust for myself. I'll try to keep it as a "secondar
 but we'll ultimately see how well that turns out. Rust is a lot more similar to Python and 
 C/C++; so it has that in favor of Haskell, at least. But whether I can keep up motivation
 to support a language for what's basically "academic" purposes remains to be seen.
+
+<a name="10/10/2024"></a>
+# 10/10/2024 - Update: Kotlin
+
+There's been some new developments relevant to this topic so I'm adding updates.
+
+I still haven't found a good use case for Rust as a secondary language. 
+One of my co-workers (an Android dev) persuaded me to give Kotlin another
+chance. I knew Android app dev is an area I want to improve in and Kotlin is required(unless I 
+want to use Java). This motivated me to revaluate Kotlin.
+
+But it was obvious that the same issues remained. Kotlin's IDE dependence put me off, especially 
+libraries like [ktor](https://ktor.io) or [spring boot](https://spring.io/projects/spring-boot) 
+that expected you to use an online project generator
+to start your projects. I can see the value of this in large companies, but I can't imagine
+going through this for a personal project. I also notice that Kotlin doesn't have a lot
+of adoption outside of Android. The main use case is replacing Java(a good one), but it doesn't 
+appear that people are actively creating new Kotlin projects for standard applications.
+This differs from Rust or Go; where I see this more frequently. 
+
+However, this let me review my priorities and goals and I now have two main goals with Kotlin/JVM.
+
+* Android Dev
+* Clojure
+
+## Android Dev
+This has been a lower priority, but I really want to become more comfortable with Android app development.
+I'd like to get to the point where I can easily build an app for myself when I need it, just like how I can
+easily write a script or small program for these problems on a standard computer. 
+
+## Clojure
+I've still been eyeing Haskell but have not pursued it. But the more I look at Clojure, the more I see 
+the similarities. And since Clojure is on the JVM, I can use Java libraries to support it along with Kotlin
+if needed. I'm not sure I can motivate myself to pursue Haskell further, but I think Clojure has enough utility.
+
+
+I don't think I will pursue Kotlin as a general purpose programming language for now, but if I really end up
+liking it that may change. That could happen from either goal. However, I will continue to regard Kotlin as a 
+tertiary language for myself, but now I have more direction in how I want to use it. 
+
+<a name="10/28/2024"></a>
+# 10/12/2024 - Update: Rust and perhaps a use case ?
+
+My disappointment in Kotlin motivated me to revaluate Rust but I took a quick detour into Haskell. This ended
+up being interesting because it became obvious to me how much Haskell has influenced Rust. Now that I understood
+Traits and datatypes like Option/Result, Haskell typeclasses and Maybe/Either made a lot more sense to me. In fact,
+maybe one reason for Rust's popularity is converts from Haskell. This new familiarity has lead me to a new idea.
+
+When I learned C, one application was using C for command line tools. C tools are much faster than Python scripts
+and compiling into a single, static executable makes for easy deployment(instead of Python virtualenvs).
+But creating makefiles and writing C is too much effort for simple tools when a Python script will do.
+But Rust's tooling simplifies the build process(and allows for cross-compilation). And it's much easier
+to organize Rust code into multiple files instead of a single Python script. I'm also realizing the subtle difference
+between a script and command line tool.
+
+## Script vs Command Line Tool
+A script is usually a set of instructions for a task that needs to be automated with some minimal configuration.
+But a command line tool is a utility like grep, awk, sed, etc; that does some semi-customizable unit of work. They're
+similar but a cli tool usually is run more frequently and needs to have more complex customization with flags. Because of this,
+Rust has several advantages over Python for command line tools.
+
+### Speed
+For scripts that are started and just let run, Python is fine. But if I want a tool I use frequently on the 
+command line, the centuries spent waiting for the Python interpreter will add up over time.
+
+### Organization
+Python does have [click](https://click.palletsprojects.com/en/stable/); which is neater than argparse, 
+but a single python script can get very large
+when trying to add subcommands and a lot of functionality. This is true even with click. But Rust's easy
+tooling lets me build a single executable while keeping the source organized in multiple files. 
+This is an advantage of building cli tools with C that I learned
+about when learning C, but the build tooling with C always put me off. Cargo fixes this issue with Rust; 
+allowing me to easily build a single statically linked executable. But I can maintain code readability
+by splitting it up into as many files/modules I need. With Python I'm force to make trade
+offs regarding file size/organization
+
+### Why not Bash?
+Bash makes sense for small, simple scripts where the goal is to just chain together commands, but anything
+more complex can be difficult in bash. I think it makes sense to improve my bash skills so I can do scripts
+in bash but use Rust for command line tools. I will investigate this.
+
+<a name="11/12/2024"></a>
+# 11/12/2024 - Update: Bash for Scripts
+
+Interestingly enough, I ended up deciding to keep Python for my scripts. Bash is nice in theory, but anything
+even slightly complex is just cleaner in Python. One script I tried converting was a simple one that copies music
+files by parsing a text based playlist file and syncing them. This is trivial in Python, but even using tools
+like Sed and Awk lead to complex and hard to maintain code. 
+
+Improving my bash is still a good idea, and I think there are scripts I can use better bash skills to create.
+But the falloff is very quick and Python becomes a better option with an even moderate amount of complexity.
+
+<a name="11/18/2024"></a>
+# 11/18/2024 - Update: Rust for CLI tools
+
+Initially, I was using a bunch of complex bash alises for some build tooling at work. I wanted to use Rust, but
+I decided to use bash first. As cool as Rust is, if Bash is better, I should go with it.
+
+But I ran into the same problem.... I had ideas for default/optional flags for easy usage. But implementing this in
+bash is not trivial. Using getopts does not handle optional parameters well. It requires state logic and creates
+dependencies on the ordering of the flags. The tool, getopt, does this much better,
+but the versioning and capabilities differs tremendously depending on the OS. Trying to figure out these version
+differences sounds like a giant mess that I really don't want to deal with. 
+
+I ended up using subcommands with semi-arcane bash syntax. This wasn't perfect, but I found that his accomplished
+90% of what I wanted with a command line tool. 
+
+But eventually; the 10% forced me to resort to ugly hacks. I then rewrote the tool in Rust. This took longer than the bash script, 
+but it wasn't extreme. Now that
+this version works, I find that I like using it a lot more. It's much easier to configure and adapt as I need to make
+changes. The bash tool could've worked but as my needs for this tool expanded Rust was ultimately the better option.
+
+## Conclusion
+I think there's a fine and difficult to assess line between using Rust or Bash for command line tools. It probably
+makes sense to start with bash but if I find that bash is too limiting I should switch. But now I FINALLY have 
+a personal use case for Rust!
