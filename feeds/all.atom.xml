@@ -1,5 +1,377 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mitigating Failure</title><link href="https://mitigatingfailure.com/" rel="alternate"></link><link href="https://mitigatingfailure.com/feeds/all.atom.xml" rel="self"></link><id>https://mitigatingfailure.com/</id><updated>2020-08-08T00:00:00-04:00</updated><subtitle>Mitigating Failure</subtitle><entry><title>Cyclegrams Logo</title><link href="https://mitigatingfailure.com/Cyclegrams-Logo.html" rel="alternate"></link><published>2020-08-08T00:00:00-04:00</published><updated>2020-08-08T00:00:00-04:00</updated><author><name>Niraj Amalkanti</name></author><id>tag:mitigatingfailure.com,2020-08-08:/Cyclegrams-Logo.html</id><summary type="html">&lt;h3&gt;Entries&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mitigating Failure</title><link href="https://mitigatingfailure.com/" rel="alternate"></link><link href="https://mitigatingfailure.com/feeds/all.atom.xml" rel="self"></link><id>https://mitigatingfailure.com/</id><updated>2025-03-11T00:00:00-04:00</updated><subtitle>Mitigating Failure</subtitle><entry><title>Leaning with AI</title><link href="https://mitigatingfailure.com/My%20experiences%20learning%20with%20AI.html" rel="alternate"></link><published>2024-11-10T00:00:00-05:00</published><updated>2025-03-11T00:00:00-04:00</updated><author><name>Niraj Amalkanti</name></author><id>tag:mitigatingfailure.com,2024-11-10:/My experiences learning with AI.html</id><summary type="html">&lt;p&gt;TL;DR: AI is at its best when it helps you think better, not when it tries to think for you.&lt;/p&gt;
+&lt;h3&gt;Entries&lt;/h3&gt;
+&lt;p&gt;&lt;a href="#overview"&gt; Overview &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#Story-So-Far"&gt; Story So Far - Learning with ChatGPT &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#3/5/2025"&gt; 3/5/2025 - Claude vs ChatGPT vs Gemini&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#3-6-2025"&gt;3/6/2025 - Ikon vs Epic&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#3-7-2025"&gt;3/7/2025 - Memories&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#3-28-2025"&gt;3/28/2025 …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;TL;DR: AI is at its best when it helps you think better, not when it tries to think for you.&lt;/p&gt;
+&lt;h3&gt;Entries&lt;/h3&gt;
+&lt;p&gt;&lt;a href="#overview"&gt; Overview &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#Story-So-Far"&gt; Story So Far - Learning with ChatGPT &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#3/5/2025"&gt; 3/5/2025 - Claude vs ChatGPT vs Gemini&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#3-6-2025"&gt;3/6/2025 - Ikon vs Epic&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#3-7-2025"&gt;3/7/2025 - Memories&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#3-28-2025"&gt;3/28/2025 - Specialized Interfaces Matter&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#4-10-2025"&gt;4/10/2025 - Canvas vs Artifacts: The Plot Thickens&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#4-11-2025"&gt;4/11/2025 - Slip Coding: Reclaiming Vibe Coding For Productivity&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#conclusion"&gt;Conclusion&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a name="overview"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Overview&lt;/h1&gt;
+&lt;p&gt;I've had a complicated relationship with AI tools. This post documents my journey from skepticism to finding genuine value in AI assistants—not as code generators, but as learning companions and thought organizers. I'll share my evolving understanding of how to use these tools effectively and compare different platforms to help others find approaches that might be useful.&lt;/p&gt;
+&lt;h2&gt;Objectives&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Document how AI assistants can amplify learning when used intelligently&lt;/li&gt;
+&lt;li&gt;Demostrate the organizational capabilities of LLMs&lt;/li&gt;
+&lt;li&gt;Share strategies for effective AI collaboration that go beyond basic prompting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a name="Story-So-Far"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Story So Far - Learning with ChatGPT&lt;/h1&gt;
+&lt;p&gt;My initial experiences with generative AI were deeply disappointing. I work in Edge AI and often have to build specialized models that work on compute constrained enviroments. In this space, I found the code generation capabilities fell far short of the hype. Prototype code in Python was okay, but anything in C++ was barely usable(if it even compiled). I needed heavy prompt engineering to get some of this to work and it was comparable in effort to writing it out in the first place.&lt;/p&gt;
+&lt;p&gt;The turning point came in November 2024. I had a realization: what if I stopped expecting AI to solve my problems and instead used it as a learning tool?&lt;/p&gt;
+&lt;p&gt;I began using ChatGPT not to generate solutions, but to:
+- Take notes during my learning process
+- Organize my thoughts and exploration
+- "Pair program" as I wrote my own code
+- Distill software engineering expertise into prompts that helped me write cleaner code&lt;/p&gt;
+&lt;p&gt;But this wasn't just limited to work and coding. I soon found that ChatGPT was great for learning about... well almost anything. Being able to take notes and looking up items in a single chat keeps things organized. I could have different lines of thought or exploration for whatever I wanted. Normally, taking notes seperately and keeping them organized is a lot of effort/upkeep. But with ChatGPT, it became trivial. And if I wanted to revisit the thread after a break(because I'm busy with other things), ChatGPT could summarize this and let me jump back in.&lt;/p&gt;
+&lt;p&gt;Now, if I wanted to study something, plan a vacation, or learn anything, my first response is to create a ChatGPT chat. I can immediately learn and get some context. And if it's relevant, revisit/reorganize the chat later. If not, just delete it and move on.&lt;/p&gt;
+&lt;p&gt;Of course, hallucinations are always a threat. But in today's era of fake news, I have to be vigilant all the time anyways as bad info is everywhere and can be hard to track down. And even if it hallucinates, ChatGPT can often correct itself on direct cross-examination. And this is a lot easier than constantly searching and cross-checking everything myself.&lt;/p&gt;
+&lt;p&gt;The ability to maintain threads and have ChatGPT function as an intelligent "notetaker" proved incredibly valuable—even for topics it likely knew nothing about. I could feed it my own knowledge and have it help organize information and potentially illuminate patterns I might have missed. This was a key insight, even if ChatGPT didn't know about a topic; it could still help me learn, by diligently taking notes and finding patterns. In this case, it helped me analyze/organize my own information instead of providing it to me.&lt;/p&gt;
+&lt;p&gt;This shift in approach changed everything. By leveraging my own intelligence and creativity, AI became an incredibly powerful force multiplier for learning and productivity.&lt;/p&gt;
+&lt;p&gt;I eventually purchased a ChatGPT Pro subscription specifically for the "Projects" feature, which let me better organize conversations by topic. This further improved its organizational ability. I could create a ChatGPT project for my personal projects and keep several different threads within the project with a shared context. Or if I had a ton of questions about science, I could create a "science" project and let ChatGPT keep all my science question threads in a single project.&lt;/p&gt;
+&lt;p&gt;What I realized was that most people use AI ineffectively— throwing problems at it and expecting perfect solutions. No wonder it never resonated with me before. The real power came from collaboration, using AI to enhance my own thinking rather than replace it.&lt;/p&gt;
+&lt;p&gt;Of course, now that I realized the power of this new tool, I had to figure out which platform was best.&lt;/p&gt;
+&lt;p&gt;&lt;a name="3-5-2025"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;3/5/2025 - Claude vs ChatGPT vs Gemini&lt;/h1&gt;
+&lt;p&gt;I evaluated the three major AI platforms specifically for my personal use cases. While my journey started with ChatGPT, I wanted to make sure I wasn't missing out on potential benefits from competitors.&lt;/p&gt;
+&lt;h2&gt;Platform Evaluation&lt;/h2&gt;
+&lt;p&gt;My first priority was chat organization — the ability to keep my learning projects separate and structured. This quickly became a decisive factor:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ChatGPT:&lt;/strong&gt;
+- Strong project organization with the ability to create and name different projects
+- Clean interface for managing conversation history
+- Easy to move convos in and out of projects&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Claude:&lt;/strong&gt;
+- Does have project-level organization 
+- Does not remove project convos from main convo list
+- Not easy to move convos into projects after they've been created&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Gemini:&lt;/strong&gt;
+- Lacks any project support&lt;/p&gt;
+&lt;p&gt;This initial assessment immediately led me to eliminate Gemini from consideration. Without proper project organization, it simply wouldn't meet my needs for structured learning and note-taking.&lt;/p&gt;
+&lt;p&gt;Between ChatGPT and Claude, the differences weren't immediately obvious. Both offered solid organizational features, though ChatGPT felt a little better. However, I've heard that Claude's models are better than OpenAIs(though I realize this is very subjective) so I wanted to compare them directly.&lt;/p&gt;
+&lt;p&gt;One observation I found surprising: none of the AI assistants themselves were aware of their own features. When asked about their project organization capabilities, they all provided generic responses rather than specific information about their implementation. Claude claimed it didn't have projects, though online resources implied otherwise. I had to purchase a Claude Pro sub to confirm that it did. &lt;/p&gt;
+&lt;p&gt;&lt;a name="3-6-2025"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;3/6/2025 - Ikon vs Epic&lt;/h1&gt;
+&lt;p&gt;I utilized both ChatGPT-4 and Claude 3.5 to evaluate ski pass options, specifically comparing the Ikon and Epic passes for the upcoming season. This served as a practical test case to assess how these tools handle detailed, research-oriented queries.&lt;/p&gt;
+&lt;p&gt;However, the results were inconclusive, as both models provided very similar answers. While ChatGPT seemed slightly more tailored to my needs, this is likely because I have used it more extensively. Further evaluation will be necessary.&lt;/p&gt;
+&lt;p&gt;&lt;a name="3-7-2025"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;3/7/2025 - Memory is the Key&lt;/h1&gt;
+&lt;p&gt;Now I've finally found the killer feature I'm looking for. I assumed all platforms have it but it's just ChatGPT. &lt;/p&gt;
+&lt;p&gt;ChatGPT has an explicit "memory" feature that allows it to recall information across separate chat sessions. This means it can reference projects, preferences, and past work without needing to review, creating a more continuous learning experience. Over time, its memory seems to improve as more interactions occur and the platform customizes itself to me.&lt;/p&gt;
+&lt;p&gt;Claude only remembers context within a single conversation, so each new chat means starting over. You can encode instructions for projects, and Claude can retrieve them, but it’s nowhere near ChatGPT’s capabilities. Anthropic values this for privacy, which I get, but I prefer ChatGPT remembering what I’ve told it—it makes my experience better. &lt;/p&gt;
+&lt;p&gt;Interestingly, Gemini does not do this. It mentions that Google has faced accusations of data privacy violations, and attempting to use a feature like this might be perceived as overly aggressive. I found this to be a very self-aware perspective. In theory, Google should have the most information about me, but if Gemini cannot leverage that, it becomes irrelevant.&lt;/p&gt;
+&lt;p&gt;Based on this observation, I plan on continuing using ChatGPT pro. I will keep the other platforms in mind to see what other advantages they confer.&lt;/p&gt;
+&lt;p&gt;&lt;a name="3-28-2025"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;3/28/2025 - Specialized Interfaces Matter&lt;/h1&gt;
+&lt;p&gt;I've been testing Claude for blog writing, and its dual-pane editing interface (artifacts) is a game-changer for working with markdown. Being able to see both the raw markdown and rendered output simultaneously makes the writing process much more fluid. I can then use natural language to more effectively brainstorm and generate something usable. &lt;/p&gt;
+&lt;figure class="center"&gt;
+    &lt;img src="https://mitigatingfailure.com/claude_dual_pane.png" width="60%" height="auto" class="border"&gt;
+    &lt;figcaption&gt;Claude's Artifact Interface&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This is especially powerful on mobile, where I can shrink the artifact and swap between the artifact the chat easily. This makes it easy to develop from my phone on the go.&lt;/p&gt;
+&lt;p&gt;What's particularly interesting is that this valuable feature remains available on Claude's free tier (at least for now). &lt;/p&gt;
+&lt;p&gt;When editing code neovim, I use Github Copilot with CodeCompanion to get a similar in-editor experience(I use this for coding but could see it working for blog writing too), but being able to brainstorm and make edits from my phone is huge for working on the go. It means I don't have to be at my desk to get work done.&lt;/p&gt;
+&lt;p&gt;&lt;a name="4-10-2025"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;4/10/2025 - Canvas vs Artifacts: The Plot Thickens&lt;/h1&gt;
+&lt;p&gt;Today, I discovered something that complicates my previous assessment: ChatGPT has a Canvas feature that's almost as good as Claude's dual-pane editing for coding or markdown work. It provides similar functionality, allowing you to view both raw and rendered content side by side. However, ChatGPT's Canvas performs slightly worse on mobile compared to Claude's dual-pane interface because it can't be collapsed. While this limitation isn't ideal, it doesn't justify upgrading to Claude Pro. &lt;/p&gt;
+&lt;p&gt;On a related note, I also found out that Claude's artifact editing actually requires a Pro subscription—contrary to what I believed on 3/28.&lt;/p&gt;
+&lt;p&gt;This was a little awkward because I originally asked Claude and ChatGPT about this feature and neither of them recognized this it. I didn't realize it myself until I told me friend about this idea and he reminded me that ChatGPT DOES have something similar(Canvas).&lt;/p&gt;
+&lt;p&gt;An interesting pattern emerges: AI assistants like ChatGPT and Claude seem unaware of their own interface features and platform capabilities. This highlights the separation between the AI models and the applications built around them, reinforcing my earlier observation that they don't "know themselves" very well. But my decision to remain stick with ChatGPT pro becomes easy at this point.&lt;/p&gt;
+&lt;p&gt;&lt;a name="4-11-2025"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;4/11/2025 - Slip Coding: Reclaiming Vibe Coding For Productivity&lt;/h1&gt;
+&lt;p&gt;Today I want to introduce a concept I've been developing through my AI-assisted learning journey: Slip Coding.&lt;/p&gt;
+&lt;h2&gt;From Vibe Coding to Slip Coding&lt;/h2&gt;
+&lt;p&gt;Vibe coding is the process of using emotions, feel, and basic requests; feeding them into an LLM, and using that process to build something. It's more about the feeling and environment than rigorous output. While there's nothing wrong with coding for the vibe, I've found that this framing often leads to aimless tinkering rather than meaningful progress.&lt;/p&gt;
+&lt;p&gt;Slip Coding is my attempt to reclaim and refine this concept. It's about using small, otherwise "slippery" pockets of time—a train commute, waiting for a friend at a café, or those 15 minutes before a meeting—to make incremental but meaningful progress on personal projects with the help of AI.&lt;/p&gt;
+&lt;h2&gt;How Slip Coding Works&lt;/h2&gt;
+&lt;p&gt;Instead of opening social media during these micro-breaks, I open ChatGPT and:
+- Brainstorm solutions to coding problems I'm stuck on
+- Learn about new tools or libraries in conversational format(Canvas)
+- Outline ideas in natural language that will later become code(Canvas)
+- Review and refine project structures 
+- Think through potential approaches to technical challenges&lt;/p&gt;
+&lt;p&gt;Canvas is huge for this, instead of just reading/discussing docs, I can actually start building an actual code file for a project. This isn't going to be perfect(it may not even compile), but it gives me a starting point and lets me think about what I want to do. Then, when I sit down and work, I can be efficient and productive with time spent on personal projects. I can skip the "settling in" part of personal projects and jump right in. And when I finish, I can update my chat with me edits and continue iterating from my phone.&lt;/p&gt;
+&lt;p&gt;Voice input provides another layer. If I'm doing chores or an activity where I need my hands, I can still do work, by speaking to the LLM. This is even less rigorous that slip coding from my phone(no visual feedback), but it's just another way to take time back.&lt;/p&gt;
+&lt;p&gt;The key insight is that I'm "preloading" my thinking. By the time I actually sit down for a dedicated coding session, I'm not starting cold. My mind has already worked through preliminary obstacles, explored potential approaches, and organized my thoughts.&lt;/p&gt;
+&lt;h2&gt;AI's Role in Slip Coding&lt;/h2&gt;
+&lt;p&gt;AI assistants are particularly well-suited for Slip Coding because:
+1. They're accessible anywhere via mobile
+2. The conversational format works well for brief sessions
+3. They maintain context long enough to make progress
+4. They can switch between high-level abstract thinking and technical specifics
+5. They don't require me to actually run code or have a development environment set up&lt;/p&gt;
+&lt;p&gt;This approach turns what would otherwise be lost time into creative momentum. It's not about coding without a computer—it's about preparing my mind so that when I do have my development environment, I can hit the ground running.&lt;/p&gt;
+&lt;h2&gt;Beyond Aesthetics&lt;/h2&gt;
+&lt;p&gt;While vibe coding often focuses on the aesthetics and feel of the programming experience, Slip Coding focuses on building sustainable habits that convert micro-moments into meaningful progress. It's less about the perfect playlist or cozy environment and more about finding ways to keep your projects moving forward in the in-between spaces of life.&lt;/p&gt;
+&lt;p&gt;The habit-forming aspect is crucial—once you get used to opening an AI chat instead of social media during these slip spaces, you'll find yourself making steady progress on projects that might otherwise languish.&lt;/p&gt;
+&lt;p&gt;A key detail is this only works for personal projects that you really want to work on, but don't have time for. I can't imagine myself being motivated to do work related to my job this way. And the lack of rigor means it's not great for things that have to get done and be right(work tasks). But for personal projects, which are much more flexible, it works beautifully.&lt;/p&gt;
+&lt;p&gt;&lt;a name="conclusion"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;After several months of experimenting with AI assistants as learning tools, I've arrived at some clear insights:&lt;/p&gt;
+&lt;h2&gt;What Actually Works&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Intelligence Amplification, Not Replacement&lt;/strong&gt;: The most valuable approach is using AI to enhance my own thinking rather than expecting it to replace it. This fundamental shift;from treating AI as a solution generator, to using it as a thought partner—transformed its utility for me.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Interface Matters As Much As Intelligence&lt;/strong&gt;: The right interface for the task often determines an AI's usefulness more than the raw capabilities of the model itself. Claude's dual-pane editing for markdown and ChatGPT's Canvas feature demonstrate how purpose-built interfaces dramatically improve specific workflows.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Organization Is Critical For Learning&lt;/strong&gt;: Project-level organization and the ability to maintain context across sessions proved essential for deep learning. This quickly eliminated Gemini from consideration and made ChatGPT's memory feature a key advantage.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;The AI Doesn't Know Itself&lt;/strong&gt;: A consistent pattern emerged—AI assistants have little awareness of their own platform features and capabilities. This separation between model and interface reinforces that we're not working with truly self-aware systems but with tools that require our direction.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;My journey from AI skeptic to effective user didn't come from better prompting or finding the "right" AI—it came from fundamentally rethinking how I approach these tools. By leveraging my own intelligence first and using AI as an amplifier for learning and organizing thoughts, I've found genuine value that wasn't apparent when I was attempting to use these tools as code generators or problem solvers.&lt;/p&gt;
+&lt;p&gt;The key insight remains: AI is at its best when it helps you think better, not when it tries to think for you.&lt;/p&gt;</content><category term="Lab"></category><category term="llms"></category></entry><entry><title>Investing</title><link href="https://mitigatingfailure.com/My%20own%20learning%20experiences%20with%20investing.html" rel="alternate"></link><published>2023-12-24T00:00:00-05:00</published><updated>2024-02-04T00:00:00-05:00</updated><author><name>Niraj Amalkanti</name></author><id>tag:mitigatingfailure.com,2023-12-24:/My own learning experiences with investing.html</id><summary type="html">&lt;h3&gt;Entries&lt;/h3&gt;
+&lt;p&gt;&lt;a href="#overview"&gt; Overview &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#12/24/2023"&gt; 12/24/2023 - Guide to Mutual Funds &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#12/27/2023"&gt; 12/27/2023 - GtMF: Picking Mutual Funds &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#12/29/2023"&gt; 12/29/2023 - GtMF: Portfolio Ideas, Building, and Monitoring &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#12/31/2023"&gt; 12/31/2023 - GtMF: Review &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/1/2024"&gt; 1/1/2024 - Mutual Funds for Dummies &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/3/2024"&gt; 1/3/2024 - MFfD: Funds and Alternatives &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/5/2024"&gt; 1/5/2024 - MFfD: Selction, Crafting …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Entries&lt;/h3&gt;
+&lt;p&gt;&lt;a href="#overview"&gt; Overview &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#12/24/2023"&gt; 12/24/2023 - Guide to Mutual Funds &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#12/27/2023"&gt; 12/27/2023 - GtMF: Picking Mutual Funds &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#12/29/2023"&gt; 12/29/2023 - GtMF: Portfolio Ideas, Building, and Monitoring &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#12/31/2023"&gt; 12/31/2023 - GtMF: Review &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/1/2024"&gt; 1/1/2024 - Mutual Funds for Dummies &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/3/2024"&gt; 1/3/2024 - MFfD: Funds and Alternatives &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/5/2024"&gt; 1/5/2024 - MFfD: Selction, Crafting, and Monitoring &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/7/2024"&gt; 1/7/2024 - MFfD: Review &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/8/2024"&gt; 1/8/2024 - Exchange-Traded-Funds for Dummies &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/9/2024"&gt; 1/9/2024 - ETFfD: What are ETFs? &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/10/2024"&gt; 1/10/2024 - ETFfD: Other types of ETFs &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/12/2024"&gt; 1/12/2024 - ETFfD: Review &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/13/2024"&gt; 1/13/2024 - Bonds for Dummies &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/15/2024"&gt; 1/15/2024 - BfD: Bonds and their  usage &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/17/2024"&gt; 1/17/2024 - BfD: Selecting Bonds and Fixed Income &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/18/2024"&gt; 1/18/2024 - Learning about the Intelligent Investor &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/20/2024"&gt; 1/20/2024 - Another Index Investor &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/21/2024"&gt; 1/21/2024 - BfD: Review &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/22/2024"&gt; 1/22/2024 - A Simple Path to Wealth&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/24/2024"&gt; 1/24/2024 - ASPtW: How to become Wealthy&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/25/2024"&gt; 1/25/2024 - ASPtW: Tricks and Withdrawing&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/26/2024"&gt; 1/26/2024 - ASPtW: Review &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#1/31/2024"&gt; 1/31/2024 - Intelligent Investor: Review&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#2/2/2024"&gt; 2/2/2024 - Advanced Portfolio Management &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#2/4/2024"&gt; 2/4/2024 - APM: Factor Models &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#2/12/2024"&gt; 2/8/2024 - APM: Incomplete Review &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#2/12/2024"&gt; 2/18/2024 - Common Sense on Mutual Funds&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a name="overview"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Overview&lt;/h1&gt;
+&lt;p&gt;Since college, I've been mainly using a robo-advisor(Betterment) that I only started
+using because of a deal they offered. &lt;/p&gt;
+&lt;p&gt;In the ensuing years; I've definitely made money from their investment selections
+and I've never felt their fees have been too high. However, a number of personal events
+and changing circumstances have motivated me to put this under closer evaluation
+and make better use of my money.&lt;/p&gt;
+&lt;p&gt;I know I have zero interest in options and day trading; as is my pattern I would rather spend a lot 
+of time up front learning and then sit back and let investments grow.&lt;/p&gt;
+&lt;p&gt;Through google searches, reviews, and forums I found a list of books that seem like a good places to 
+start; they are as follows&lt;/p&gt;
+&lt;p&gt;Guide to Mutual Funds - Postive reviews, but some reviews accuse of simplicity; seems like a good start&lt;/p&gt;
+&lt;p&gt;"Dummies" Series for Mutual Funds, ETFs, and Bonds - I anticipate these will be what I invest in&lt;/p&gt;
+&lt;p&gt;Common Sense of Mutual Funds - Good reviews but long and boring; a later read after I have an initial understanding&lt;/p&gt;
+&lt;p&gt;A Simple Path to Wealth - I like overcomplicating things; this feels like a good step back for after a ton of dense, technical reading&lt;/p&gt;
+&lt;p&gt;Advanced Portfolio Management - Quant book if I want to try this&lt;/p&gt;
+&lt;p&gt;One key detail I want to learn is not just how to pick funds and build a portfolio, but how
+to determine risk and assess based on financial goals. I know different goals will have different approaches
+and I doubt it's as simple as "more/less stocks"&lt;/p&gt;
+&lt;h2&gt;Objectives&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Determine how to set my own financial goals&lt;/li&gt;
+&lt;li&gt;Determine how to make my a portfolio and organize my own investments for different goals&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a name="12/24/2023"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;12/24/2023 - Guide to Mutual Funds&lt;/h1&gt;
+&lt;p&gt;Book is by a group, Moringstar, they rate mutual funds and provides investment advice&lt;/p&gt;
+&lt;p&gt;Book is from before 2008; so it will not discuss that crash, which is interesting&lt;/p&gt;
+&lt;p&gt;Reviews suggest book is too simple, but for me it might be a good starting point&lt;/p&gt;
+&lt;p&gt;&lt;a name="12/27/2023"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;12/27/2023 - GtMF: Picking Mutual Funds&lt;/h1&gt;
+&lt;p&gt;Book is definitely not too simple for me right now&lt;/p&gt;
+&lt;p&gt;Moringstar Style Box classifies mutual funds based on size and growth vs value&lt;/p&gt;
+&lt;p&gt;Discussion of growth vs value&lt;/p&gt;
+&lt;p&gt;Discuss style investing&lt;/p&gt;
+&lt;p&gt;Risk&lt;/p&gt;
+&lt;p&gt;Fund manager analysis&lt;/p&gt;
+&lt;p&gt;KEY- You know your future expense ratio and costs; you don't know your future return(windshield vs rear view mirror)&lt;/p&gt;
+&lt;p&gt;&lt;a name="12/29/2023"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;12/29/2023 - GtMF: Portfolio Ideas, Building, and Monitoring&lt;/h1&gt;
+&lt;p&gt;Brings up the idea of a "core holding" the basis of a porfolio. Usually growth or value fund for stocks&lt;/p&gt;
+&lt;p&gt;Fund prospectuses are good resources for funds; but can very complicated&lt;/p&gt;
+&lt;p&gt;Bonds are either treasuries or municipal. Muncipal bonds can be tax free; VERY important if you're in a high tax bracket&lt;/p&gt;
+&lt;p&gt;Goes into extreme detail of specialized funds to use as auxillaries for both stocks and bonds&lt;/p&gt;
+&lt;p&gt;Recognize that buy and hold is better; DON'T time the market&lt;/p&gt;
+&lt;p&gt;Goes into detail for how to make portfolios for different goals. THIS IS WHAT I WANTED&lt;/p&gt;
+&lt;p&gt;Indexing and checkups&lt;/p&gt;
+&lt;p&gt;Best kind of advisor is time based one&lt;/p&gt;
+&lt;p&gt;&lt;a name="12/31/2023"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;12/31/2023 - GtMF: Review&lt;/h1&gt;
+&lt;p&gt;Very good introduction&lt;/p&gt;
+&lt;p&gt;Not sure how good morningstar is, but good place to start&lt;/p&gt;
+&lt;p&gt;Good learnings with growth vs value, importance of expense ratios. Value of indexing&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/1/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/1/2024 - Mutual Funds for Dummies&lt;/h1&gt;
+&lt;p&gt;Good start; reviewing mutual funds; what they are; drawbacks, etc&lt;/p&gt;
+&lt;p&gt;AGAIN, costs of mutual funds are huge; biggest drawback is not paying attention to your costs(where have i heard this before?)&lt;/p&gt;
+&lt;p&gt;Notes importances of paying off debts, having insurance, emergency funds, etc before investingj&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/3/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/3/2024 - MFfD: Funds and Alternatives&lt;/h1&gt;
+&lt;p&gt;Two different types of securities "ownwership" and "lending".&lt;/p&gt;
+&lt;p&gt;Does not reccomend individiual stocks; difficulty and diversifying is hard. Makes sense; I want to have a life&lt;/p&gt;
+&lt;p&gt;ETFs; a lot of good points for ETFs. Author claims they're too complicated and most people shouldn't bother. I don't know if I 
+like this. There are a lot of pros; but a big one is buy/ask spread&lt;/p&gt;
+&lt;p&gt;Hedge Funds have high costs and the author claims they are too complicated and too hard to enter anyways. Agree they're too hard
+but I don't like ignoring something just because it's too complicated(index funds have demonstrated value of simplicity but it shouldn't be automatic)&lt;/p&gt;
+&lt;p&gt;Rules about advisors&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/5/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/5/2024 - MFfD: Selection, Crafting, and Monitoring&lt;/h1&gt;
+&lt;p&gt;Good stuff on indetinfying funds; morningstart referenced again; I guess it is a good resource&lt;/p&gt;
+&lt;p&gt;Prospectuses(discussed previously, brought up again)&lt;/p&gt;
+&lt;p&gt;Where to buy funds&lt;/p&gt;
+&lt;p&gt;Understanding asset allocation&lt;/p&gt;
+&lt;p&gt;Different types of funds MMF, Stocks, Bonds, Specialties&lt;/p&gt;
+&lt;p&gt;Taxes&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/7/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/7/2024 - MFfD: review&lt;/h1&gt;
+&lt;p&gt;Good informaiton; understand mutual funds; how to proceed with them; asset allocation works well with
+what I learned from Morningstar&lt;/p&gt;
+&lt;p&gt;Again, buying and holding index funds with some diversification is key&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/8/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/8/2024 - Exchange-Traded-Funds for Dummies&lt;/h1&gt;
+&lt;p&gt;Excited to finall learn more about Exchange Traded Funds, which have come up a lot
+but are still a little unclear to me &lt;/p&gt;
+&lt;p&gt;Very interested to understand pros and cons vs mutual funds&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/9/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/9/2024 - ETFfD: What are ETFS?&lt;/h1&gt;
+&lt;p&gt;Basically a stock whose value is tied to a mutual fund(usually index fund)&lt;/p&gt;
+&lt;p&gt;Can be cheaper than index mutual funds&lt;/p&gt;
+&lt;p&gt;Easier to keep track of capitol gains/losses&lt;/p&gt;
+&lt;p&gt;Buy/Ask spread is a potential downside&lt;/p&gt;
+&lt;p&gt;Recurring investments are not common; reinvestments must also be manual&lt;/p&gt;
+&lt;p&gt;Same classes; growth, value, etc&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/10/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/10/2024 - ETFfD: Other types of ETFs&lt;/h1&gt;
+&lt;p&gt;ETFs also exist for bonds, commodities, &lt;/p&gt;
+&lt;p&gt;Leveraged ETFS; analysis&lt;/p&gt;
+&lt;p&gt;Update with John; should investigate more&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/12/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/12/2024 - ETFfD: Review&lt;/h1&gt;
+&lt;p&gt;Good lessons; combination of ETFs and mutual funds is ideal&lt;/p&gt;
+&lt;p&gt;Recurring investments and autopilot investing is probably better with mutual funds(Fidelity exception)&lt;/p&gt;
+&lt;p&gt;ETFs still have advantages and important to recognize and leverage&lt;/p&gt;
+&lt;p&gt;Again, discussions about advisors&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/13/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/13/2024 - Bonds for Dummies&lt;/h1&gt;
+&lt;p&gt;Bonds are included in Mutual Funds and ETFs; would like to learn more even
+if I don't intend to buy individual bonds&lt;/p&gt;
+&lt;p&gt;Same author as ETFs for Dummies; so I think it's good option&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/15/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/15/2024 - BfD: Bonds and their Usage&lt;/h1&gt;
+&lt;p&gt;Bonds are BORING. Finally have met my match in something that can bore even me&lt;/p&gt;
+&lt;p&gt;Reviewing what bonds are; loans with interest rates&lt;/p&gt;
+&lt;p&gt;How bonds go up/down in value&lt;/p&gt;
+&lt;p&gt;Callability&lt;/p&gt;
+&lt;p&gt;Treasuresis, corporate bonds, agency bonds, municipal bonds&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/17/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/17/2024 - BfD: Selecting Bonds and Fixed Income&lt;/h1&gt;
+&lt;p&gt;Understanding how to select bond funds and how much to put in bonds&lt;/p&gt;
+&lt;p&gt;Recognizing how to combine bonds and cash for fixed income portfolios in retirement&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/18/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/18/2024 - Learning about the Intelligent Investor and Other Discussions&lt;/h1&gt;
+&lt;p&gt;Learned about Intelligent Investor book from two different friends. &lt;/p&gt;
+&lt;p&gt;Discussion with Brad about market timing &lt;/p&gt;
+&lt;p&gt;Predicting the market&lt;/p&gt;
+&lt;p&gt;Started reading but book seems very simple and even more boring than bonds.
+Will start listening to as audiobook&lt;/p&gt;
+&lt;p&gt;Talking to Gus; he mainly invests in VOO instead of VTI
+Also a buy and hold investor&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/21/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/21/2024 - BfD: Review&lt;/h1&gt;
+&lt;p&gt;Bonds are boring, but good understanding of internals and makes it 
+a bit easier to select bond funds. Probably overkill for most people
+unless they want to invest in individual bonds(not advisable)&lt;/p&gt;
+&lt;p&gt;Bonds are only for stability; have very little use otherwise&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/22/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/22/2024 - A Simple Path to Wealth&lt;/h1&gt;
+&lt;p&gt;Wanted to read this later after I learned a bit so I could approach the simple perspective with knowledge&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/24/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/22/2024 - ASPtW: How to Become Wealthy&lt;/h1&gt;
+&lt;p&gt;Good, simple advice. Don't get into debt recognize how your money can grow
+50% savings rate is hard; but monk parable is good
+Importance of gap money
+Market trends(revew)
+Another overview of bonds
+Asset allocation&lt;/p&gt;
+&lt;p&gt;Retirement. VERY good advice&lt;/p&gt;
+&lt;p&gt;More opinions on investment advisors&lt;/p&gt;
+&lt;p&gt;Very engaging book&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/25/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/25/2024 - ASPtW: Tricks and Withdrawing&lt;/h1&gt;
+&lt;p&gt;Index funds; market idiots&lt;/p&gt;
+&lt;p&gt;Really interesting con discussion&lt;/p&gt;
+&lt;p&gt;Retirement; withdrawal tactics; social security(levers idea)&lt;/p&gt;
+&lt;p&gt;Foundation&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/25/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/25/2024 - ASPtW: Review&lt;/h1&gt;
+&lt;p&gt;Excellent book; should've read first. My main rec to anybody, especially people 
+who don't want to care too much&lt;/p&gt;
+&lt;p&gt;&lt;a name="1/31/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;1/31/2024 - Intelligent Investor: Review&lt;/h1&gt;
+&lt;p&gt;Mostly boring and simple, but good understanding
+Felt like this was the base of everything I've learned&lt;/p&gt;
+&lt;p&gt;Key detail about markets(I don't know and I don't care, just like ASPtW)&lt;/p&gt;
+&lt;p&gt;&lt;a name="2/2/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;2/2/2024 - Advanced Portfolio Management&lt;/h1&gt;
+&lt;p&gt;Final book, interested to learn how quants and hedge funds actually work&lt;/p&gt;
+&lt;p&gt;Unlikely I'll actually use this but at least I can learn. May not finish book&lt;/p&gt;
+&lt;p&gt;&lt;a name="2/4/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;2/4/2024 - APM: Factor Models&lt;/h1&gt;
+&lt;p&gt;Hedge funds make sense
+Alpha and Beta
+Previous authors don't get it, BUT risk still exists
+Even though they don't get it; their advice is still decent
+Multiple factors&lt;/p&gt;
+&lt;p&gt;&lt;a name="2/8/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;2/8/2024 - APM: Incomplete Review&lt;/h1&gt;
+&lt;p&gt;Can see where this is going.
+Multiple factors, identifying market details
+Not relevant to me and I should move on
+May come back later but leaving for now&lt;/p&gt;
+&lt;p&gt;&lt;a name="2/12/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;2/12/2024 - Discussions with Another Friend&lt;/h1&gt;
+&lt;p&gt;Discussed with friend; generally supportive of advie but thinks I'm conservative
+Mentioned leveraged etfs and talked about volitaility decay
+Point about market following leverage dfunds(invested in pandemic)
+Will investigate further later&lt;/p&gt;
+&lt;p&gt;&lt;a name="2/18/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;2/18/2024 - Common Sense on Mutual Funds&lt;/h1&gt;
+&lt;p&gt;Book by John Bogle; started listening to audiobook like Intelligent Investor
+Likely similar to Intelligent Investor; good advice and details but probably not worth read
+Listen is enough; will provide review once finished to listening&lt;/p&gt;
+&lt;p&gt;&lt;a name="11/24/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;11/24/2024 - Common Sense on Mutual Funds - Bonds&lt;/h1&gt;
+&lt;p&gt;It's been some time been; listening to book raises interesting point on
+bond funds. Indicates bond funds are always worse than bonds in performance
+Understand risks and issues with bonds but I'd like to do the mat on this myself.
+I'll add it to my analysis &lt;/p&gt;</content><category term="Lab"></category><category term="investing"></category></entry><entry><title>Cyclegrams Logo</title><link href="https://mitigatingfailure.com/Cyclegrams-Logo.html" rel="alternate"></link><published>2020-08-08T00:00:00-04:00</published><updated>2020-08-08T00:00:00-04:00</updated><author><name>Niraj Amalkanti</name></author><id>tag:mitigatingfailure.com,2020-08-08:/Cyclegrams-Logo.html</id><summary type="html">&lt;h3&gt;Entries&lt;/h3&gt;
 &lt;p&gt;&lt;a href="#overview"&gt; Overview &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#app"&gt; Cyclegrams &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#git"&gt; Git &lt;/a&gt;&lt;/p&gt;
@@ -246,17 +618,20 @@ log" this ends up creating is probably more than worth the marginal effort of us
 if branching and merging turns out to be more trouble than it's worth, the git history and logs
 are sufficient.&lt;/p&gt;
 &lt;p&gt;So my evaluation is that I will continue to use git when working on inkscape projects. If I end
-up changing my mind about this later, I will amend this entry.&lt;/p&gt;</content><category term="Studio"></category><category term="logo"></category></entry><entry><title>Design Patterns in Rust</title><link href="https://mitigatingfailure.com/Design%20Patterns%20in%20Rust.html" rel="alternate"></link><published>2020-06-13T00:00:00-04:00</published><updated>2020-06-26T00:00:00-04:00</updated><author><name>Niraj Amalkanti</name></author><id>tag:mitigatingfailure.com,2020-06-13:/Design Patterns in Rust.html</id><summary type="html">&lt;h3&gt;Entries&lt;/h3&gt;
+up changing my mind about this later, I will amend this entry.&lt;/p&gt;</content><category term="Studio"></category><category term="logo"></category></entry><entry><title>Design Patterns in Rust</title><link href="https://mitigatingfailure.com/Design%20Patterns%20in%20Rust.html" rel="alternate"></link><published>2020-06-13T00:00:00-04:00</published><updated>2020-06-26T00:00:00-04:00</updated><author><name>Niraj Amalkanti</name></author><id>tag:mitigatingfailure.com,2020-06-13:/Design Patterns in Rust.html</id><summary type="html">&lt;h3&gt;TLDR&lt;/h3&gt;
+&lt;p&gt;I wanted to try experimenting with traditional java design patterns in Rust.
+I knew the features of Rust would mean I couldn't copy and paste them
+from GoF's templates.&lt;/p&gt;
+&lt;h3&gt;Entries&lt;/h3&gt;
 &lt;p&gt;&lt;a href="#overview"&gt; Overview &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#6/13/2020"&gt; 6/13/2020 - Why Design Patterns? &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#6/14/2020"&gt; 6/14/2020 - Preliminary Research &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#6/15/2020"&gt; 6/15/2020 - Updating Old Project &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#6/16/2020"&gt; 6/16/2020 - New Design &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#6/17/2020"&gt; 6/17/2020 - Implementing User Struct &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#6/20/2020"&gt; 6/20/2020 - Designing Internal Api &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#6/22/2020"&gt; 6/22/2020 - Implementing Internal Api &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#6/23/2020"&gt; 6/23/2020 - Channels with Serenity &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#6/24/2020"&gt; 6/24 …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Entries&lt;/h3&gt;
+&lt;p&gt;&lt;a href="#6/16/2020"&gt; 6 …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;h3&gt;TLDR&lt;/h3&gt;
+&lt;p&gt;I wanted to try experimenting with traditional java design patterns in Rust.
+I knew the features of Rust would mean I couldn't copy and paste them
+from GoF's templates.&lt;/p&gt;
+&lt;h3&gt;Entries&lt;/h3&gt;
 &lt;p&gt;&lt;a href="#overview"&gt; Overview &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#6/13/2020"&gt; 6/13/2020 - Why Design Patterns? &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#6/14/2020"&gt; 6/14/2020 - Preliminary Research &lt;/a&gt;&lt;/p&gt;
@@ -636,6 +1011,8 @@ but I couldn't come up with any concrete use cases.&lt;/p&gt;
 &lt;p&gt;&lt;a href="#6/13/2020"&gt; 6/13/2020 - The Decision &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#6/14/2020"&gt; 6/14/2020 - Use Cases &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#6/15/2020"&gt; 6/15/2020 - Final Thoughts and Objective Analysis &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#10/10/2024"&gt; 10/10/2024 - Update: Kotlin &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#10/12/2024"&gt; 10/12/2024 - Update: Rust &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a name="overview"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;Overview&lt;/h1&gt;
 &lt;p&gt;I consider my "primary" languages to be Python and C/C++. I use both of these languages 
@@ -1008,16 +1385,111 @@ do over time.&lt;/p&gt;
 up with strong use cases for Rust for myself. I'll try to keep it as a "secondary" language
 but we'll ultimately see how well that turns out. Rust is a lot more similar to Python and 
 C/C++; so it has that in favor of Haskell, at least. But whether I can keep up motivation
-to support a language for what's basically "academic" purposes remains to be seen.&lt;/p&gt;</content><category term="Lab"></category><category term="rust"></category><category term="kotlin"></category></entry><entry><title>Arch Linux Keychain</title><link href="https://mitigatingfailure.com/Arch-Keychain.html" rel="alternate"></link><published>2020-05-22T00:00:00-04:00</published><updated>2020-05-22T00:00:00-04:00</updated><author><name>Niraj Amalkanti</name></author><id>tag:mitigatingfailure.com,2020-05-22:/Arch-Keychain.html</id><summary type="html">&lt;h3&gt;Entries&lt;/h3&gt;
+to support a language for what's basically "academic" purposes remains to be seen.&lt;/p&gt;
+&lt;p&gt;&lt;a name="10/10/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;10/10/2024 - Update: Kotlin&lt;/h1&gt;
+&lt;p&gt;There's been some new developments relevant to this topic so I'm adding updates.&lt;/p&gt;
+&lt;p&gt;I still haven't found a good use case for Rust as a secondary language. 
+One of my co-workers (an Android dev) persuaded me to give Kotlin another
+chance. I knew Android app dev is an area I want to improve in and Kotlin is required(unless I 
+want to use Java). This motivated me to revaluate Kotlin.&lt;/p&gt;
+&lt;p&gt;But it was obvious that the same issues remained. Kotlin's IDE dependence put me off, especially 
+libraries like &lt;a href="https://ktor.io"&gt;ktor&lt;/a&gt; or &lt;a href="https://spring.io/projects/spring-boot"&gt;spring boot&lt;/a&gt; 
+that expected you to use an online project generator
+to start your projects. I can see the value of this in large companies, but I can't imagine
+going through this for a personal project. I also notice that Kotlin doesn't have a lot
+of adoption outside of Android. The main use case is replacing Java(a good one), but it doesn't 
+appear that people are actively creating new Kotlin projects for standard applications.
+This differs from Rust or Go; where I see this more frequently. &lt;/p&gt;
+&lt;p&gt;However, this let me review my priorities and goals and I now have two main goals with Kotlin/JVM.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Android Dev&lt;/li&gt;
+&lt;li&gt;Clojure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Android Dev&lt;/h2&gt;
+&lt;p&gt;This has been a lower priority, but I really want to become more comfortable with Android app development.
+I'd like to get to the point where I can easily build an app for myself when I need it, just like how I can
+easily write a script or small program for these problems on a standard computer. &lt;/p&gt;
+&lt;h2&gt;Clojure&lt;/h2&gt;
+&lt;p&gt;I've still been eyeing Haskell but have not pursued it. But the more I look at Clojure, the more I see 
+the similarities. And since Clojure is on the JVM, I can use Java libraries to support it along with Kotlin
+if needed. I'm not sure I can motivate myself to pursue Haskell further, but I think Clojure has enough utility.&lt;/p&gt;
+&lt;p&gt;I don't think I will pursue Kotlin as a general purpose programming language for now, but if I really end up
+liking it that may change. That could happen from either goal. However, I will continue to regard Kotlin as a 
+tertiary language for myself, but now I have more direction in how I want to use it. &lt;/p&gt;
+&lt;p&gt;&lt;a name="10/28/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;10/12/2024 - Update: Rust and perhaps a use case ?&lt;/h1&gt;
+&lt;p&gt;My disappointment in Kotlin motivated me to revaluate Rust but I took a quick detour into Haskell. This ended
+up being interesting because it became obvious to me how much Haskell has influenced Rust. Now that I understood
+Traits and datatypes like Option/Result, Haskell typeclasses and Maybe/Either made a lot more sense to me. In fact,
+maybe one reason for Rust's popularity is converts from Haskell. This new familiarity has lead me to a new idea.&lt;/p&gt;
+&lt;p&gt;When I learned C, one application was using C for command line tools. C tools are much faster than Python scripts
+and compiling into a single, static executable makes for easy deployment(instead of Python virtualenvs).
+But creating makefiles and writing C is too much effort for simple tools when a Python script will do.
+But Rust's tooling simplifies the build process(and allows for cross-compilation). And it's much easier
+to organize Rust code into multiple files instead of a single Python script. I'm also realizing the subtle difference
+between a script and command line tool.&lt;/p&gt;
+&lt;h2&gt;Script vs Command Line Tool&lt;/h2&gt;
+&lt;p&gt;A script is usually a set of instructions for a task that needs to be automated with some minimal configuration.
+But a command line tool is a utility like grep, awk, sed, etc; that does some semi-customizable unit of work. They're
+similar but a cli tool usually is run more frequently and needs to have more complex customization with flags. Because of this,
+Rust has several advantages over Python for command line tools.&lt;/p&gt;
+&lt;h3&gt;Speed&lt;/h3&gt;
+&lt;p&gt;For scripts that are started and just let run, Python is fine. But if I want a tool I use frequently on the 
+command line, the centuries spent waiting for the Python interpreter will add up over time.&lt;/p&gt;
+&lt;h3&gt;Organization&lt;/h3&gt;
+&lt;p&gt;Python does have &lt;a href="https://click.palletsprojects.com/en/stable/"&gt;click&lt;/a&gt;; which is neater than argparse, 
+but a single python script can get very large
+when trying to add subcommands and a lot of functionality. This is true even with click. But Rust's easy
+tooling lets me build a single executable while keeping the source organized in multiple files. 
+This is an advantage of building cli tools with C that I learned
+about when learning C, but the build tooling with C always put me off. Cargo fixes this issue with Rust; 
+allowing me to easily build a single statically linked executable. But I can maintain code readability
+by splitting it up into as many files/modules I need. With Python I'm force to make trade
+offs regarding file size/organization&lt;/p&gt;
+&lt;h3&gt;Why not Bash?&lt;/h3&gt;
+&lt;p&gt;Bash makes sense for small, simple scripts where the goal is to just chain together commands, but anything
+more complex can be difficult in bash. I think it makes sense to improve my bash skills so I can do scripts
+in bash but use Rust for command line tools. I will investigate this.&lt;/p&gt;
+&lt;p&gt;&lt;a name="11/12/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;11/12/2024 - Update: Bash for Scripts&lt;/h1&gt;
+&lt;p&gt;Interestingly enough, I ended up deciding to keep Python for my scripts. Bash is nice in theory, but anything
+even slightly complex is just cleaner in Python. One script I tried converting was a simple one that copies music
+files by parsing a text based playlist file and syncing them. This is trivial in Python, but even using tools
+like Sed and Awk lead to complex and hard to maintain code. &lt;/p&gt;
+&lt;p&gt;Improving my bash is still a good idea, and I think there are scripts I can use better bash skills to create.
+But the falloff is very quick and Python becomes a better option with an even moderate amount of complexity.&lt;/p&gt;
+&lt;p&gt;&lt;a name="11/18/2024"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;11/18/2024 - Update: Rust for CLI tools&lt;/h1&gt;
+&lt;p&gt;Initially, I was using a bunch of complex bash alises for some build tooling at work. I wanted to use Rust, but
+I decided to use bash first. As cool as Rust is, if Bash is better, I should go with it.&lt;/p&gt;
+&lt;p&gt;But I ran into the same problem.... I had ideas for default/optional flags for easy usage. But implementing this in
+bash is not trivial. Using getopts does not handle optional parameters well. It requires state logic and creates
+dependencies on the ordering of the flags. The tool, getopt, does this much better,
+but the versioning and capabilities differs tremendously depending on the OS. Trying to figure out these version
+differences sounds like a giant mess that I really don't want to deal with. &lt;/p&gt;
+&lt;p&gt;I ended up using subcommands with semi-arcane bash syntax. This wasn't perfect, but I found that his accomplished
+90% of what I wanted with a command line tool. &lt;/p&gt;
+&lt;p&gt;But eventually; the 10% forced me to resort to ugly hacks. I then rewrote the tool in Rust. This took longer than the bash script, 
+but it wasn't extreme. Now that
+this version works, I find that I like using it a lot more. It's much easier to configure and adapt as I need to make
+changes. The bash tool could've worked but as my needs for this tool expanded Rust was ultimately the better option.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;I think there's a fine and difficult to assess line between using Rust or Bash for command line tools. It probably
+makes sense to start with bash but if I find that bash is too limiting I should switch. But now I FINALLY have 
+a personal use case for Rust!&lt;/p&gt;</content><category term="Lab"></category><category term="rust"></category><category term="kotlin"></category></entry><entry><title>Arch Linux Keychain</title><link href="https://mitigatingfailure.com/Arch-Keychain.html" rel="alternate"></link><published>2020-05-22T00:00:00-04:00</published><updated>2020-05-22T00:00:00-04:00</updated><author><name>Niraj Amalkanti</name></author><id>tag:mitigatingfailure.com,2020-05-22:/Arch-Keychain.html</id><summary type="html">&lt;h3&gt;TLDR&lt;/h3&gt;
+&lt;p&gt;I wanted to created a keyring accessory that looked like the Arch Linux logo
+and intended to create a 3D model and print it; this ended up being way
+easier than expected&lt;/p&gt;
+&lt;h3&gt;Entries&lt;/h3&gt;
 &lt;p&gt;&lt;a href="#overview"&gt; Overview &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#5/22/2020"&gt; 5/22/2020 - Initial Fumbling &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#5/23/2020"&gt; 5/23/2020 - Tutorials &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#5/24/2020"&gt; 5/24/2020 - 3D Printing Service &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#6/08/2020"&gt; 6/08/2020 - Final Thoughts &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a name="overview"&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1&gt;Overview&lt;/h1&gt;
-&lt;p&gt;As a Linux user I love opportunities to show off my preferred operating system.
-Recently I tried looking for a keychain for the Arch Linux logo. I …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Entries&lt;/h3&gt;
+&lt;p&gt;&lt;a href="#5/24/2020"&gt; 5/24/2020 - 3D Printing Service …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;h3&gt;TLDR&lt;/h3&gt;
+&lt;p&gt;I wanted to created a keyring accessory that looked like the Arch Linux logo
+and intended to create a 3D model and print it; this ended up being way
+easier than expected&lt;/p&gt;
+&lt;h3&gt;Entries&lt;/h3&gt;
 &lt;p&gt;&lt;a href="#overview"&gt; Overview &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#5/22/2020"&gt; 5/22/2020 - Initial Fumbling &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#5/23/2020"&gt; 5/23/2020 - Tutorials &lt;/a&gt;&lt;/p&gt;

@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mitigating Failure - Workshop</title><link href="https://mitigatingfailure.com/" rel="alternate"></link><link href="https://mitigatingfailure.com/feeds/workshop.atom.xml" rel="self"></link><id>https://mitigatingfailure.com/</id><updated>2020-05-22T00:00:00-04:00</updated><subtitle>Mitigating Failure</subtitle><entry><title>Arch Linux Keychain</title><link href="https://mitigatingfailure.com/Arch-Keychain.html" rel="alternate"></link><published>2020-05-22T00:00:00-04:00</published><updated>2020-05-22T00:00:00-04:00</updated><author><name>Niraj Amalkanti</name></author><id>tag:mitigatingfailure.com,2020-05-22:/Arch-Keychain.html</id><summary type="html">&lt;h3&gt;Entries&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mitigating Failure - Workshop</title><link href="https://mitigatingfailure.com/" rel="alternate"></link><link href="https://mitigatingfailure.com/feeds/workshop.atom.xml" rel="self"></link><id>https://mitigatingfailure.com/</id><updated>2020-05-22T00:00:00-04:00</updated><subtitle>Mitigating Failure</subtitle><entry><title>Arch Linux Keychain</title><link href="https://mitigatingfailure.com/Arch-Keychain.html" rel="alternate"></link><published>2020-05-22T00:00:00-04:00</published><updated>2020-05-22T00:00:00-04:00</updated><author><name>Niraj Amalkanti</name></author><id>tag:mitigatingfailure.com,2020-05-22:/Arch-Keychain.html</id><summary type="html">&lt;h3&gt;TLDR&lt;/h3&gt;
+&lt;p&gt;I wanted to created a keyring accessory that looked like the Arch Linux logo
+and intended to create a 3D model and print it; this ended up being way
+easier than expected&lt;/p&gt;
+&lt;h3&gt;Entries&lt;/h3&gt;
 &lt;p&gt;&lt;a href="#overview"&gt; Overview &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#5/22/2020"&gt; 5/22/2020 - Initial Fumbling &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#5/23/2020"&gt; 5/23/2020 - Tutorials &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#5/24/2020"&gt; 5/24/2020 - 3D Printing Service &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#6/08/2020"&gt; 6/08/2020 - Final Thoughts &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a name="overview"&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1&gt;Overview&lt;/h1&gt;
-&lt;p&gt;As a Linux user I love opportunities to show off my preferred operating system.
-Recently I tried looking for a keychain for the Arch Linux logo. I …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Entries&lt;/h3&gt;
+&lt;p&gt;&lt;a href="#5/24/2020"&gt; 5/24/2020 - 3D Printing Service …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;h3&gt;TLDR&lt;/h3&gt;
+&lt;p&gt;I wanted to created a keyring accessory that looked like the Arch Linux logo
+and intended to create a 3D model and print it; this ended up being way
+easier than expected&lt;/p&gt;
+&lt;h3&gt;Entries&lt;/h3&gt;
 &lt;p&gt;&lt;a href="#overview"&gt; Overview &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#5/22/2020"&gt; 5/22/2020 - Initial Fumbling &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="#5/23/2020"&gt; 5/23/2020 - Tutorials &lt;/a&gt;&lt;/p&gt;
