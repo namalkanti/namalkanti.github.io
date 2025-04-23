@@ -1,11 +1,11 @@
-Title: Leaning with AI
+Title: Learning with AI
 Date: 2024-11-10 
 Modified: 2025-3-11 
 Category: Lab
 Tags: llms
 Slug: My experiences learning with AI
 Authors: Niraj Amalkanti 
-State: In-Progress
+State: Successful
 
 TL;DR: AI is at its best when it helps you think better, not when it tries to think for you.
 
@@ -121,7 +121,7 @@ Based on this observation, I plan on continuing using ChatGPT pro. I will keep t
 I've been testing Claude for blog writing, and its dual-pane editing interface (artifacts) is a game-changer for working with markdown. Being able to see both the raw markdown and rendered output simultaneously makes the writing process much more fluid. I can then use natural language to more effectively brainstorm and generate something usable. 
 
 <figure class="center">
-    <img src="{attach}/images/claude_dual_pane.png" width="60%" height="auto" class="border">
+    <img src="{attach}/images/claude_dual_pane.png" width="100%" height="auto" class="border">
     <figcaption>Claude's Artifact Interface</figcaption>
 </figure>
 
