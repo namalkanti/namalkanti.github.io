@@ -86,6 +86,8 @@
 <p><a href="#3-28-2025">3/28/2025 - Specialized Interfaces Matter</a></p>
 <p><a href="#4-10-2025">4/10/2025 - Canvas vs Artifacts: The Plot Thickens</a></p>
 <p><a href="#4-11-2025">4/11/2025 - Slip Coding: Reclaiming Vibe Coding For Productivity</a></p>
+<p><a href="#4-25-2025">4/25/2025 - Functional Programming Helps the AI Help Me</a></p>
+<p><a href="#5-10-2025">5/10/2025 - Self-Documenting Code with AI</a></p>
 <p><a href="#conclusion">Conclusion</a></p>
 <p><a name="overview"></a></p>
 <h1>Overview</h1>
@@ -187,6 +189,36 @@
 <p>While vibe coding often focuses on the aesthetics and feel of the programming experience, Slip Coding focuses on building sustainable habits that convert micro-moments into meaningful progress. It's less about the perfect playlist or cozy environment and more about finding ways to keep your projects moving forward in the in-between spaces of life.</p>
 <p>The habit-forming aspect is crucial—once you get used to opening an AI chat instead of social media during these slip spaces, you'll find yourself making steady progress on projects that might otherwise languish.</p>
 <p>A key detail is this only works for personal projects that you really want to work on, but don't have time for. I can't imagine myself being motivated to do work related to my job this way. And the lack of rigor means it's not great for things that have to get done and be right(work tasks). But for personal projects, which are much more flexible, it works beautifully.</p>
+<p><a name="4-25-2025"></a></p>
+<h1>4/25/2025 - Functional Programming Helps the AI Help Me</h1>
+<p>One of the more surprising lessons I’ve learned while working with AI coding tools is that functional programming doesn’t just make code cleaner for humans—it makes it far easier for AI to collaborate effectively.</p>
+<p>I've been reading the book "Grokking Simplicity", which introduced the idea of separating code into actions, calculations, and data:</p>
+<div class="highlight"><pre><span></span><code>Data is just raw information — structures with no behavior.
+
+Calculations are pure functions — same input, same output, no side effects.
+
+Actions are anything that touches or depends on the outside world — printing, saving, fetching, timing, etc.
+</code></pre></div>
+
+<p>These are fundemental concepts in functional programming, but often get obscured because functional languages have so many nuances. Teaching functional programming though javascript is a great way to learn the core concepts. </p>
+<p>Once I started designing with these categories in mind, everything fell into place. Isolating pure calculations made it trivial to write unit tests. And if it’s trivial for me, it’s trivial for the AI. Structuring my code into clear, testable chunks with obvious input/output signatures became a sort of scaffolding. At that point, the AI isn’t solving a complex, ambiguous task — it’s answering a series of simple questions. It’s like writing a math proof: break the problem down far enough, and each piece becomes obvious. Then the AI just connects the dots.</p>
+<p>And by breaking problems into smaller, well-defined pieces, I’ve found that AI tools like ChatGPT or CodeCompanion can operate more effectively. For example:</p>
+<ul>
+<li><strong>Pure Functions Simplify Debugging</strong>: When functions are pure (no side effects, same input produces the same output), it’s easier for AI to reason about them. This makes debugging and refactoring more straightforward, as the AI can focus on isolated components without worrying about hidden dependencies.</li>
+<li><strong>Clear Boundaries for Collaboration</strong>: Separating actions, calculations, and data creates natural boundaries. I can delegate calculations to the AI while retaining control over actions that interact with the external world, like database queries or API calls.</li>
+<li><strong>Improved Testability</strong>: Writing unit tests for pure functions is trivial, and AI can assist in generating these tests. This ensures that the codebase remains robust and maintainable, even as the AI contributes to its development.</li>
+</ul>
+<p>This approach has not only improved my productivity but also made it easier to trust the AI’s contributions. When the AI operates within a clean, functional structure, its outputs are more predictable and easier to integrate into the larger system.</p>
+<p>While Object-Oriented Programming (OOP) and design patterns still have their place, separating code into distinct, functional components has proven invaluable. It not only makes it easier to collaborate with AI by providing clear boundaries but also ensures I can seamlessly take over when the AI reaches its limits.</p>
+<p><a name="5-10-2025"></a></p>
+<h1>5/10/2025 - Self-Documenting Code with AI</h1>
+<p>I’ve always relied on self-documenting code as a cornerstone of my coding style, but when I saw how well functional programming worked with AI, I realized the same principles apply. It’s not just about clear naming—self-documenting code shines because its structure, nesting, and organization make it inherently easier to understand and work with. </p>
+<p>Self documenting code has always been
+- <strong>Intuitive for Teammates</strong>: Functions became so clear that others could use them without needing to ask questions. This improved collaboration and reduced friction in team environments.
+- <strong>Easier to Maintain</strong>: Revisiting old code felt less like deciphering a puzzle and more like reading a well-organized guide.</p>
+<p>but now I realize its also
+- <strong>AI-Friendly</strong>: Clean, structured code made it easier for AI tools to understand the context and provide accurate suggestions or improvements.</p>
+<p>This wasn’t something I set out to achieve, but it’s become a valuable insight. Clean, self-documenting code doesn’t just help humans—it helps machines, too. It’s a reminder that the principles of good software design amplify productivity for both human and AI collaborators.</p>
 <p><a name="conclusion"></a></p>
 <h1>Conclusion</h1>
 <p>After several months of experimenting with AI assistants as learning tools, I've arrived at some clear insights:</p>
@@ -203,6 +235,9 @@
 </li>
 <li>
 <p><strong>The AI Doesn't Know Itself</strong>: A consistent pattern emerged—AI assistants have little awareness of their own platform features and capabilities. This separation between model and interface reinforces that we're not working with truly self-aware systems but with tools that require our direction.</p>
+</li>
+<li>
+<p><strong>Clean Code Benefits Everyone</strong>: Functional programming principles and self-documenting code not only helps teammates but also makes AI collaboration more effective. Clean, structured code is easier for both humans and machines to navigate, trust, and build upon.</p>
 </li>
 </ol>
 <p>My journey from AI skeptic to effective user didn't come from better prompting or finding the "right" AI—it came from fundamentally rethinking how I approach these tools. By leveraging my own intelligence first and using AI as an amplifier for learning and organizing thoughts, I've found genuine value that wasn't apparent when I was attempting to use these tools as code generators or problem solvers.</p>
