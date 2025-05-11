@@ -143,11 +143,15 @@ Actions are anything that touches or depends on the outside world — printing, 
 &lt;p&gt;&lt;a name="5-10-2025"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;5/10/2025 - Self-Documenting Code with AI&lt;/h1&gt;
 &lt;p&gt;I’ve always relied on self-documenting code as a cornerstone of my coding style, but when I saw how well functional programming worked with AI, I realized the same principles apply. It’s not just about clear naming—self-documenting code shines because its structure, nesting, and organization make it inherently easier to understand and work with. &lt;/p&gt;
-&lt;p&gt;Self documenting code has always been
-- &lt;strong&gt;Intuitive for Teammates&lt;/strong&gt;: Functions became so clear that others could use them without needing to ask questions. This improved collaboration and reduced friction in team environments.
-- &lt;strong&gt;Easier to Maintain&lt;/strong&gt;: Revisiting old code felt less like deciphering a puzzle and more like reading a well-organized guide.&lt;/p&gt;
-&lt;p&gt;but now I realize its also
-- &lt;strong&gt;AI-Friendly&lt;/strong&gt;: Clean, structured code made it easier for AI tools to understand the context and provide accurate suggestions or improvements.&lt;/p&gt;
+&lt;p&gt;Self documenting code has always been&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Intuitive for Teammates&lt;/strong&gt;: Functions became so clear that others could use them without needing to ask questions. This improved collaboration and reduced friction in team environments.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Easier to Maintain&lt;/strong&gt;: Revisiting old code felt less like deciphering a puzzle and more like reading a well-organized guide.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;but now I realize its also&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;AI-Friendly&lt;/strong&gt;: Clean, structured code made it easier for AI tools to understand the context and provide accurate suggestions or improvements.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;This wasn’t something I set out to achieve, but it’s become a valuable insight. Clean, self-documenting code doesn’t just help humans—it helps machines, too. It’s a reminder that the principles of good software design amplify productivity for both human and AI collaborators.&lt;/p&gt;
 &lt;p&gt;&lt;a name="conclusion"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;Conclusion&lt;/h1&gt;
